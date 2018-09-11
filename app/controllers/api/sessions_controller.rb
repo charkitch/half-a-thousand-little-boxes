@@ -15,7 +15,6 @@ class Api::SessionsController < ApplicationController
   end
 
   def destroy
-    debugger
     logout!
     render '/root'
   end
