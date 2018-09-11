@@ -2,11 +2,11 @@ export const createUser = (user) => {
   return $.ajax({
     method: 'POST',
     url: '/api/users',
-    data: { user }
+    data: { user },
   });
 };
 
-export const login = ( user ) => {
+export const login = (user) => {
   return $.ajax({
     method: 'POST',
     url: '/api/session',
@@ -17,13 +17,6 @@ export const login = ( user ) => {
 export const logout = () => {
   return $.ajax({
     method: 'DELETE',
-    url: '/api/session'
+    url: '/api/session',
   });
 };
-
-
-
-// $.ajax({
-//   method: 'GET',
-//   url: '/api/users',
-// });
