@@ -1,4 +1,4 @@
-class sessionsController < ApplicationController
+class Api::SessionsController < ApplicationController
 
   def create
     @user = User.find_and_validate(
@@ -15,7 +15,9 @@ class sessionsController < ApplicationController
   end
 
   def destroy
+    debugger
     logout!
+    render '/root'
   end
 
 end
