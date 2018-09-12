@@ -28,11 +28,11 @@ class User < ApplicationRecord
     self.password_digest = BCrypt::Password.create(password)
   end
 
-  def self.find_and_validate(username, password)
-    @user =User.find_by_username(username)
-
+  def self.find_and_validate(username, password, email)
+    byebug
+    @user = email.length > 0 ? User.find_by_email(email) : nil
+    @user ||= User.find_by_username(username)
     return @user if @user && @user.valid_password?(password)
-
     return nil
   end
 
