@@ -24,7 +24,7 @@ input {
   height: 40px;
 }
 
-input[type="text"], input[type="password"]  {
+input[type="text"], input[type="password"] {
   width: 318px;
   height: 40px;
 }
@@ -61,8 +61,6 @@ input[type='submit'] {
   height: 100px;
 }
 
-.access {
-}
 
 .access-login {
   color: white;
@@ -83,9 +81,3 @@ input[type='submit'] {
   margin-right: 30px;
   border-radius: 30px;
 }
-
-
-
-
-
-.current-user-nav
