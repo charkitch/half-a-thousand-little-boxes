@@ -20,6 +20,7 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
 
   after_initialize :ensure_session_token
+  before_create :ensure_username
 
   attr_reader :password
 
@@ -55,6 +56,15 @@ class User < ApplicationRecord
 
   def self.generate_session_token
     SecureRandom::urlsafe_base64
+  end
+
+  def ensure_username
+    self.username ||= self.stripped_email
+  end
+
+  def stripped_email
+    ampersand_locale = self.email.index('@')
+    self.email[0...ampersand_locale]
   end
 
 end
