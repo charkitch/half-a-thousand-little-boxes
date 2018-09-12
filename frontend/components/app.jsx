@@ -1,7 +1,9 @@
 import React from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
-
+import { Switch } from 'react-router-dom';
 import UserAcknowledgementContainer from './user_acknowledgement/user_acknowledgement_container';
+import { AuthRoute } from '../util/route_util.jsx'
+import LogInFormContainer from './session_form/log_in_form_container'
+import SignUpFormContainer from './session_form/sign_up_form_container'
 
 const App = () => {
   return (
@@ -10,10 +12,10 @@ const App = () => {
         <UserAcknowledgementContainer />
       </header>
       <p>A 1F416 joke would be good here. </p>
-      <switch>
-       <AuthRoute exact path="/login" component={LogInFormContainer} />
-       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-      </switch>
+      <Switch>
+        <AuthRoute exact path="/login" component={LogInFormContainer} />
+        <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+      </Switch>
     </div>
   );
 };

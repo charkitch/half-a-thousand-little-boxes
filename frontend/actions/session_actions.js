@@ -25,7 +25,7 @@ export const receiveErrors = errors => {
 
 //who have thunk it
 
-export const singnUp = (user) => {
+export const signup = (user) => {
   return dispatch => {
     return SessionAPIUtil.createUser(user).then( user => {
       dispatch(receiveCurrentUser(user)), err => {
@@ -48,7 +48,7 @@ export const login = (user) => {
 export const logout = () => {
   return dispatch => {
     return SessionAPIUtil.logout().then( user => {
-      dispatch(LOGOUT_CURRENT_USER());
+      dispatch(logoutCurrentUser());
     });
   };
 };

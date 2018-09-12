@@ -29,8 +29,11 @@ class User < ApplicationRecord
   end
 
   def self.find_and_validate(username, password)
-    @user.find_by(username: username)
-    return user if @user && user.valid_password?(password)
+    debugger
+    @user =User.find_by_username(username)
+
+    return @user if @user && @user.valid_password?(password)
+
     return nil
   end
 

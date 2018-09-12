@@ -1,13 +1,14 @@
 class Api::SessionsController < ApplicationController
 
   def create
+    debugger
     @user = User.find_and_validate(
       params[:user][:username],
       params[:user][:password]
     )
 
     if @user
-      login!(user)
+      login!(@user)
       render 'api/users/show'
     else
       render plain: 'invalid login', status: 401
@@ -16,7 +17,7 @@ class Api::SessionsController < ApplicationController
 
   def destroy
     logout!
-    render '/root'
+    render plain: 'logged out'
   end
 
 end
