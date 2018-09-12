@@ -17,7 +17,7 @@
 class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :password_digest, presence: true
-  validates :username, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
 
   after_initialize :ensure_session_token
   before_create :ensure_username
@@ -29,10 +29,9 @@ class User < ApplicationRecord
     self.password_digest = BCrypt::Password.create(password)
   end
 
-  def self.find_and_validate(username, password, email)
-    byebug
-    @user = email.length > 0 ? User.find_by_email(email) : nil
-    @user ||= User.find_by_username(username)
+  def self.find_and_validate(identifier, password)
+    @user = identifier.index('@'): User.find_by_email(identifier) : nil
+    @user ||= User.find_by_username(identifier)
     return @user if @user && @user.valid_password?(password)
     return nil
   end
@@ -63,8 +62,8 @@ class User < ApplicationRecord
   end
 
   def stripped_email
-    ampersand_locale = self.email.index('@')
-    self.email[0...ampersand_locale]
+    at_sym_locale = self.email.index('@')
+    self.email[0...at_sym_locale]
   end
 
 end

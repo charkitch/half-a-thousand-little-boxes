@@ -1,0 +1,42 @@
+.logged-out-nav {
+  background-color: teal;
+}
+
+nav {
+  height: 70px;
+  width: 100%;
+}
+
+div {
+  display: block;
+}
+
+input {
+  background-color: red;
+}
+
+.login-form-container {
+  width: 400px;
+  margin: auto;
+  color: #71767a;
+}
+
+.nav-access {
+  position: absolute;
+
+  padding: 10px
+  background-color: violet;
+}
+
+.login {
+  color: white
+}
+
+.signup {
+  background: blue;
+  border-radius: 30px;
+}
+
+
+
+.current-user-nav
