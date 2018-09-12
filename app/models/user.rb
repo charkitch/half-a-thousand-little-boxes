@@ -30,8 +30,8 @@ class User < ApplicationRecord
   end
 
   def self.find_and_validate(identifier, password)
-    @user = identifier.index('@'): User.find_by_email(identifier) : nil
-    @user ||= User.find_by_username(identifier)
+    #redo this better
+    @user = User.find_by(username: identifier) || User.find_by(email: identifier)
     return @user if @user && @user.valid_password?(password)
     return nil
   end

@@ -1,10 +1,17 @@
 .logged-out-nav {
   background-color: teal;
+  width: 300px;
+  right: 20px;
+  position:absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 nav {
   height: 70px;
   width: 100%;
+  position: absolute;
 }
 
 div {
@@ -12,30 +19,72 @@ div {
 }
 
 input {
-  background-color: red;
+  border-radius: 4px;
+  width: 318px;
+  height: 40px;
+}
+
+input[type="text"], input[type="password"]  {
+  width: 318px;
+  height: 40px;
+}
+
+input, label {
+  display: block;
+}
+
+input {
+  border: 1px solid rgba(185,193,199,0.5);
+}
+
+input[type='submit'] {
+  background-color: #41cb56;
+  color: white;
+  text-align: center
+}
+
+.login-form-box {
+  background-color: whitesmoke;
+  width: 400px;
+  margin: auto;
 }
 
 .login-form-container {
-  width: 400px;
-  margin: auto;
   color: #71767a;
 }
 
 .nav-access {
   position: absolute;
-
-  padding: 10px
+  padding: 10px;
+  width: 100px;
   background-color: violet;
+  height: 100px;
 }
 
-.login {
-  color: white
+.access {
 }
 
-.signup {
-  background: blue;
+.access-login {
+  color: white;
+  display: inline-block;
+  background: transparent;
+  margin-left: 30px
+}
+
+.access-signup {
+  color: white;
+  height: 30px;
+  line-height: 26px;
+  width: 90px;
+  text-align: center;
+  vertical-align: center;
+  background-color: #00aaff;
+  font-weight: bold;
+  margin-right: 30px;
   border-radius: 30px;
 }
+
+
 
 
 

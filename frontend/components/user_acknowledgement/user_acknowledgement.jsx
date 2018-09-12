@@ -4,13 +4,11 @@ import { Link } from 'react-router-dom';
 const UserAcknowledgement = ({ currentUser, logout }) => {
   const accessLinks = () => {
     return (
-      <div className='navbar-access'>
         <nav className="logged-out-nav">
-          <Link className="login" to="/login">Login</Link>
+          <Link className="access-login" to="/login">Login</Link>
           <br></br>
-          <Link className="signup" to="signup">Sign Up</Link>
+          <Link className="access-signup" to="signup">Sign Up</Link>
         </nav>
-      </div>
     );
   };
   const personalGreeting = () => {
