@@ -10,7 +10,6 @@ const mapDispatchToProps = dispatch => {
 
 
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
    currentUser: state.entities.users[state.session.id],
   };
