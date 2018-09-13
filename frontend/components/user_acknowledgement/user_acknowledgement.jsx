@@ -11,13 +11,12 @@ const UserAcknowledgement = ({ currentUser, logout }) => {
         </div>
     );
   };
+
   let personalGreeting = () => {
   return (
-  <div className='navbar-access'>
-    <nav className="current-user-nav">
-      <h1>welcome {currentUser.username}. 500px does list name, only navbar.</h1>
+  <div className='logged-in-nav'>
+      <h1 className="tester">welcome {currentUser.username}.</h1>
       <button onClick={logout}>logout. Will become dropdown.</button>
-    </nav>
   </div>
     )};
 
