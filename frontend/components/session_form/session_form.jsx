@@ -40,7 +40,7 @@ class SessionForm extends React.Component {
    render() {
      let usernameEntry = ''
      if (this.props.formType === 'Sign up') {
-       usernameEntry = (<label>Username(optional)
+       usernameEntry = (<label className='access-label'>Username(optional)
        <input type='text' value={this.state.username} onChange={this.update('username')} />
       </label>) }
 
@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
           {this.renderErrors()}
           <div className="login-form">
             <br/>
-            <label>{this.props.identifierText}</label>
+            <label className='access-label'>{this.props.identifierText}</label>
             <input type="text"
               value={this.state.email}
               onChange={this.update('email')}
@@ -61,7 +61,7 @@ class SessionForm extends React.Component {
             <br/>
             {usernameEntry}
             <br/>
-            <label>Password</label>
+            <label className='access-label'>Password</label>
             <input type="password"
               value={this.state.password}
               onChange={this.update('password')}
@@ -69,7 +69,9 @@ class SessionForm extends React.Component {
             <br/>
             <input className="session-submit" type="submit" value={this.props.formType} />
           </div>
+          <div className='redirect-message'>
           {this.props.bumperText}  {this.props.navLink}
+          </div>
         </form>
       </div>
     );

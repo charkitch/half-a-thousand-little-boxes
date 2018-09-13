@@ -1,0 +1,29 @@
+.login-form-container {
+  background-color: #f7f8fa;
+  height: 100vh;
+  /* justify-content: center */
+}
+
+
+.login-form-box {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 400px;
+  margin: auto;
+  border: 1px solid #f7f8fa;
+  padding: 32px 40px 24px;
+  box-sizing: border-box;
+  position: relative;
+  top: 18%;
+}
+
+.access-label {
+  font-size: 14px;
+  color: #71767a;
+}
+
+.redirect-message {
+  color: #71767a;
+  font-size: 12px;
+}

@@ -11,7 +11,7 @@ const UserAcknowledgement = ({ currentUser, logout }) => {
         </div>
     );
   };
-  const personalGreeting = () => {
+  let personalGreeting = () => {
   return (
   <div className='navbar-access'>
     <nav className="current-user-nav">
@@ -20,6 +20,7 @@ const UserAcknowledgement = ({ currentUser, logout }) => {
     </nav>
   </div>
     )};
+
   return currentUser ? personalGreeting() : accessLinks();
 };
 
