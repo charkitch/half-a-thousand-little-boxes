@@ -1,3 +1,18 @@
+
+
+nav {
+  height: 70px;
+  width: 100%;
+  color: transparent;
+  position: absolute;
+  z-index: 10
+}
+
+.current-user-nav {
+  z-index: 1000;
+  position: relative;
+}
+
 .logged-out-nav {
   width: 185px;
   height: 100%;
@@ -8,15 +23,6 @@
   justify-content: space-between;
   font-size: 14px;
 }
-
-nav {
-  height: 70px;
-  width: 100%;
-  color: transparent;
-  position: absolute;
-  z-index: 10
-}
-
 
 input {
   border-radius: 4px;
