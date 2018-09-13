@@ -1,8 +1,9 @@
 class Api::SessionsController < ApplicationController
 
   def create
+    debugger
     @user = User.find_and_validate(
-      params[:user][:identifier],
+      params[:user][:email],
       params[:user][:password]
     )
 
