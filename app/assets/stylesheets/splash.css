@@ -27,19 +27,26 @@
   position: absolute;
   top: 60%;
   left: 50%;
-  font-size: 24px
+  font-size: 24px;
+  text-rendering: optimizeLegibility;
 }
 
 .splash-center-appeal-join {
+  display: inline-block;
   font-size: 18px;
-  border-radius: 30px;
-  background: blue;
+  background: #0099e5;
   color: white;
+  line-height: 44px;
+  font-weight: bold;
   transform: translate(-50%, -50%);
-  color: black;
   position: absolute;
   top: 70%;
   left: 50%;
-  font-size: 24px
+  /* font-size: 24px; */
+  border-radius: 100px;
+  height: 50px;
+  margin-top: 40px;
+  padding: 0 30px;
+  border: 2px solid #0099e5;
 
 }
