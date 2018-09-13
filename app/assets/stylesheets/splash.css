@@ -1,0 +1,45 @@
+.splash-container {
+  color: purple;
+  position: relative;
+}
+
+.splash-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.splash-center-appeal {
+}
+
+.splash-center-appeal-headline {
+  color: black;
+  font-size: 48px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* width: 800px */
+}
+
+.splash-center-appeal-sub {
+  transform: translate(-50%, -50%);
+  color: black;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  font-size: 24px
+}
+
+.splash-center-appeal-join {
+  font-size: 18px;
+  border-radius: 30px;
+  background: blue;
+  color: white;
+  transform: translate(-50%, -50%);
+  color: black;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  font-size: 24px
+
+}

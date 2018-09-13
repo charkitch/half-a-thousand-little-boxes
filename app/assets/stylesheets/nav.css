@@ -12,6 +12,9 @@
 nav {
   height: 70px;
   width: 100%;
+  color: transparent;
+  position: absolute;
+  z-index: 10
 }
 
 div {
