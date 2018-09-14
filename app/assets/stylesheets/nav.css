@@ -66,10 +66,27 @@ input {
 }
 
 input[type='submit'] {
-  
+
 }
 
+.hidden {
+  display: none;
+}
 
+.drop-down-logged-in {
+    width: 145px;
+    height: 30px;
+    /* height: 300px; */
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    background-color: white;
+}
+
+.nav-user-icon {
+  width: 25px;
+  height: 25px;
+}
 
 .nav-access {
   position: absolute;
@@ -99,4 +116,19 @@ input[type='submit'] {
   margin-right: 30px;
   border-radius: 30px;
   margin-left: 30px;
+}
+
+.logout-button {
+  display: block;
+  height: 26px;
+  line-height: 26px;
+  font-size: 14px;
+  color: #525558;
+  padding: 0 20px;
+  background-color: #fff;
+  text-align: left;
+}
+
+.logout-button:hover {
+  color: blue;
 }

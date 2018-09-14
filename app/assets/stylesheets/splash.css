@@ -2,11 +2,10 @@
   color: purple;
   position: relative;
   display: flex;
-  align-content: space-between
+  justify-content: center;
 }
 
 .splash-image {
-  /* position: relative; */
   width: 100%;
   height: 80%;
   overflow: scroll;
@@ -14,47 +13,38 @@
 }
 
 
-.splash-center-appeal {
+.appeal {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 20%;
+  align-items: center;
 }
 
-.splash-center-appeal-headline {
-  color: black;
+.splash-center-headline {
   font-size: 48px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
   padding: 40px 0;
   text-align: center;
-  transform: translate(-50%, -50%);
-  /* width: 800px */
 }
 
-.splash-center-appeal-sub {
-  transform: translate(-50%, -50%);
-  color: black;
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  font-size: 24px;
-  text-rendering: optimizeLegibility;
+.splash-center-sub {
+position: relative;
+font-size: 24px;
 }
 
-.splash-center-appeal-join {
+.splash-center-join {
   display: inline-block;
   font-size: 18px;
   background: #0099e5;
-  color: white;
   line-height: 44px;
   font-weight: bold;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  /* font-size: 24px; */
+  position: relative;
   border-radius: 100px;
   height: 50px;
   margin-top: 40px;
   padding: 0 30px;
   border: 2px solid #0099e5;
+  width: 100px;
 
 }

@@ -1,26 +1,55 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const UserAcknowledgement = ({ currentUser, logout }) => {
-  const accessLinks = () => {
+
+class UserAcknowledgement extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dropDown: "hidden"
+    }
+    this.handleEnterHover = this.handleEnterHover.bind(this)
+    this.handleExitHover = this.handleExitHover.bind(this)
+  }
+
+  accessLinks()  {
     return (
-        <div className="logged-out-nav">
-          <Link className="access-login" to="/login">Login</Link>
-          <br></br>
-          <Link className="access-signup" to="signup">Sign Up</Link>
-        </div>
+      <div className="logged-out-nav">
+        <Link className="access-login" to="/login">Login</Link>
+        <br></br>
+        <Link className="access-signup" to="signup">Sign Up</Link>
+      </div>
     );
   };
 
-  let personalGreeting = () => {
-  return (
-  <div className='logged-in-nav'>
-      <h1 className="tester">welcome {currentUser.username}.</h1>
-      <button onClick={logout}>logout. Will become dropdown.</button>
-  </div>
-    )};
+  personalGreeting() {
+    return (
+      <div onMouseEnter={this.handleEnterHover} onMouseLeave={this.handleExitHover} className='logged-in-nav'>
+        <img className='nav-user-icon' src={window.userIcon} alt="default user icon"/>
+        <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 
-  return currentUser ? personalGreeting() : accessLinks();
-};
+        <div className={this.state.dropDown} >
+          <ul>
+            <li>
+              <button className="logout-button" onClick={this.props.logout}>Log out</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    )
+  }
+
+    handleEnterHover(e) {
+      this.setState({ dropDown: 'drop-down-logged-in' })
+    }
+
+    handleExitHover(e) {
+      this.setState({ dropDown: 'hidden' })
+    }
+
+    render() {
+      return this.props.currentUser ? this.personalGreeting() : this.accessLinks()
+    }
+}
 
 export default UserAcknowledgement;
