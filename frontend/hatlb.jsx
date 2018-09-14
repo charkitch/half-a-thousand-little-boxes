@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
+import { logout } from './util/session_api_util'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -23,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-
+  window.logout = logout
   window.store = store
   delete window.currentUser;
   const root = document.getElementById('root');

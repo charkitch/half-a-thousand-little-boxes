@@ -8,6 +8,7 @@ class UserAcknowledgement extends React.Component {
     this.state = {
       dropDown: "hidden"
     }
+    this.logoutAndDeHover = this.logoutAndDeHover.bind(this)
     this.handleEnterHover = this.handleEnterHover.bind(this)
     this.handleExitHover = this.handleExitHover.bind(this)
   }
@@ -22,6 +23,11 @@ class UserAcknowledgement extends React.Component {
     );
   };
 
+  logoutAndDeHover() {
+    this.setState({ dropDown: 'hidden' })
+    this.props.logout();
+  }
+
   personalGreeting() {
     return (
       <div onMouseEnter={this.handleEnterHover} onMouseLeave={this.handleExitHover} className='logged-in-nav'>
@@ -31,7 +37,7 @@ class UserAcknowledgement extends React.Component {
         <div className={this.state.dropDown} >
           <ul>
             <li>
-              <button className="logout-button" onClick={this.props.logout}>Log out</button>
+              <button className="logout-button" onClick={this.logoutAndDeHover}>Log out</button>
             </li>
           </ul>
         </div>
