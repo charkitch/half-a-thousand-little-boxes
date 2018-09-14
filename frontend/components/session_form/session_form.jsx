@@ -9,6 +9,8 @@ class SessionForm extends React.Component {
       password: '',
       email: '',
     };
+
+    this.submitDemo = this.submitDemo.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -37,12 +39,34 @@ class SessionForm extends React.Component {
      );
    }
 
+
+  submitDemo(e) {
+    e.preventDefault();
+    const demoUser = { email: 'futureboss@yourcompany.com', password: 'hire_me!' }
+    this.props.processForm(demoUser)
+  }
+
+  demoButton() {
+     let demoForm = '';
+
+     if (this.props.formType == 'Log in') {
+       demoForm = ( <button className='session-submit demo' onClick={this.submitDemo}>Demo Login</button> )
+     }
+
+     return demoForm
+   }
+
+
+
+
    render() {
-     let usernameEntry = ''
+     let usernameEntry = '';
      if (this.props.formType === 'Sign up') {
        usernameEntry = (<label className='access-label'>Username(optional)
        <input type='text' value={this.state.username} onChange={this.update('username')} />
       </label>) }
+
+
 
     return (
       <div className="login-form-container">
@@ -69,6 +93,7 @@ class SessionForm extends React.Component {
             <br/>
             <input className="session-submit" type="submit" value={this.props.formType} />
           </div>
+          {this.demoButton()}
           <div className='redirect-message'>
           {this.props.bumperText}  {this.props.navLink}
           </div>

@@ -4,6 +4,18 @@
   /* justify-content: center */
 }
 
+.session-submit {
+  background-color: #41cb56;
+  color: white;
+  text-align: center;
+}
+
+.demo {
+  align-self: flex-start;
+  background-color: #00aaff;
+  border-radius: 30px;
+  font-weight: bold;
+}
 
 .login-form-box {
   display: flex;
