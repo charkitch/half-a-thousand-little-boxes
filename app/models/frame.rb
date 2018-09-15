@@ -13,7 +13,9 @@
 class Frame < ApplicationRecord
   validates :photographer_id, presence: true
 
-  belongs_to :photographer
+  belongs_to :photographer,
+  foreign_key: :photographer_id,
+  class_name: :User
 
   has_one_attached :image
 
