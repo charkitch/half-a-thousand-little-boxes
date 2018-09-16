@@ -8,4 +8,12 @@ Rails.application.routes.draw do
 
   root "static_pages#root"
 
+  namespace :api, defaults: { format: :json } do
+    resources :users, only: :shows
+    resources :frames, only: [:create]
+  end
+
+
+  # resources :frames, only: :show #TEST ONLY
+
 end

@@ -12,11 +12,17 @@
 
 class Frame < ApplicationRecord
   validates :photographer_id, presence: true
+  validate :not_empty
 
   belongs_to :photographer,
   foreign_key: :photographer_id,
   class_name: :User
 
   has_one_attached :image
+
+  def not_empty
+    errors[:image] << 'must be uploaded. This is a photo site!' unless self.image.attached?
+  end
+
 
 end
