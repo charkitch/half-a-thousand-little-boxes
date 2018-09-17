@@ -1,7 +1,7 @@
-class API::FramesController < ApplicationController
-
+class Api::FramesController < ApplicationController
 
   def create
+    byebug
     @frame = Frame.new(frame_params)
     @frame.image.attach(io: frame[:image], filename: frame[:title])
     if @frame.save
@@ -26,7 +26,7 @@ class API::FramesController < ApplicationController
     if @frame
       render :edit
     else
-      render json: ["invalid edit attempt"], status 404
+      render json: ["invalid edit attempt"], status: 404
     end
   end
 
@@ -37,7 +37,8 @@ class API::FramesController < ApplicationController
   private
 
   def frame_params
-    params.require(:frames).permit(:photographer_id, :caption, :title, :image)
+    byebug
+    params.require(:frame).permit(:photographer_id, :caption, :title, :image)
   end
 
 

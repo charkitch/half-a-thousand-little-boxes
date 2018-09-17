@@ -14,9 +14,9 @@ export const receiveCurrentFile = (currentFile) => {
 
 
 
-export const createFrame = (dispatch) => {
-  return (frame) => {
-    FRAME_API_UTIL.uploadPhoto(frame).then( (userFrames) => {
+export const createFrame = (frame) => {
+  return (dispatch) => {
+    FRAME_API_UTIL.createFrame(frame).then( (userFrames) => {
       dispatch(receiveUserPhotos(userFrames));
     });
   };

@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import { sendPhoto } from '../../actions/frames_actions';
-import { openModal } from '../../actions/modal_actions';
+import { createFrame } from '../../actions/frames_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 class UploadForm extends React.Component {
   constructor(props) {
@@ -12,19 +12,20 @@ class UploadForm extends React.Component {
       description: '"Tell us more about your beautiful photo"',
       title: this.props.currentFile.name
     };
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
 
   }
 
   handleSubmit(e) {
-    console.log('hat')
-    debugger
     e.preventDefault();
     const frameData = new FormData();
     frameData.append('frame[title]', this.state.title);
+    debugger
     frameData.append('frame[description]', this.state.description);
+    debugger
     frameData.append('frame[image]', this.currentFile);
-    frameData.appened('frame[photographer_id]', this.props.session.id);
+    debugger
+    frameData.append('frame[photographer_id]', this.props.currentUser.id);
     debugger
     this.props.createFrame(frameData);
     closeModal()
@@ -71,7 +72,7 @@ class UploadForm extends React.Component {
 const mapDispatchToProps = dispatch => {
   return {
     openModal: modal => dispatch(openModal(modal)),
-    sendPhoto: frame => dispatch(sendPhoto(frame)),
+    createFrame: frame => dispatch(createFrame(frame)),
   };
 };
 

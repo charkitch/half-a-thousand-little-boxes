@@ -1,6 +1,7 @@
 
 
-export const uploadPhoto = (imageData) => {
+export const createFrame = (imageData) => {
+  debugger
   return $.ajax({
     url: '/api/frames',
     method: 'POST',
