@@ -1,46 +1,49 @@
+import { connect } from 'react-redux';
 import React from 'react';
-import { Route } from 'react-router-dom';
-import { connect } from 'react';
-import UploadFormContainer from './upload_form_container'
 
 class UploadSelect extends React.Component {
   constructor(props) {
     super(props);
+    this.handleFile = this.handleFile.bind(this)
   }
 
 
   handleFile(e) {
     const file = e.currentTarget.files[0];
-    const fileReader = newFileReader();
+    const fileReader = new FileReader();
     fileReader.onloadend = () => {
-    }
-    // this.props.openModal(UploadFormContainer);
+      openModal(UploadForm);
+    };
   }
 
   render() {
 
     return (
-      <div className='upload-selector'>
-        <div>
-          <input type="file" />
-        </div>
+      <div>
+        <input type="file" onChange={this.handleFile}/>
       </div>
-    );
+    )
   }
 }
 
-export default UploadSelect;
+// <div className='upload-selector'>
+//   <div>
+//     <input type="file" onChange={this.handleFile.bind(this)} />
+//   </div>
+// </div>
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     processForm: (user) => dispatch(login(user)),
-//     otherForm: (
-//       <button onClick={() => dispatch(openModal('signup'))}>
-//         Signup
-//       </button>
-//     ),
-//     closeModal: () => dispatch(closeModal())
-//   };
-// };
+const mapDispatchToProps = dispatch => {
+  return {
+    openModal: (modal) => dispatch(openModal(modal)),
+  };
+};
 
-// export default connect(mapStateToProps, mapDispatchToProps)(UploadSelect);
+
+const mapStateToProps = (state) => {
+  return {
+   currentUser: state.entities.users[state.session.id],
+   currentFile: state.entities.currentFile
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(UploadSelect);

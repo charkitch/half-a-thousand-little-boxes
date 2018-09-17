@@ -1,11 +1,10 @@
 import React from "react";
 import { closeModal } from "../../actions/modal_actions";
 import { connect } from 'react-redux';
-import UploadFormContainer from '../frames/upload_form_container';
+// import UploadFormContainer from '../frames/upload_form_container';
 import UploadSelectContainer from '../frames/upload_select';
 // import uploadSelectContainer from '../frames/upload_initial_screen_container';
 import { UPLOAD_FORM, UPLOAD_FILE_SELECT } from '../../actions/modal_actions';
-
 
 
 const Modal = ({ modal, closeModal }) => {
