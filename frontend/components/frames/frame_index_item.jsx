@@ -1,14 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-const FrameIndexItem = ({Frames}) => {
-  return (
-    <li className="frame-index-item">
 
-      <span>frame.title</span>
+class FrameIndexItem extends React.Component {
+  consturctor(props {
+    super(props);
+    this.handleClick = this.handleClick.bind(this)
+  })
 
+  handleClick( {
+    this.props.history.push(`/frames/${this.props.bench.id}`)
+  })
 
-
-    </li>
-  )
+  render() {
+    return (
+      <div>
+        className = `frames-index-item`
+        onClick (this.handleCLick)
+        <div className=`index-item-details`>
+          <img src="{awsLocale}"></img>
+        </div>
+      </div>
+    )
+  }
 }
+
+export default withRouter(FrameIndexItem);

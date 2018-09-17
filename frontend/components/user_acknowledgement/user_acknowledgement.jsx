@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import uploader from './uploader';
 
 
 class UserAcknowledgement extends React.Component {
@@ -8,9 +9,9 @@ class UserAcknowledgement extends React.Component {
     this.state = {
       dropDown: "hidden"
     }
-    this.logoutAndDeHover = this.logoutAndDeHover.bind(this)
-    this.handleEnterHover = this.handleEnterHover.bind(this)
-    this.handleExitHover = this.handleExitHover.bind(this)
+    this.logoutAndDeHover = this.logoutAndDeHover.bind(this);
+    this.handleEnterHover = this.handleEnterHover.bind(this);
+    this.handleExitHover = this.handleExitHover.bind(this);
   }
 
   accessLinks()  {
@@ -41,20 +42,21 @@ class UserAcknowledgement extends React.Component {
             </li>
           </ul>
         </div>
+        {uploader}
       </div>
     )
   }
 
     handleEnterHover(e) {
-      this.setState({ dropDown: 'drop-down-logged-in' })
+      this.setState({ dropDown: 'drop-down-logged-in' });
     }
 
     handleExitHover(e) {
-      this.setState({ dropDown: 'hidden' })
+      this.setState({ dropDown: 'hidden' });
     }
 
     render() {
-      return this.props.currentUser ? this.personalGreeting() : this.accessLinks()
+      return this.props.currentUser ? this.personalGreeting() : this.accessLinks();
     }
 }
 
