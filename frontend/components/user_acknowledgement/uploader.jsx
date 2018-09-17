@@ -1,27 +1,30 @@
-// const reader = new FileReader();
-// const file = e.currentTarget.files[0]
-// reader.onloadened = () =>
-//   this.setState({imageUrl: reader.result, imageFile: file});
-//
-// if (file) {
-//   reader.readAsDataURL(file);
-// } else {
-//   this.set.State({imageUrl: "", imageFile: null});
-// }
-//
-//
-//
-// handleSubmit(e) {
-//   e.preventDefault();
-//   const formData = new FormData();
-//   formData.append('frame[title]', this.state.title)
-//   formData.append('frame[caption]', this.state.caption)
-//   if (this.state.photoFile) {
-//     formData.append('frame[image]', this.state.photoFile)
-//   }
-// };
-const uploader = () => (
-  <input type="file"/>
-);
+import React from 'react';
 
-export default uploader;
+// const uploader = () => (
+//     <b
+//   </form>
+// );
+//
+// export default uploader;
+
+
+
+// render() {
+//     console.log(this.state);
+//     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
+//     return (
+//       <form onSubmit={this.handleSubmit.bind(this)}>
+//         <label htmlFor="post-body">Body of Post</label>
+//         <input type="text"
+//           id="post-body"
+//           value={this.state.title}
+//           onChange={this.handleInput.bind(this)}/>
+//         <input type="file"
+//           onChange={this.handleFile.bind(this)}/>
+//         <h3>Image preview </h3>
+//         {preview}
+//         <button>Make a new Post!</button>
+//       </form>
+//     );
+//   }
+// }

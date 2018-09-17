@@ -9,9 +9,13 @@ nav {
 }
 
 button {
-  position: absolute;
+  /* position: absolute; */
 }
 
+.upload-button {
+  background-color: green;
+  color: white;
+}
 
 .current-user-nav {
   z-index: 1000;
