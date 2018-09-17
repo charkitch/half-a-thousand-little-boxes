@@ -6,20 +6,35 @@ import React from 'react';
 
 class UploadForm extends React.Component {
   constructor(props) {
+    debugger
     super(props);
   }
 
-  render() {
+  handleSubmit(e) {
+    e.preventDefault;
+  }
 
+  render() {
+    debugger
     return (
-      <div>
-        Do I print?
-      </div>
+      <div>Do I print?</div>
+      // <form>
+      //
+      //   <div>
+      //     Do I print?
+      //   </div>
+      //   <label>Title
+      //     <input type="text" value={this.props.current.}></input>
+      //   </label>
+      //
+      //
+      //   <label className="upload-box label-description"> Description
+      //     <input type="textarea" value="Tell us more about your beautiful photo"/>
+      //   </label>
+      // </form>
     );
   }
 }
-
-
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -30,6 +45,7 @@ const mapDispatchToProps = dispatch => {
 
 
 const mapStateToProps = (state) => {
+  debugger
   return {
    currentUser: state.entities.users[state.session.id],
    currentFile: state.entities.currentFile

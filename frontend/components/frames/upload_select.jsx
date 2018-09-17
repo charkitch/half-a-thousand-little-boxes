@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { UPLOAD_FORM } from '../../actions/modal_actions';
-import { openModal } from '../../actions/modal_actions'
+import { openModal } from '../../actions/modal_actions';
+import { receiveCurrentFile } from '../../actions/frames_actions';
 
 class UploadSelect extends React.Component {
   constructor(props) {
@@ -11,15 +12,10 @@ class UploadSelect extends React.Component {
 
 
   handleFile(e) {
-    debugger
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
-    fileReader.onloadend = () => {
-      dispatch(receiveCurrentFile(file));
-    };
-    if (file) {
-      this.props.openModal(UPLOAD_FORM)
-    }
+    this.props.receiveCurrentFile(file);
+    this.props.openModal(UPLOAD_FORM);
   }
 
 
@@ -32,26 +28,22 @@ class UploadSelect extends React.Component {
       <div>
         <input type="file" onChange={this.handleFile}/>
       </div>
-    )
+    );
   }
 }
 
-// <div className='upload-selector'>
-//   <div>
-//     <input type="file" onChange={this.handleFile.bind(this)} />
-//   </div>
-// </div>
+
 
 const mapDispatchToProps = dispatch => {
   return {
-    openModal: (modal) => dispatch(openModal(modal)),
+    openModal: modal => dispatch(openModal(modal)),
+    receiveCurrentFile: file => dispatch(receiveCurrentFile(file))
   };
 };
 
 const mapStateToProps = (state) => {
   return {
    currentUser: state.entities.users[state.session.id],
-   currentFile: state.entities.currentFile
   };
 };
 

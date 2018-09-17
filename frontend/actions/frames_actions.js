@@ -5,7 +5,7 @@ export const RECEIVE_USER_PHOTOS = 'RECEIVE_USERS_PHOTOS';
 export const RECEIVE_CURRENT_FILE = "RECEIVE_CURRENT_FILE";
 
 
-const receiveCurrentFile = (currentFile) => {
+export const receiveCurrentFile = (currentFile) => {
   return {
     type: RECEIVE_CURRENT_FILE,
     currentFile,
@@ -14,11 +14,11 @@ const receiveCurrentFile = (currentFile) => {
 
 
 
-export const aquireCurrentFile = (dispatch) => {
-  return (currentFile) => {
-    dispatch(receiveCurrentFile(currentFile))
-  };
-};
+// export const aquireCurrentFile = (dispatch) => {
+//   return (currentFile) => {
+//     dispatch(receiveCurrentFile(currentFile))
+//   };
+// };
 
 
 export const sendPhoto = (dispatch) => {
