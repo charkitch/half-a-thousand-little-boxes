@@ -3,6 +3,7 @@ import { closeModal } from "../../actions/modal_actions";
 import { connect } from 'react-redux';
 // import UploadFormContainer from '../frames/upload_form_container';
 import UploadSelectContainer from '../frames/upload_select';
+import UploadForm from '../frames/upload_form';
 // import uploadSelectContainer from '../frames/upload_initial_screen_container';
 import { UPLOAD_FORM, UPLOAD_FILE_SELECT } from '../../actions/modal_actions';
 
@@ -17,7 +18,7 @@ const Modal = ({ modal, closeModal }) => {
         component = <UploadSelectContainer />;
       break;
     case UPLOAD_FORM:
-      component = <UploadFormContainer />;
+      component = <UploadForm />;
       break;
     default:
       return null;

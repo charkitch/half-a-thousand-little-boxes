@@ -12,6 +12,8 @@ const receiveCurrentFile = (currentFile) => {
   };
 };
 
+
+
 export const aquireCurrentFile = (dispatch) => {
   return (currentFile) => {
     dispatch(receiveCurrentFile(currentFile))

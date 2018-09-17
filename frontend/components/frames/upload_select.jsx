@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
+import { UPLOAD_FORM } from '../../actions/modal_actions';
+import { openModal } from '../../actions/modal_actions'
 
 class UploadSelect extends React.Component {
   constructor(props) {
@@ -9,15 +11,23 @@ class UploadSelect extends React.Component {
 
 
   handleFile(e) {
+    debugger
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
-      openModal(UploadForm);
+      dispatch(receiveCurrentFile(file));
     };
+    if (file) {
+      this.props.openModal(UPLOAD_FORM)
+    }
   }
 
-  render() {
 
+  //
+
+
+
+  render() {
     return (
       <div>
         <input type="file" onChange={this.handleFile}/>
@@ -37,7 +47,6 @@ const mapDispatchToProps = dispatch => {
     openModal: (modal) => dispatch(openModal(modal)),
   };
 };
-
 
 const mapStateToProps = (state) => {
   return {
