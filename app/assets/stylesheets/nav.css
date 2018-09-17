@@ -69,9 +69,6 @@ input {
   border: 1px solid rgba(185,193,199,0.5);
 }
 
-input[type='submit'] {
-
-}
 
 .hidden {
   display: none;

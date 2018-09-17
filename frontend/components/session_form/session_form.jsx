@@ -43,13 +43,13 @@ class SessionForm extends React.Component {
   submitDemo(e) {
     e.preventDefault();
     const demoUser = { email: 'futureboss@yourcompany.com', password: 'hire_me!' }
-    this.props.processForm(demoUser)
+    this.props.processForm(demoUser);
   }
 
   demoButton() {
      let demoForm = '';
 
-     if (this.props.formType == 'Log in') {
+     if (this.props.formType === 'Log in') {
        demoForm = ( <button className='session-submit demo' onClick={this.submitDemo}>Demo Login</button> )
      }
 
@@ -64,7 +64,7 @@ class SessionForm extends React.Component {
      if (this.props.formType === 'Sign up') {
        usernameEntry = (<label className='access-label'>Username(optional)
        <input type='text' value={this.state.username} onChange={this.update('username')} />
-      </label>) }
+      </label>) };
 
 
 
@@ -91,7 +91,7 @@ class SessionForm extends React.Component {
               onChange={this.update('password')}
               className="login-input"              />
             <br/>
-            <input className="session-submit" type="submit" value={this.props.formType} />
+            <input className="session-submit form-submit" type="submit" value={this.props.formType} />
           </div>
           {this.demoButton()}
           <div className='redirect-message'>

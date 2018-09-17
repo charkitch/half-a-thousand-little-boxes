@@ -14,17 +14,10 @@ export const receiveCurrentFile = (currentFile) => {
 
 
 
-// export const aquireCurrentFile = (dispatch) => {
-//   return (currentFile) => {
-//     dispatch(receiveCurrentFile(currentFile))
-//   };
-// };
-
-
-export const sendPhoto = (dispatch) => {
-  return (photo) => {
-    FRAME_API_UTIL.uploadPhoto(photo).then( (userPhotos) => {
-      dispatch(receiveUserPhotos(userPhotos));
+export const createFrame = (dispatch) => {
+  return (frame) => {
+    FRAME_API_UTIL.uploadPhoto(frame).then( (userFrames) => {
+      dispatch(receiveUserPhotos(userFrames));
     });
   };
 };
