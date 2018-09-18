@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Home = () => (
   <div className="home-screen">
-      <h1 className="splash-center-headline">Features Pending</h1>
+      <h1 className="splash-center-headline"></h1>
   </div>
 );
 
