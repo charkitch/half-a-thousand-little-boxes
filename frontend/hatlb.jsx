@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
 //   } else {
 //     preloadedState = {}
 //   }
-//   debugger
 //   store = configureStore(preloadedState);
 //   store = configureStore
 //   delete window.currentUser;
