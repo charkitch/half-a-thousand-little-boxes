@@ -1,0 +1,9 @@
+.frames-user-ii-holder {
+  display: flex;
+  flex-direction: row;
+}
+
+.frames-user-index-item {
+  width: 146px;
+  height: 110px;
+}

@@ -1,10 +1,9 @@
 import React from 'react';
-import FrameIndexItem from './frame_index_item';
+import FramesIndexItem from './frames_index_item';
 import withRouter from 'react-router';
 
-class FrameIndex extends React.Component {
+class FramesIndex extends React.Component {
   constructor(props) {
-    debugger
     super(props);
   }
 
@@ -15,13 +14,14 @@ class FrameIndex extends React.Component {
   }
 
   render() {
-    debugger
     return (
-      <ul>
-        {this.props.frames.map( frame =>  <FrameIndexItem frame={frame} key={`frame-${frame.id}`}/>)}
-      </ul>
+      <div>
+        <ul className="frames-user-ii-holder ">
+          {this.props.frames.map( frame => <FramesIndexItem frame={frame} key={`frame-${frame.id}`}/>)}
+        </ul>
+      </div>
     );
   }
 }
 
-export default FrameIndex;
+export default FramesIndex;

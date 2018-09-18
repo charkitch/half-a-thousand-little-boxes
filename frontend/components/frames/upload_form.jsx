@@ -10,7 +10,7 @@ class UploadForm extends React.Component {
     super(props);
     this.state = {
       imageURL: '',
-      caption: '"Tell us more about your beautiful photo"',
+      caption: 'Tell us more about your beautiful photo',
       title: this.props.currentFile.name
     };
     this.handleSubmit = this.handleSubmit.bind(this);

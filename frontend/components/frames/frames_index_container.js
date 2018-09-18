@@ -3,10 +3,9 @@ import { logout } from '../../actions/session_actions';
 import { createFrame, requestUserPhotos} from '../../actions/frames_actions';
 import { openModal } from '../../actions/modal_actions';
 import { withRouter } from 'react-router';
-import FrameIndex from './frames_index';
+import FramesIndex from './frames_index';
 
 const mapDispatchToProps = dispatch => {
-  debugger
   return {
     openModal: modal => dispatch(openModal(modal)),
     requestUserPhotos: () => dispatch(requestUserPhotos()),
@@ -23,4 +22,4 @@ const mapStateToProps = (state) => {
 
 export default withRouter(connect(
   mapStateToProps,
-  mapDispatchToProps)(FrameIndex));
+  mapDispatchToProps)(FramesIndex));
