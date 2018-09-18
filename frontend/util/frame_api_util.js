@@ -16,3 +16,19 @@ export const requestUserPhotos = () => {
     url: '/api/frames',
   });
 };
+
+
+export const requestOneFrame = (id) => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/frames/${id}',
+  });
+};
+
+export const editFrame = (frame) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: '/api/frames/${id}',
+    data: { frame }
+  });
+};

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { editFrame } from '../../actions/frames_actions';
 import FrameEdit from './frame_edit_form';
+import { withRouter } from 'react-router'
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -16,6 +17,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
-  mapDispatchToProps)(FrameEdit);
+  mapDispatchToProps)(FrameEdit));
