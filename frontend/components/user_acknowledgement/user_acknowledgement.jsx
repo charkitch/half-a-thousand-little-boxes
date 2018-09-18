@@ -38,15 +38,17 @@ class UserAcknowledgement extends React.Component {
   personalGreeting() {
     return (
       <div>
-        <div onMouseEnter={this.handleEnterHover} onMouseLeave={this.handleExitHover} className='logged-in-nav'>
-          <img className='nav-user-icon' src={window.userIcon} alt="default user icon"/>
+        <div className='logged-in-nav' >
+          <div onMouseEnter={this.handleEnterHover}>
+            <img className='nav-user-icon' src={window.userIcon} alt="default user icon"/>
 
-          <div className={this.state.dropDown} >
-            <ul>
-              <li>
-                <button className="logout-button" onClick={this.logoutAndDeHover}>Log out</button>
-              </li>
-            </ul>
+            <div onMouseLeave={this.handleExitHover} className={this.state.dropDown} >
+              <ul>
+                <li>
+                  <button className="logout-button" onClick={this.logoutAndDeHover}>Log out</button>
+                </li>
+              </ul>
+            </div>
           </div>
           <button type="submit" className="upload-button" onClick={this.handleUploadClick}>
             <img className='nav-upload-symbol' src={window.uploadIcon}/>

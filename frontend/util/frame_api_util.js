@@ -1,7 +1,6 @@
 
 
 export const createFrame = (formData) => {
-  debugger
   return $.ajax({
     url: '/api/frames',
     method: 'POST',

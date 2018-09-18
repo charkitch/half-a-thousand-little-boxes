@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { createFrame } from '../../actions/frames_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
+import { withRouter } from 'react-router';
 
 class UploadForm extends React.Component {
   constructor(props) {
@@ -18,20 +19,20 @@ class UploadForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
     const formData = new FormData();
     formData.append('frame[title]', this.state.title);
     formData.append('frame[caption]', this.state.caption);
     formData.append('frame[picture]', this.props.currentFile);
     formData.append('frame[photographer_id]', this.props.currentUser.id);
-    this.props.createFrame(formData);
+    debugger
+    this.props.createFrame(formData).then( () => this.props.history.push('/manage/public'));
     this.props.closeModal();
   }
 
   update(field) {
     return e => this.setState({
       [field]: e.target.value
-    })
+    });
   }
 
 
@@ -68,6 +69,7 @@ const mapDispatchToProps = dispatch => {
   return {
     openModal: modal => dispatch(openModal(modal)),
     createFrame: frame => dispatch(createFrame(frame)),
+    closeModal: () => dispatch(closeModal()),
   };
 };
 
@@ -79,6 +81,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
-  mapDispatchToProps)(UploadForm);
+  mapDispatchToProps)(UploadForm));

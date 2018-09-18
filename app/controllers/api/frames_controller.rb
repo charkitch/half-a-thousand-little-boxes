@@ -36,7 +36,6 @@ class Api::FramesController < ApplicationController
   private
 
   def frame_params
-    byebug
     params.require(:frame).permit(:photographer_id, :caption, :title)
   end
 

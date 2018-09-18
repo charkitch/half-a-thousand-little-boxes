@@ -22,6 +22,9 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   before_create :ensure_username
 
+  has_many :frames,
+  foreign_key: :photographer_id
+
   attr_reader :password
 
   def password=(password)
