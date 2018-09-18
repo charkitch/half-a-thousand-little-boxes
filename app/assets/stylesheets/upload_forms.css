@@ -4,3 +4,38 @@
   border-radius: 5px;
   box-sizing: border-box;
 }
+
+
+.upload-button {
+  background-color: #34bf49;
+  color: white;
+  height: 50px;
+  width: 110px;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.upload-mask {
+  display: flex;
+  position: absolute;
+  width: 180px;
+  height: 40px;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  /* pointer-events: none; */
+  background: #0099e5
+}
+
+.upload-text {
+  margin: auto;
+}
+
+.upload-input {
+  position: absolute;
+  cursor: pointer;
+  width: 180px;
+  height: 40px;
+  opacity: 0;
+}

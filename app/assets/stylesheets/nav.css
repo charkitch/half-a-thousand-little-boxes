@@ -4,7 +4,7 @@ nav {
   height: 70px;
   width: 100%;
   color: transparent;
-  position: absolute;
+  position: fixed;
   z-index: 10
 }
 
@@ -12,35 +12,7 @@ button {
   /* position: absolute; */
 }
 
-.upload-button {
-  background-color: #34bf49;
-  color: white;
-  height: 50px;
-  width: 110px;
-  display: flex;
-  justify-content: space-around;
-  align-content: center;
-}
 
-.nav-upload-symbol {
-  height: 22px;
-  width: 30px;
-}
-
-.current-user-nav {
-  z-index: 1000;
-  position: relative;
-}
-
-.logged-in-nav {
-  width: 185px;
-  height: 100%;
-  margin-right: 50px;
-  float: right;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 14px;}
 
 .logged-out-nav {
   width: 185px;
@@ -84,20 +56,6 @@ input {
   display: none;
 }
 
-.drop-down-logged-in {
-    width: 145px;
-    height: 30px;
-    /* height: 300px; */
-    position: absolute;
-    top: 50px;
-    right: 100px;
-    background-color: white;
-}
-
-.nav-user-icon {
-  width: 25px;
-  height: 25px;
-}
 
 .nav-access {
   position: absolute;
@@ -127,19 +85,4 @@ input {
   margin-right: 30px;
   border-radius: 30px;
   margin-left: 30px;
-}
-
-.logout-button {
-  display: block;
-  height: 26px;
-  line-height: 26px;
-  font-size: 14px;
-  color: #525558;
-  padding: 0 20px;
-  background-color: #fff;
-  text-align: left;
-}
-
-.logout-button:hover {
-  color: blue;
 }

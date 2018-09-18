@@ -9,7 +9,7 @@ class FrameIndexItem extends React.Component {
   })
 
   handleClick( {
-    this.props.history.push(`/frames/${this.props.bench.id}`)
+    this.props.history.push(`/frames/${this.props.frame.id}`)
   })
 
   render() {
