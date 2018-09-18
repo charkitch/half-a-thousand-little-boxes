@@ -6,6 +6,7 @@ export const RECEIVE_CURRENT_FILE = "RECEIVE_CURRENT_FILE";
 
 
 export const receiveCurrentFile = (currentFile) => {
+  debugger
   return {
     type: RECEIVE_CURRENT_FILE,
     currentFile,

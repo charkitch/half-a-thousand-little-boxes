@@ -13,8 +13,18 @@ button {
 }
 
 .upload-button {
-  background-color: green;
+  background-color: #34bf49;
   color: white;
+  height: 50px;
+  width: 110px;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.nav-upload-symbol {
+  height: 22px;
+  width: 30px;
 }
 
 .current-user-nav {

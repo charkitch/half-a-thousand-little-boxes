@@ -14,8 +14,8 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = (state) => {
   return {
-   currentUser: this.state.entities.users[state.session.id],
-   currentFile: this.state.entities.currentFile
+   currentUser: state.entities.users[state.session.id],
+   currentFile: state.entities.currentFile
   };
 };
 

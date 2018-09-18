@@ -17,5 +17,11 @@
 .form-submit {
   background-color: #41cb56;
   color: white;
-  text-align: center
+  text-align: center;
+}
+
+.icon-credit {
+  z-index: -20;
+  position: relative;
+  display: none;
 }

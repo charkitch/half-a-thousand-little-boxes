@@ -18,13 +18,14 @@ class UploadForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const frameData = new FormData();
-    frameData.append('frame[title]', this.state.title);
-    frameData.append('frame[caption]', this.state.caption);
-    frameData.append('frame[image]', this.currentFile);
-    frameData.append('frame[photographer_id]', this.props.currentUser.id);
-    this.props.createFrame(frameData);
-    closeModal()
+    debugger
+    const formData = new FormData();
+    formData.append('frame[title]', this.state.title);
+    formData.append('frame[caption]', this.state.caption);
+    formData.append('frame[picture]', this.props.currentFile);
+    formData.append('frame[photographer_id]', this.props.currentUser.id);
+    this.props.createFrame(formData);
+    this.props.closeModal();
   }
 
   update(field) {
@@ -37,14 +38,12 @@ class UploadForm extends React.Component {
   componentDidMount() {
     const reader = new FileReader();
     const file = this.props.currentFile;
-    console.log(reader.readyState);
     reader.onloadend = () => {
       this.setState({imageURL: reader.result, imageFile: file});
     };
     if (file) {
       reader.readAsDataURL(file);
     }
-    console.log(reader.readyState);
   }
 
   render() {

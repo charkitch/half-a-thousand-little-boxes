@@ -1,9 +1,8 @@
 class Api::FramesController < ApplicationController
 
   def create
-    byebug
     @frame = Frame.new(frame_params)
-    @frame.image.attach(io: frame[:image], filename: frame[:title])
+    @frame.image.attach(io: params[:frame][:picture], filename: params[:frame][:title] + '.jpg')
     if @frame.save
       render :index
     else
@@ -38,7 +37,7 @@ class Api::FramesController < ApplicationController
 
   def frame_params
     byebug
-    params.require(:frame).permit(:photographer_id, :caption, :title, :image)
+    params.require(:frame).permit(:photographer_id, :caption, :title)
   end
 
 
