@@ -1,28 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 
 class FrameIndexItem extends React.Component {
-  consturctor(props {
+  constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this)
-  })
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-  handleClick( {
-    this.props.history.push(`/frames/${this.props.frame.id}`)
-  })
+  handleClick() {
+    this.props.history.push(`/frames/${this.props.frame.id}`);
+  }
 
   render() {
     return (
-      <div>
-        className = `frames-index-item`
-        onClick (this.handleCLick)
-        <div className=`index-item-details`>
+      <li className="frames-index-item" onClick={this.handleCLick} >
+        <div className="index-item-details">
           <img src="{awsLocale}"></img>
         </div>
-      </div>
-    )
+      </li>
+    );
   }
 }
 
-export default withRouter(FrameIndexItem);
+export default FrameIndexItem;

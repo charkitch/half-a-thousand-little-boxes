@@ -9,3 +9,10 @@ export const createFrame = (formData) => {
     processData: false
   });
 };
+
+export const requestUserPhotos = () => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/frames',
+  });
+};

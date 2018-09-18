@@ -7,7 +7,7 @@ import { receiveCurrentFile } from '../../actions/frames_actions';
 class UploadSelect extends React.Component {
   constructor(props) {
     super(props);
-    this.handleFile = this.handleFile.bind(this)
+    this.handleFile = this.handleFile.bind(this);
   }
 
 

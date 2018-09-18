@@ -7,6 +7,7 @@ import SignUpFormContainer from './session_form/sign_up_form_container';
 import Splash from './splash';
 import Home from './home';
 import Modal from './modal/modal';
+import FramesIndex from './frames/frames_index_container';
 
 const App = () => {
   return (
@@ -20,7 +21,7 @@ const App = () => {
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <ProtectedRoute exact path="/home" component={(Home)} />
-        <ProtectedRoute exact path="/manage/public" component={(Home)} />
+        <ProtectedRoute exact path="/manage/public" component={(FramesIndex)} />
       </Switch>
     </div>
   );

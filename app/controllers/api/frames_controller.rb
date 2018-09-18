@@ -16,7 +16,6 @@ class Api::FramesController < ApplicationController
   end
 
   def index
-    @frames = Frame.all
     render :index
   end
 

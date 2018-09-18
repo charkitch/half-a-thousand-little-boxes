@@ -1,24 +1,26 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import { createFrame } from '../../actions/frames_actions';
+import { createFrame, requestUserPhotos} from '../../actions/frames_actions';
 import { openModal } from '../../actions/modal_actions';
-import UploadForm from './upload_form';
-import { withRouter } from 'rails-routes'
+import { withRouter } from 'react-router';
+import FrameIndex from './frames_index';
 
 const mapDispatchToProps = dispatch => {
+  debugger
   return {
-    
-    openModal: (modal) => dispatch(openModal(modal)),
+    openModal: modal => dispatch(openModal(modal)),
+    requestUserPhotos: () => dispatch(requestUserPhotos()),
   };
 };
 
 
 const mapStateToProps = (state) => {
+  debugger
   return {
-    frames: state.entitites.frames,
+    frames: state.entities.frames,
   };
 };
 
 export default withRouter(connect(
   mapStateToProps,
-  mapDispatchToProps)(UploadForm));
+  mapDispatchToProps)(FrameIndex));

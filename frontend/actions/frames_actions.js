@@ -12,6 +12,16 @@ export const receiveCurrentFile = (currentFile) => {
   };
 };
 
+export const requestUserPhotos = () => {
+  return (dispatch) => {
+    return FRAME_API_UTIL.requestUserPhotos().then( userFrames => {
+      return dispatch(receiveUserPhotos(userFrames));
+    }, err => {
+    dispatch(receiveErrors(err.responseJSON));
+    });
+  };
+};
+
 
 
 export const createFrame = (frame) => {
