@@ -4,3 +4,9 @@ json.frames do
     json.awsLocale url_for frame.image
   end
 end
+
+@frames.each do |frame|
+  json.set! frame.id do
+    json.partial! '_frame', frame: frame
+  end
+end
