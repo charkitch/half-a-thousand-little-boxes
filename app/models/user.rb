@@ -20,7 +20,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   after_initialize :ensure_session_token
-  before_create :ensure_username
+  validate :ensure_username
 
   has_many :frames,
   foreign_key: :photographer_id
@@ -50,13 +50,17 @@ class User < ApplicationRecord
   end
 
   def ensure_username
-    self.username ||= self.stripped_email
+    debugger
+    if self.username == ''
+      self.username = self.stripped_email
+    end
   end
 
   def stripped_email
     at_sym_locale = self.email.index('@')
     self.email[0...at_sym_locale]
   end
+
   private
 
   def ensure_session_token

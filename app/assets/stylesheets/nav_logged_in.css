@@ -21,13 +21,13 @@
   font-size: 14px;}
 
   .drop-down-logged-in {
-      width: 145px;
-      height: 30px;
-      /* height: 300px; */
-      position: absolute;
-      top: 50px;
-      right: 100px;
-      background-color: white;
+    width: 145px;
+    height: 30px;
+    /* height: 300px; */
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    background-color: white;
   }
 
   .nav-user-icon {
