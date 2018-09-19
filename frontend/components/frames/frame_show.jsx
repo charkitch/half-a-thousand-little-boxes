@@ -21,8 +21,13 @@ class FrameShow extends React.Component {
       return null;
     } else {
         return (
-            <div className="frame-show-image-container">
-              <img classame="image-show" src={currentFrame.awsLocale}/>
+            <div className="frame-show-container">
+              <div className="image-container">
+                <img className="image-show" src={currentFrame.awsLocale}/>
+              </div>
+              <div className="user-info-box">
+                <strong>User Details!</strong>
+              </div>
             </div>
         );
       }
