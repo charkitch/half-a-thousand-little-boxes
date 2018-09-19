@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import uploader from './uploader';
 import { UPLOAD_FILE_SELECT } from '../../actions/modal_actions';
+import { withRouter } from 'react-router'
 
 class UserAcknowledgement extends React.Component {
   constructor(props) {
@@ -13,11 +14,13 @@ class UserAcknowledgement extends React.Component {
     this.handleEnterHover = this.handleEnterHover.bind(this);
     this.handleExitHover = this.handleExitHover.bind(this);
     this.handleUploadClick = this.handleUploadClick.bind(this);
+    this.handleHomeClick = this.handleHomeClick.bind(this);
   }
 
   accessLinks()  {
     return (
       <nav className="fixed-nav">
+        <div className="home-link">HATLB</div>
         <div className="logged-out-nav">
           <Link className="access-login" to="/login">Login</Link>
           <br></br>
@@ -25,6 +28,10 @@ class UserAcknowledgement extends React.Component {
         </div>
       </nav>
     );
+  }
+
+  handleHomeClick() {
+    this.props.history.push('/home')
   }
 
   logoutAndDeHover() {
@@ -40,6 +47,9 @@ class UserAcknowledgement extends React.Component {
   personalGreeting() {
     return (
       <nav className="sticky-nav">
+        <div className="left-side-nav">
+          <div className="home-link" onClick={this.handleHomeClick}>HATLB</div>
+        </div>
         <div className='logged-in-nav' >
           <div onMouseEnter={this.handleEnterHover}>
             <img className='nav-user-icon' src={window.userIcon} alt="default user icon"/>
@@ -74,4 +84,4 @@ class UserAcknowledgement extends React.Component {
     }
 }
 
-export default UserAcknowledgement;
+export default withRouter(UserAcknowledgement);

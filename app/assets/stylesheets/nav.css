@@ -4,8 +4,24 @@ nav {
   height: 70px;
   width: 100%;
   color: transparent;
-  position: sticky;
-  z-index: 10
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-side-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 96px;
+  font: 60px;
+}
+
+.home-link {
+  cursor: pointer;
+  font-size: 20px;
+  font-family: 'Righteous';
+  color: #34bf49;;
 }
 
 .sticky-nav {
@@ -19,7 +35,6 @@ nav {
 button {
   /* position: absolute; */
 }
-
 
 
 .logged-out-nav {
