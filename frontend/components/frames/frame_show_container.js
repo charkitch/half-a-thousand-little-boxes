@@ -4,10 +4,11 @@ import { createFrame } from '../../actions/frames_actions';
 import { openModal } from '../../actions/modal_actions';
 import { withRouter } from 'react-router';
 import FrameShow from './frame_show';
+import { requestOneFrame } from './../../actions/frames_actions';
 
 const mapDispatchToProps = dispatch => {
   return {
-    openModal: modal => dispatch(openModal(modal)),
+    requestOneFrame: id => dispatch(requestOneFrame(id))
   };
 };
 
@@ -18,6 +19,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default withRouter(connect(
+export default connect(
   mapStateToProps,
-  mapDispatchToProps)(FrameShow));
+  mapDispatchToProps)(FrameShow);

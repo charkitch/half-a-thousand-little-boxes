@@ -9,13 +9,17 @@ class FrameShow extends React.Component {
 
 
   componentDidMount() {
+    if (this.props.frames.length == 0) {
+      this.props.requestOneFrame(this.props.match.params.id)
+    }
 
   }
 
   render() {
+      debugger
       return (
           <div className="frame-show-image-container">
-            <img classname="image-show" src={this.props.frame.awsLocale}></img>
+            <img classname="image-show" src={this.props.frames[this.frameId].awsLocale}/>
           </div>
       );
     }
