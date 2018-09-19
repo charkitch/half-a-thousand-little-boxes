@@ -1,23 +1,31 @@
 import React from 'react';
-import FramesShow from './frames_show';
-import withRouter from 'react-router';
+import { withRouter } from 'react-router';
 
-class FramesIndex extends React.Component {
+class FrameShow extends React.Component {
   constructor(props) {
+    debugger
     super(props);
+    this.frameId = parseInt(props.match.params.id);
+  }
+
+
+  componentDidMount() {
+
   }
 
   render() {
-    if (this.props.frames.length === 0) {
-        return null;
+    debugger
+      return (
+          <div className="frame-show-image-container">
+            <img classname="image-show" src={this.props.frame.awsLocale}></img>
+          </div>
+      );
     }
-    return (
-      <div className="photo-storage-box">
-        <ul className="frames-user-ii-holder">
-        </ul>
-      </div>
-    );
   }
-}
 
-export default FramesIndex;
+export default withRouter(FrameShow);
+
+
+//eventually dispatch a follow action
+//toggle follow status
+//that's why it's a component but wont be neede for a bit
