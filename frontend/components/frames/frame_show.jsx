@@ -26,7 +26,6 @@ class FrameShow extends React.Component {
                 <img className="image-show" src={currentFrame.awsLocale}/>
               </div>
               <div className="user-info-box">
-                <strong>User Details!</strong>
               </div>
             </div>
         );

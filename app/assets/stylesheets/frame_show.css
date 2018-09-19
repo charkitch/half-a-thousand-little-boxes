@@ -1,3 +1,9 @@
 .frame-show-image-container {
-  
+
+}
+
+
+.image-show {
+  max-width: 900px;
+  max-height: 900px;
 }
