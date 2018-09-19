@@ -14,7 +14,7 @@ class FramesIndexItem extends React.Component {
   render() {
     return (
       <li className="frames-user-index-item" onClick={this.handleClick} >
-        <div className="">
+        <div className="frames-user-index-item">
           <img src={this.props.frame.awsLocale}></img>
         </div>
       </li>

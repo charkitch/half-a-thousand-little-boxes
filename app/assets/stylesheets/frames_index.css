@@ -1,0 +1,25 @@
+.frames-user-index-item {
+  margin: 5px
+  /* width: 146px;
+  height: 110px; */
+}
+
+
+
+.photo-storage-box {
+  background-color: #f7f8fa;
+  height: 100vh;
+  padding: 20px 40px;
+}
+
+.frames-user-ii-holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.frames-user-index-item {
+  margin: 5px;
+  width: 146px;
+  height: 110px;
+}
