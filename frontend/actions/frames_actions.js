@@ -24,7 +24,7 @@ export const createFrame = (frame) => {
 
 export const requestOneFrame = (id) => {
   return (dispatch) => {
-    return USER_API_UTIL.requestOneFrame(id).then( frame => {
+    return FRAME_API_UTIL.requestOneFrame(id).then( frame => {
       return dispatch(receiveOneFrame(frame));
     }, err => {
     dispatch(receiveErrors(err.responseJSON));
