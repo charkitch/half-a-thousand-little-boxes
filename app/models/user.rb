@@ -50,7 +50,6 @@ class User < ApplicationRecord
   end
 
   def ensure_username
-    debugger
     if self.username == ''
       self.username = self.stripped_email
     end

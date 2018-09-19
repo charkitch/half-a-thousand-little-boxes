@@ -11,7 +11,6 @@ class FramesIndex extends React.Component {
     if (this.props.frames.length === 0) {
         return null;
     }
-    debugger
     return (
       <div className="photo-storage-box">
         <ul className="frames-user-ii-holder">

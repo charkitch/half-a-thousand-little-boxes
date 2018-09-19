@@ -6,7 +6,6 @@ export const RECEIVE_ONE_USER = "RECEIVE_ONE_USER";
 export const requestOneUser = (id) => {
   return (dispatch) => {
     return USER_API_UTIL.requestOneUser(id).then( user => {
-      debugger
       return dispatch(receiveOneUser(user));
     }, err => {
     dispatch(receiveErrors(err.responseJSON));
@@ -15,7 +14,6 @@ export const requestOneUser = (id) => {
 };
 
 const receiveOneUser = (user) => {
-  debugger
   return {
     type: RECEIVE_ONE_USER,
     user

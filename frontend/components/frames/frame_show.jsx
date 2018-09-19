@@ -3,7 +3,6 @@ import { withRouter } from 'react-router';
 
 class FrameShow extends React.Component {
   constructor(props) {
-    debugger
     super(props);
     this.frameId = parseInt(props.match.params.id);
   }
@@ -14,7 +13,6 @@ class FrameShow extends React.Component {
   }
 
   render() {
-    debugger
       return (
           <div className="frame-show-image-container">
             <img classname="image-show" src={this.props.frame.awsLocale}></img>
