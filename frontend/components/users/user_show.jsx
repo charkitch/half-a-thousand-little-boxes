@@ -16,7 +16,8 @@ class UserShow extends React.Component {
   }
 
   render() {
-    if (!this.props.shownUser) {
+    debugger
+    if (!this.props.users.userId) {
       return null;
     }
     else {

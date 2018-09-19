@@ -11,10 +11,11 @@ class FramesIndex extends React.Component {
     if (this.props.frames.length === 0) {
         return null;
     }
+    debugger
     return (
       <div className="photo-storage-box">
         <ul className="frames-user-ii-holder">
-          {this.props.frames.map( frame => <FramesIndexItem frame={frame} key={`frame-${frame.id}`}/>)}
+          {Object.values(this.props.frames).map( frame => <FramesIndexItem frame={frame} key={`frame-${frame.id}`}/>)}
         </ul>
       </div>
     );

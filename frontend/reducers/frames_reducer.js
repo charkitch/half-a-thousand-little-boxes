@@ -6,7 +6,7 @@ const framesReducer = (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_USER_FRAMES:
-      return action.userFrames.frames;
+      return action.userFrames;
     default:
       return state;
   }
