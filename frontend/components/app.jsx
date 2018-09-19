@@ -8,7 +8,7 @@ import Splash from './splash';
 import Home from './home';
 import Modal from './modal/modal';
 import FramesIndex from './frames/frames_index_container';
-import FrameEdit from './frames/frame_edit_container';
+import UserShow from './users/user_show_container';
 
 const App = () => {
   return (
@@ -22,8 +22,7 @@ const App = () => {
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <ProtectedRoute exact path="/home" component={(Home)} />
-        <ProtectedRoute exact path="/manage/public" component={(FramesIndex)} />
-        <ProtectedRoute exact path="/frames/:id" component={(FrameEdit)} />
+        <Route exact path="/users/:id" component={(UserShow)} />
       </Switch>
     </div>
   );

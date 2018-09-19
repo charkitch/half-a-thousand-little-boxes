@@ -1,13 +1,15 @@
-import { RECEIVE_USER_PHOTOS } from '../actions/frames_actions.js';
+import { RECEIVE_USER_FRAMES } from '../actions/frames_actions.js';
 
-const frameReducer = (state = [], action) => {
+
+
+const framesReducer = (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {
-    case RECEIVE_USER_PHOTOS:
-      return action.userPhotos;
+    case RECEIVE_USER_FRAMES:
+      return action.userFrames.frames;
     default:
       return state;
   }
 };
 
-export default frameReducer;
+export default framesReducer;

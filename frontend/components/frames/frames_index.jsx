@@ -7,13 +7,10 @@ class FramesIndex extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    if (frames.length === 0) {
-      this.props.requestUserPhotos()
-    }
-  }
-
   render() {
+    if (this.props.frames.length === 0) {
+        return null;
+    }
     return (
       <div>
         <ul className="frames-user-ii-holder ">

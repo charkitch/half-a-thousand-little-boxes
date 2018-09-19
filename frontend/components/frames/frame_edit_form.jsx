@@ -2,7 +2,6 @@ import React from 'react';
 
 class FrameEditForm extends React.Component {
   constructor(props) {
-    debugger
     super(props);
     this.state = {
       imageURL: '',
@@ -35,7 +34,6 @@ class FrameEditForm extends React.Component {
   }
 
   render() {
-    debugger
     const { caption, title } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>

@@ -10,25 +10,31 @@ export const createFrame = (formData) => {
   });
 };
 
-export const requestUserPhotos = () => {
+export const requestUserFrames = (userId) => {
   return $.ajax({
     method: 'GET',
-    url: '/api/frames',
+    url: `/api/users/${userId}/frames`,
   });
 };
-
 
 export const requestOneFrame = (id) => {
   return $.ajax({
     method: 'GET',
-    url: '/api/frames/${id}',
+    url: `/api/frames/${id}`,
   });
 };
 
 export const editFrame = (frame) => {
   return $.ajax({
     method: 'PATCH',
-    url: '/api/frames/${id}',
+    url: `/api/frames/${frame.id}`,
     data: { frame }
+  });
+};
+
+export const requestCurrentUserPhotos = () => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/frames',
   });
 };

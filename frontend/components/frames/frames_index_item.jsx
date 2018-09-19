@@ -8,7 +8,6 @@ class FramesIndexItem extends React.Component {
   }
 
   handleClick() {
-    debugger
     this.props.history.push(`/frames/${this.props.frame.id}`);
   }
 

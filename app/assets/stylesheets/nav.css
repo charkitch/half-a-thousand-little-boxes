@@ -4,7 +4,7 @@ nav {
   height: 70px;
   width: 100%;
   color: transparent;
-  position: fixed;
+  position: sticky;
   z-index: 10
 }
 
