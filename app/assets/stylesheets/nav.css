@@ -8,6 +8,14 @@ nav {
   z-index: 10
 }
 
+.sticky-nav {
+  position: sticky;
+}
+
+.fixed-nav {
+  position: fixed;
+}
+
 button {
   /* position: absolute; */
 }

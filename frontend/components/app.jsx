@@ -14,15 +14,13 @@ const App = () => {
   return (
     <div>
       <Modal />
-      <nav>
-        <UserAcknowledgementContainer />
-      </nav>
+      <UserAcknowledgementContainer />
       <Switch className="main">
         <AuthRoute exact path="/" component={Splash} />
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <ProtectedRoute exact path="/home" component={(Home)} />
-        <Route exact path="/users/:id" component={(UserShow)} />
+        <ProtectedRoute exact path="/users/:id" component={(UserShow)} />
       </Switch>
     </div>
   );

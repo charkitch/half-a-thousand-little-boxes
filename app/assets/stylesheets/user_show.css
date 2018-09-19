@@ -1,0 +1,39 @@
+
+.photo-storage-box {
+  background-color: #f7f8fa;
+  height: 100vh;
+  padding: 20px 40px;
+}
+
+.frames-user-ii-holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.frames-user-index-item {
+  margin: 5px
+  /* width: 146px;
+  height: 110px; */
+}
+
+.profile-info-box {
+  height: 347px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.user-avatar  {
+  margin: 0 auto;
+  width: 104px;
+  height: 104px;
+  position: relative;
+  top: 52px;
+}
+
+.shown-user-name {
+  font-size: 30px;
+}

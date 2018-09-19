@@ -22,10 +22,8 @@ class UserShow extends React.Component {
     else {
       return (
         <div>
-            <UserDetails shownUser={this.props.shownUser} />
-          <div>
-            <FramesIndex frames={this.props.frames}/>
-          </div>
+          <UserDetails shownUser={this.props.shownUser} />
+          <FramesIndex frames={this.props.frames}/>
         </div>
       );
     }

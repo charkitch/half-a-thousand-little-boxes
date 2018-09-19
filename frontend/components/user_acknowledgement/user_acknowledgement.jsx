@@ -17,11 +17,13 @@ class UserAcknowledgement extends React.Component {
 
   accessLinks()  {
     return (
-      <div className="logged-out-nav">
-        <Link className="access-login" to="/login">Login</Link>
-        <br></br>
-        <Link className="access-signup" to="signup">Sign Up</Link>
-      </div>
+      <nav className="fixed-nav">
+        <div className="logged-out-nav">
+          <Link className="access-login" to="/login">Login</Link>
+          <br></br>
+          <Link className="access-signup" to="signup">Sign Up</Link>
+        </div>
+      </nav>
     );
   }
 
@@ -37,7 +39,7 @@ class UserAcknowledgement extends React.Component {
 
   personalGreeting() {
     return (
-      <div>
+      <nav className="sticky-nav">
         <div className='logged-in-nav' >
           <div onMouseEnter={this.handleEnterHover}>
             <img className='nav-user-icon' src={window.userIcon} alt="default user icon"/>
@@ -55,7 +57,7 @@ class UserAcknowledgement extends React.Component {
             <span className="upload-Button-text">Upload</span>
           </button>
         </div>
-      </div>
+      </nav>
     );
   }
 
