@@ -15,12 +15,13 @@ class UserAcknowledgement extends React.Component {
     this.handleExitHover = this.handleExitHover.bind(this);
     this.handleUploadClick = this.handleUploadClick.bind(this);
     this.handleHomeClick = this.handleHomeClick.bind(this);
+    this.handleRootClick = this.handleRootClick.bind(this);
   }
 
   accessLinks()  {
     return (
       <nav className="fixed-nav">
-        <div className="home-link">HATLB</div>
+        <div className="home-link" onClick={this.handleRootClick}>HATLB</div>
         <div className="logged-out-nav">
           <Link className="access-login" to="/login">Login</Link>
           <br></br>
@@ -30,8 +31,12 @@ class UserAcknowledgement extends React.Component {
     );
   }
 
+  handleRootClick() {
+    this.props.history.push('/');
+  }
+
   handleHomeClick() {
-    this.props.history.push('/home')
+    this.props.history.push('/home');
   }
 
   logoutAndDeHover() {
@@ -80,7 +85,8 @@ class UserAcknowledgement extends React.Component {
     }
 
     render() {
-      return this.props.currentUser ? this.personalGreeting() : this.accessLinks();
+      return this.props.currentUser ?
+      this.personalGreeting() : this.accessLinks();
     }
 }
 

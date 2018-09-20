@@ -8,7 +8,6 @@ class UserShow extends React.Component {
   constructor(props) {
     super(props);
     this.userId = parseInt(this.props.match.params.id);
-
   }
 
   componentDidMount() {
@@ -16,13 +15,13 @@ class UserShow extends React.Component {
   }
 
   render() {
-    if (!this.props.shownUser) {
+    if (!this.props.users[this.userId]) {
       return null;
     }
     else {
       return (
         <div>
-          <UserDetails shownUser={this.props.shownUser} />
+          <UserDetails shownUser={this.props.users[this.userId]} />
           <FramesIndex frames={this.props.frames}/>
         </div>
       );

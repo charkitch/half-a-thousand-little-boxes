@@ -5,10 +5,11 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import LogInFormContainer from './session_form/log_in_form_container';
 import SignUpFormContainer from './session_form/sign_up_form_container';
 import Splash from './splash';
-import Home from './home';
+import Home from './users/home_container.js';
 import Modal from './modal/modal';
 import FramesIndex from './frames/frames_index_container';
 import UserShow from './users/user_show_container';
+import FrameShow from './frames/frame_show_container';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <ProtectedRoute exact path="/home" component={(Home)} />
         <ProtectedRoute exact path="/users/:id" component={(UserShow)} />
+        <ProtectedRoute exact path="/frames/:id" component={(FrameShow)} />
       </Switch>
     </div>
   );

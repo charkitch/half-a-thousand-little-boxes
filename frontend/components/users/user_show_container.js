@@ -18,7 +18,7 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = (state) => {
   return {
     frames: state.entities.frames,
-    shownUser: state.entities.users.shownUser
+    users: state.entities.users
   };
 };
 

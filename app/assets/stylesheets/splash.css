@@ -5,32 +5,11 @@
   justify-content: center;
 }
 
+
+
 .splash-image {
   width: 100%;
   height: 80%;
-  overflow: scroll;
-  object-fit: contain;
-}
-
-
-.appeal {
-  color: white;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 20%;
-  align-items: center;
-}
-
-.splash-center-headline {
-  font-size: 48px;
-  padding: 40px 0;
-  text-align: center;
-}
-
-.splash-center-sub {
-position: relative;
-font-size: 24px;
 }
 
 .splash-center-join {

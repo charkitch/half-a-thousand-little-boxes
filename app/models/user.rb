@@ -25,6 +25,8 @@ class User < ApplicationRecord
   has_many :frames,
   foreign_key: :photographer_id
 
+  has_one_attached :user_avatar
+
   attr_reader :password
 
   def password=(password)

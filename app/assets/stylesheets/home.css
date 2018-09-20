@@ -1,0 +1,43 @@
+.home-whole-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f8fa;
+  padding: 20px;
+}
+
+.following-appeal-image {
+  width: 700px;
+  height: auto;
+  margin-bottom: 20px
+}
+
+.home-center-headline {
+  color: black;
+  margin: 0px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.home-center-sub {
+  color: black;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.upload-input-appeal {
+  margin-top: 155px;
+  display: flex;
+  /* position: absolute; */
+  /* text-align: center; */
+  width: 180px;
+  height: 40px;
+  cursor: pointer;
+  /* text-align: center; */
+  color: white;
+  /* pointer-events: none; */
+  background: #0099e5;
+  justify-content: center;
+  border-radius: 5px;
+  align-content: center;
+}
