@@ -51,3 +51,11 @@
 position: relative;
 font-size: 24px;
 }
+.following-feed-appeal {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 130px;
+  align-items: center;
+}

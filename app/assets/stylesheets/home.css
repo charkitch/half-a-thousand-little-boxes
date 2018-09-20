@@ -1,9 +1,10 @@
 .home-whole-container {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   background-color: #f7f8fa;
   padding: 20px;
+  height: 100vh;
 }
 
 .following-appeal-image {
