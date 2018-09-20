@@ -21,7 +21,9 @@ class UserAcknowledgement extends React.Component {
   accessLinks()  {
     return (
       <nav className="fixed-nav">
-        <div className="home-link" onClick={this.handleRootClick}>HATLB</div>
+        <div className="left-side-nav">
+          <div className="home-link" onClick={this.handleRootClick}>HATLB</div>
+        </div>
         <div className="logged-out-nav">
           <Link className="access-login" to="/login">Login</Link>
           <br></br>
