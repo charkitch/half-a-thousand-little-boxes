@@ -6,9 +6,7 @@ import { logout } from './util/session_api_util'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
-  debugger
   if (window.currentUser) {
-    debugger
     const { currentUser } = window;
     const { id } = currentUser;
     const preloadedState = {
@@ -19,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       session: { id }
       };
-      debugger
     store = configureStore(preloadedState);
 
     delete window.currentUser;

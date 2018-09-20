@@ -58,7 +58,6 @@ class UserAcknowledgement extends React.Component {
   }
 
   personalGreeting() {
-    debugger
     return (
       <nav className="sticky-nav">
         <div className="left-side-nav">
