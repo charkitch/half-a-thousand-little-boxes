@@ -1,9 +1,10 @@
 import React from 'react';
+import { UPLOAD_FILE_SELECT } from '../../actions/modal_actions';
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
-
+    this.handleUploadClick = this.handleUploadClick.bind(this);
   }
 
   handleUploadClick(e) {
