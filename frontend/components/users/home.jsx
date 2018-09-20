@@ -1,5 +1,6 @@
 import React from 'react';
 import { UPLOAD_FILE_SELECT } from '../../actions/modal_actions';
+import FollowFeed from '../following/follow_feed_container';
 
 class Home extends React.Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class Home extends React.Component {
               <span className="upload-Button-text">Upload now!</span>
             </button>
           </div>
+          <FollowFeed/>
         </div>
       );
     }
