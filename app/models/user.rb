@@ -27,6 +27,23 @@ class User < ApplicationRecord
 
   has_one_attached :user_avatar
 
+  has_many :followers,
+  through: :followings,
+  source: :follower
+
+  has_many :followees
+  through: :follows
+  source: :followee
+
+  has_many :followings,
+  foreign_key: :followee_id,
+  class_name: :Following
+
+  has_many :follows,
+  foreign_key: :follower_id,
+  class_name: :Following
+
+
   attr_reader :password
 
   def password=(password)
