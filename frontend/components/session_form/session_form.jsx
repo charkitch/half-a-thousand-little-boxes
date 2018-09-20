@@ -9,7 +9,6 @@ class SessionForm extends React.Component {
       password: '',
       email: '',
     };
-
     this.submitDemo = this.submitDemo.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -40,8 +39,9 @@ class SessionForm extends React.Component {
 
 
   submitDemo(e) {
+    const demoUser = { email: 'futureboss@yourcompany.com', password: 'hire_me!' };
     e.preventDefault();
-    const demoUser = { email: 'futureboss@yourcompany.com', password: 'hire_me!' }
+    this.setState(demoUser);
     this.props.processForm(demoUser);
   }
 

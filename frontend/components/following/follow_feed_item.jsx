@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-
-class FramesIndexItem extends React.Component {
+//
+class FollowFeedItem extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
@@ -12,14 +12,11 @@ class FramesIndexItem extends React.Component {
   }
 
   render() {
+    debugger
     return (
-      <li className="frames-user-index-item" onClick={this.handleClick} >
-        <div className="frames-user-index-item">
-          <img src={this.props.frame.awsLocale}></img>
-        </div>
-      </li>
+      <div className="follow-feed-item">
+
+      </div>
     );
   }
 }
-
-export default withRouter(FramesIndexItem);
