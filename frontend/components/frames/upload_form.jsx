@@ -18,6 +18,7 @@ class UploadForm extends React.Component {
   }
 
   handleSubmit(e) {
+    debugger
     e.preventDefault();
     const formData = new FormData();
     formData.append('frame[title]', this.state.title);

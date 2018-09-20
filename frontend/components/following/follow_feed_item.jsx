@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import PhotographerDetails from './photographer_details';
 //
 class FollowFeedItem extends React.Component {
   constructor(props) {
@@ -12,11 +13,14 @@ class FollowFeedItem extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <div className="follow-feed-item">
-
+        <div className="photographer ">
+          <p></p>
+        </div>
       </div>
     );
   }
 }
+
+export default FollowFeedItem
