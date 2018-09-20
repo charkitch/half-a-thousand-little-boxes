@@ -16,7 +16,7 @@ class Api::FramesController < ApplicationController
   end
 
   def index
-    @frames = Frame.where(photographer_id: params[:user_id])
+    @frames = Frame.where(photographer_id: params[:user_id]).with_attached_image
     render :index
   end
 
