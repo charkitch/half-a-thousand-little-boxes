@@ -35,7 +35,7 @@
   height: 25px;
 }
 
-.logout-button {
+.dropdown-button {
   display: block;
   height: 26px;
   line-height: 26px;
@@ -46,6 +46,6 @@
   text-align: left;
 }
 
-.logout-button:hover {
+.dropdown-button:hover {
   color: blue;
 }

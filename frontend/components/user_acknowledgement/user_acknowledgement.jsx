@@ -16,6 +16,7 @@ class UserAcknowledgement extends React.Component {
     this.handleUploadClick = this.handleUploadClick.bind(this);
     this.handleHomeClick = this.handleHomeClick.bind(this);
     this.handleRootClick = this.handleRootClick.bind(this);
+    this.handleVanity = this.handleVanity.bind(this);
   }
 
   accessLinks()  {
@@ -51,7 +52,13 @@ class UserAcknowledgement extends React.Component {
     this.props.openModal(UPLOAD_FILE_SELECT);
   }
 
+  handleVanity(e){
+    e.preventDefault();
+    this.props.history.push(`/users/${this.props.currentUser.id}`);
+  }
+
   personalGreeting() {
+    debugger
     return (
       <nav className="sticky-nav">
         <div className="left-side-nav">
@@ -64,7 +71,8 @@ class UserAcknowledgement extends React.Component {
             <div onMouseLeave={this.handleExitHover} className={this.state.dropDown} >
               <ul>
                 <li>
-                  <button className="logout-button" onClick={this.logoutAndDeHover}>Log out</button>
+                  <button className="dropdown-button" onClick={this.logoutAndDeHover}>Log out</button>
+                  <button className="dropdown-button" onClick={this.handleVanity}>My profile </button>
                 </li>
               </ul>
             </div>
