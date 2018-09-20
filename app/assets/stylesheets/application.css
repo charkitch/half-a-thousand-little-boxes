@@ -25,3 +25,29 @@
   position: relative;
   display: none;
 }
+
+.appeal-image {
+  overflow: scroll;
+  object-fit: contain;
+}
+
+
+.appeal {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 20%;
+  align-items: center;
+}
+
+.appeal-center-headline {
+  font-size: 48px;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.appeal-center-sub {
+position: relative;
+font-size: 24px;
+}

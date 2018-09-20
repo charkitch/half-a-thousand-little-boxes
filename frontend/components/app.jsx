@@ -5,7 +5,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import LogInFormContainer from './session_form/log_in_form_container';
 import SignUpFormContainer from './session_form/sign_up_form_container';
 import Splash from './splash';
-import Home from './home';
+import Home from './users/home_container.js';
 import Modal from './modal/modal';
 import FramesIndex from './frames/frames_index_container';
 import UserShow from './users/user_show_container';
