@@ -10,10 +10,10 @@ const followeesReducer = (state = [], action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      return action.user.followees;
+      return union(state, action.user.followees);
     case RECEIVE_NEW_FOLLOWEE:
     case RECEIVE_UNFOLLOW:
-      return action.followees;
+      return union(state, action.followees);
     default:
       return state;
   }
