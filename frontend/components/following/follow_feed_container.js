@@ -13,7 +13,7 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = (state) => {
   return {
-    followees: state.entities.followees,
+    followees: state.entities.users[state.session.id].followees,
     frames: state.entities.frames,
     users: state.entities.users,
   };

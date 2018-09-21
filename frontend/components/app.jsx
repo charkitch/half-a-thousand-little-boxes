@@ -13,7 +13,7 @@ import FrameShow from './frames/frame_show_container';
 
 const App = () => {
   return (
-    <div>
+    <div className="app">
       <Modal />
       <UserAcknowledgementContainer />
       <Switch className="main">

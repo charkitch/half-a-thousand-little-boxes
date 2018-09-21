@@ -4,7 +4,8 @@
   /* justify-content: center; */
   background-color: #f7f8fa;
   padding: 20px;
-  height: 100vh;
+  /* height: 100vh; */
+  height: 100%;
   flex-direction: column;
 }
 
