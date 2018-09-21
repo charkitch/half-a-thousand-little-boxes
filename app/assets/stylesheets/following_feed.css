@@ -3,3 +3,32 @@
   height: 100vh;
   width: 700px;
 }
+
+.photographer-detail {
+  height: 61px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.followee-avatar {
+  width: 60px;
+}
+
+.follow-button-container {
+  width: 100px;
+  height: 30px;
+  border-radius: 3px;
+  background-color: #0099e5;
+  color: white;
+  position: absolute;
+  right: 53px;
+  top: 160px;
+  text-align: center;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.unfollow-button {
+  background-color: #ff6666
+}

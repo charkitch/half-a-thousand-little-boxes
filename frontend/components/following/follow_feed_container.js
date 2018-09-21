@@ -3,6 +3,7 @@ import FollowFeed from './follow_feed';
 
 const mapDispatchToProps = dispatch => {
   return {
+    //unfollow:
   };
 };
 

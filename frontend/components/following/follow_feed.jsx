@@ -7,14 +7,10 @@ class FollowFeed extends React.Component {
   }
 
   render() {
-    // if (this.props.follows.length === 0) {
-    //     return FollowImpertive!
-    // }
     return (
       <div className="feed-storage-box">
-        <p>Hello?</p>
         <ul className="feed-storage-list">
-          {this.props.followees.map( followeId => <FollowFeedItem followeeId={followeeId} key={`followee-${followeeId}`}/>)}
+          {this.props.followees.map( followeeId => <FollowFeedItem followeeId={followeeId} key={`followee-${followeeId}`}/>)}
         </ul>
       </div>
     );

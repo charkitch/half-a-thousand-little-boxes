@@ -1,13 +1,30 @@
-class FollowingsController < ApplicationController
+class Api::FollowingsController < ApplicationController
 
   def create
-    Following.new(following_params)
+    new_follow = Following.new
+    new_follow.followee_id = params[:user_id]
+    new_follow.follower_id = current_user.id
+    if new_follow.save
+      @followees = current_user.followee_ids
+      render json: @followees, status: 200
+    else
+      render json: new_follow.errors.full_messages, status: 422
+    end
   end
 
-  private
-
-  def following_params
-      params.require(:following).permit(:follower_id, :followee_id)
+  def destroy
+    unfollowing = Following.find_by(followee_id: params[:id], follower_id: current_user.id)
+    debugger
+    unless unfollowing
+      return render status: 404
+    end
+    if unfollowing.destroy
+      @followees = current_user.followee_ids
+      render json: @followees, status: 200
+    else
+      debugger
+      render status: 422
+    end
   end
 
 end
