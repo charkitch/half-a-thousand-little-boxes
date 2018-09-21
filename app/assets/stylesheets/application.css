@@ -14,6 +14,10 @@
  *= require_self
  */
 
+ .hidden {
+   display: none;
+ }
+
 .form-submit {
   background-color: #41cb56;
   color: white;
