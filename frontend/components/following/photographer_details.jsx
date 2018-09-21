@@ -1,14 +1,15 @@
 import React from 'react';
 
-export default function photographer_details (photographer, timestamp) {
+export default function photographerDetails (props) {
+  if (!props.photographer) {
+    return null;
+  }
   return (
   <div className="photographer-detail">
     <img className='followee-avatar' src={window.userIcon} alt="default user icon"/>
-    <p>Photographer Name</p>
-    <p>so many hours ago</p>
+    <div className='text-detail'>
+      <p>{props.photographer.username}</p>
+      <p>{props.createdAt}</p>
+    </div>
   </div>
 );}
-
-
-// <div>{photographer.username}</div>
-// <div>{timestamp}</div>

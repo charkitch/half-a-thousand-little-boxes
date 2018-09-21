@@ -14,7 +14,6 @@ class Api::FollowingsController < ApplicationController
 
   def destroy
     unfollowing = Following.find_by(followee_id: params[:id], follower_id: current_user.id)
-    debugger
     unless unfollowing
       return render status: 404
     end
@@ -22,7 +21,6 @@ class Api::FollowingsController < ApplicationController
       @followees = current_user.followee_ids
       render json: @followees, status: 200
     else
-      debugger
       render status: 422
     end
   end

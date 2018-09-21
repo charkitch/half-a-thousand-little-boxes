@@ -1,6 +1,11 @@
 import React from 'react';
 
 
-export const PictureDetails = () => (
-  <div>picture details</div>
+const PictureDetails = ({ title, caption }) => (
+  <div>
+    <p>{title}</p>
+    <p>{caption}</p>
+  </div>
 );
+
+export default PictureDetails;

@@ -1,10 +1,7 @@
 import React from 'react';
-import { withRouter } from 'react-router';
-import { connect } from 'react-redux';
 
-import { requestOneUser } from '../../actions/user_actions';
 import PhotographerDetails from './photographer_details';
-import { PictureDetails } from './picture_details';
+import PictureDetails from './picture_details';
 
 class FollowFeedItem extends React.Component {
   constructor(props) {
@@ -21,32 +18,19 @@ class FollowFeedItem extends React.Component {
   render() {
     return (
       <div className="follow-feed-item">
-        <PhotographerDetails/>
+        <PhotographerDetails photographer={this.props.photographer} createdAt={this.props.frame.created_at}/>
         <div className="picture-container">
-
+          <img src={this.props.frame.awsLocale}></img>
         </div>
-        <PictureDetails/>
+          <PictureDetails
+            title={this.props.frame.title}
+            caption={this.props.frame.caption}
+            />
         <div>
         </div>
       </div>
     );
   }
 }
-// <img src={this.props.frame.awsLocale}/>
 
-const mapDispatchToProps = dispatch => {
-  return {
-    requestOneUser: id => dispatch(requestOneUser(id))
-  };
-};
-
-
-const mapStateToProps = (state) => {
-  return {
-
-  };
-};
-
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(FollowFeedItem);
+export default FollowFeedItem;

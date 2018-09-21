@@ -1,16 +1,21 @@
 import { connect } from 'react-redux';
 import FollowFeed from './follow_feed';
+import { requestUserFrames } from '../../actions/frames_actions';
+import { requestOneUser } from '../../actions/user_actions';
 
 const mapDispatchToProps = dispatch => {
   return {
-    //unfollow:
+    requestUserFrames: id => dispatch(requestUserFrames(id)),
+    requestOneUser: id => dispatch(requestOneUser(id))
   };
 };
 
 
 const mapStateToProps = (state) => {
   return {
-    followees: state.entities.users[state.session.id].followees
+    followees: state.entities.followees,
+    frames: state.entities.frames,
+    users: state.entities.users,
   };
 };
 

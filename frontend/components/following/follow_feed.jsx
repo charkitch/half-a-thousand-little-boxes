@@ -6,11 +6,23 @@ class FollowFeed extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    for (var i = 0; i < this.props.followees.length; i++) {
+      this.props.requestUserFrames(this.props.followees[i]);
+      this.props.requestOneUser(this.props.followees[i]);
+    }
+  }
+
   render() {
     return (
       <div className="feed-storage-box">
         <ul className="feed-storage-list">
-          {this.props.followees.map( followeeId => <FollowFeedItem followeeId={followeeId} key={`followee-${followeeId}`}/>)}
+          {Object.values(this.props.frames).map( frame =>
+            <FollowFeedItem
+              key={frame.id}
+              frame={frame}
+              photographer={this.props.users[frame.photographer_id]}/>
+          )}
         </ul>
       </div>
     );
@@ -18,3 +30,9 @@ class FollowFeed extends React.Component {
 }
 
 export default FollowFeed;
+
+
+// {Object.values(this.props.frames).map( frame =>
+//   (<FollowFeedItem
+//     frame={frame}
+//     photographer={this.props.users[frame.photographerId]}/>))}
