@@ -9,7 +9,7 @@ const framesReducer = (state = {}, action) => {
     case RECEIVE_ONE_FRAME:
       return Object.assign({}, state, {[action.frame.id]: action.frame});
     case RECEIVE_USER_FRAMES:
-      return action.userFrames;
+      return Object.assign({}, state, action.userFrames);
     default:
       return state;
   }

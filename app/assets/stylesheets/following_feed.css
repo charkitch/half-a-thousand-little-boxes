@@ -12,8 +12,11 @@
   margin-top: 20px;
 }
 
-.photo-title {
+.photo-info {
+  padding-left: 10px;
+}
 
+.photo-title {
 }
 
 .photo-caption {

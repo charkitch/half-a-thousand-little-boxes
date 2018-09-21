@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const PictureDetails = ({ title, caption }) => (
-  <div>
+  <div className="photo-info">
     <h1 className="photo-title">{title}</h1>
     <p className="photo-caption">{caption}</p>
   </div>
