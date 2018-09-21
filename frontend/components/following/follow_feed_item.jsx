@@ -15,6 +15,7 @@ class FollowFeedItem extends React.Component {
 
 
 
+
   render() {
     return (
       <div className="follow-feed-item">

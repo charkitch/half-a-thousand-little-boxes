@@ -1,6 +1,7 @@
 .feed-storage-box {
   height: 100vh;
   width: 700px;
+  overflow: scroll;
 }
 
 .photographer-detail {
@@ -16,7 +17,7 @@
 }
 
 .photo-caption {
-  
+
 }
 
 .followee-avatar {
