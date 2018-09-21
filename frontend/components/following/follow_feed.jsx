@@ -7,7 +7,6 @@ class FollowFeed extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     for (var i = 0; i < this.props.followees.length; i++) {
       this.props.requestUserFrames(this.props.followees[i]);
       this.props.requestOneUser(this.props.followees[i]);
