@@ -3,8 +3,8 @@ import React from 'react';
 
 const PictureDetails = ({ title, caption }) => (
   <div>
-    <p>{title}</p>
-    <p>{caption}</p>
+    <h1 className="photo-title">{title}</h1>
+    <p className="photo-caption">{caption}</p>
   </div>
 );
 

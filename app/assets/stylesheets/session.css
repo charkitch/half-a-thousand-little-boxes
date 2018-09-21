@@ -10,9 +10,11 @@
 
 .demo {
   align-self: flex-start;
-  background-color: #00aaff;
-  border-radius: 30px;
+  background-color: #41cb56;
+  border-radius: 2px;
   font-weight: bold;
+  color: white;
+  font: inherit;
 }
 
 .login-form-box {
