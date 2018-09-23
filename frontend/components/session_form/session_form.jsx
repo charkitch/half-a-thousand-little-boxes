@@ -49,17 +49,20 @@ class SessionForm extends React.Component {
      let demoForm = '';
 
      if (this.props.formType === 'Log in') {
-       demoForm = ( <button className='session-submit demo' onClick={this.submitDemo}>Demo Login</button> )
+       demoForm = (
+         <button
+           className='session-submit form-submit demo'
+           onClick={this.submitDemo}>Demo Login
+         </button> );
      }
 
-     return demoForm
+     return demoForm;
    }
 
 
 
 
    render() {
-     debugger
      let usernameEntry = '';
      if (this.props.formType === 'Sign up') {
        usernameEntry = (<label className='access-label'>Username(optional)

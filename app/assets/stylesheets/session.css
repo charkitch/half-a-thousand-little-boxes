@@ -6,15 +6,13 @@
 
 .session-submit {
   text-align: center;
+  margin: 3px;
 }
 
 .demo {
-  align-self: flex-start;
-  background-color: #41cb56;
-  border-radius: 2px;
-  font-weight: bold;
-  color: white;
-  font: inherit;
+  border-radius: 4px;
+  width: 318px;
+  height: 40px;
 }
 
 .login-form-box {
@@ -38,4 +36,6 @@
 .redirect-message {
   color: #71767a;
   font-size: 12px;
+  margin-top: 100px;
+  text-align: center;
 }
