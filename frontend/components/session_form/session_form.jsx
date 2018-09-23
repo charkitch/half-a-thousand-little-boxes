@@ -59,11 +59,12 @@ class SessionForm extends React.Component {
 
 
    render() {
+     debugger
      let usernameEntry = '';
      if (this.props.formType === 'Sign up') {
        usernameEntry = (<label className='access-label'>Username(optional)
        <input type='text' value={this.state.username} onChange={this.update('username')} />
-      </label>) };
+      </label>); }
 
 
 
@@ -72,11 +73,11 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
           {this.props.exortation} Half A Thousand Tiny Boxes
-          {this.renderErrors()}
+          <div className="error-info">{this.renderErrors()}</div>
           <div className="login-form">
             <br/>
             <label className='access-label'>{this.props.identifierText}</label>
-            <input type="text"
+            <input type={this.props.inputType}
               value={this.state.email}
               onChange={this.update('email')}
               className="login-input"

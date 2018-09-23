@@ -9,6 +9,7 @@ const mapStateToProps = state => {
     errors: state.errors.session,
     formType: 'Log in',
     identifierText: 'Email or Username',
+    inputType: 'text',
     exortation: 'Log In to',
     bumperText: "Don't have an account?",
     navLink: <Link to="/signup">Sign up</Link>,

@@ -9,6 +9,7 @@ const mapStateToProps = state => {
     errors: state.errors.session,
     formType: 'Sign up',
     identifierText: 'Email ',
+    inputType: 'email',
     exortation: 'Join',
     bumperText: 'Already have an account?',
     navLink: <Link to="/login">Log in</Link>,
@@ -22,4 +23,4 @@ const mapDispatchToProps= dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SessionForm)
+export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
