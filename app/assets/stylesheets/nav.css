@@ -19,7 +19,6 @@ nav {
 }
 
 .home-link {
-  cursor: pointer;
   color: #34bf49;
   display: flex;
   flex-direction: row;

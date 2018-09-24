@@ -22,7 +22,6 @@
   position: absolute;
   width: 180px;
   height: 40px;
-  cursor: pointer;
   text-align: center;
   color: white;
   /* pointer-events: none; */
@@ -34,7 +33,6 @@
 }
 
 .upload-input {
-  cursor: pointer;
   width: 180px;
   height: 40px;
   opacity: 0;

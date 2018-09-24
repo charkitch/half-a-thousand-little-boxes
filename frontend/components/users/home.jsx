@@ -20,7 +20,7 @@ class Home extends React.Component {
           <div className="following-feed-appeal">
             <h4 className="home-center-headline">Keep an eye out for good photos!</h4>
             <p className="home-center-sub">Share them with the HATLB community</p>
-            <button type="submit" className="upload-input-appeal" onClick={this.handleUploadClick}>
+            <button type="submit" className="upload-input-appeal clickable" onClick={this.handleUploadClick}>
               <span className="upload-Button-text">Upload now!</span>
             </button>
           </div>

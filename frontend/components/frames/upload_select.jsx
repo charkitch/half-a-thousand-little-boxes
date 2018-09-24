@@ -21,7 +21,7 @@ class UploadSelect extends React.Component {
   render() {
     return (
       <div>
-        <div className="upload-mask">
+        <div className="upload-mask clickable">
           <div className="upload-text">Select a Photo</div>
         </div>
         <input className="upload-input" type="file" onChange={this.handleFile}/>

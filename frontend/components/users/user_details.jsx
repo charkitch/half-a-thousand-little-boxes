@@ -9,7 +9,11 @@ const UserDetails = ({shownUser, onSelection, buttonClass, buttonText}) => {
           atl="default user icon"/>
       </div>
       <div className="shown-user-name">{shownUser.username}</div>
-      <div onClick={onSelection} className={`follow-button-container ${buttonClass}`}>{buttonText}</div>
+      <div
+        onClick={onSelection}
+        className={`follow-button-container clickable ${buttonClass}`}
+        >{buttonText}
+      </div>
     </div>
   );
 };

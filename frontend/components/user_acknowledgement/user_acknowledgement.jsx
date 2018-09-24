@@ -26,7 +26,7 @@ class UserAcknowledgement extends React.Component {
     return (
       <nav className={navClass}>
         <div className="left-side-nav">
-          <div className="home-link" onClick={this.handleRootClick}>
+          <div className="home-link clickable" onClick={this.handleRootClick}>
             <div className='big-logo-start'>HAT</div>
             <div className='small-logo-middle'>l</div>
             <div className='smallest-log-end'>b</div>
@@ -68,7 +68,7 @@ class UserAcknowledgement extends React.Component {
     return (
       <nav className="sticky-nav">
         <div className="left-side-nav">
-          <div className="home-link" onClick={this.handleRootClick}>
+          <div className="home-link clickable" onClick={this.handleRootClick}>
             <div className='big-logo-start'>HAT</div>
             <div className='small-logo-middle'>l</div>
             <div className='smallest-log-end'>b</div>
