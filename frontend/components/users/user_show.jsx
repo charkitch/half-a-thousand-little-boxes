@@ -7,25 +7,21 @@ import UserNav from './user_nav';
 class UserShow extends React.Component {
   constructor(props) {
     super(props);
-    this.userId = parseInt(this.props.match.params.id);
+    this.shownUser = parseInt(this.props.match.params.id);
     this.onSelection = this.onSelection.bind(this);
   }
 
-  componentDidMount() {
-    this.props.requestOneUser(this.userId)
-      .then(this.props.requestUserFrames(this.userId));
-  }
 
   onSelection() {
-    if (this.props.followees.includes(this.userId)) { // user not following
-      (this.props.deleteFollow(this.userId));
+    if (this.props.followees.includes(this.shownUser)) { // user not following
+      (this.props.deleteFollow(this.shownUser));
     } else {
-      this.props.createFollow(this.userId);
+      this.props.createFollow(this.shownUser);
     }
   }
 
   buttonText() {
-    if (this.props.followees.includes(this.userId)) {
+    if (this.props.followees.includes(this.shownUser)) {
       return "Unfollow";
     } else {
       return "Follow";
@@ -34,17 +30,22 @@ class UserShow extends React.Component {
 
 
   buttonClass() {
-    if (this.userId === this.props.currentUser) {
+    if (this.shownUser === this.props.currentUser) {
       return "hidden";
-    } else if (this.props.followees.includes(this.userId)) {
+    } else if (this.props.followees.includes(this.shownUser)) {
       return "unfollow-button";
     } else {
       return "follow-button";
     }
   }
 
+  componentDidMount() {
+    this.props.requestOneUser(this.shownUser)
+    .then(this.props.requestUserFrames(this.shownUser));
+  }
+
   render() {
-    if (!this.props.users[this.userId]) {
+    if (!this.props.users[this.shownUser]) {
       return null;
     }
     else {
@@ -54,7 +55,7 @@ class UserShow extends React.Component {
             onSelection={this.onSelection}
             buttonText={this.buttonText()}
             buttonClass={this.buttonClass()}
-            shownUser={this.props.users[this.userId]}
+            shownUser={this.props.users[this.shownUser]}
           />
 
           <FramesIndex frames={this.props.frames}/>

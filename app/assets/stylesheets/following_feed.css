@@ -21,6 +21,10 @@
   width: 60px;
 }
 
+.author-link {
+  display: flex
+}
+
 .follow-button-container {
   width: 100px;
   height: 30px;

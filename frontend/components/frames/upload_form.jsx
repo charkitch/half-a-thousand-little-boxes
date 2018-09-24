@@ -52,15 +52,31 @@ class UploadForm extends React.Component {
     const { caption, title } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
-        <img src={this.state.imageURL} className="preview-image" alt={this.props.currentFile.name} />
+        <img
+          src={this.state.imageURL}
+          className="preview-image"
+          alt={this.props.currentFile.name}
+        />
         <label>Title
-          <input type="text" value={title} onChange={this.update('title')}></input>
+          <input
+            type="text"
+            value={title}
+            onChange={this.update('title')}>
+          </input>
         </label>
 
         <label className="upload-box label-caption">Caption
-          <input type="textarea" value={caption} onChange={this.update('caption')}/>
+          <input
+            type="textarea"
+            value={caption}
+            onChange={this.update('caption')}
+          />
         </label>
-        <input className="upload-submit form-submit" type="submit" value="Submit" />
+        <input
+          className="upload-submit form-submit"
+          type="submit"
+          value="Submit"
+        />
       </form>
     );
   }

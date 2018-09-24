@@ -22,7 +22,7 @@ const mapStateToProps = (state) => {
   return {
     frames: state.entities.frames,
     users: state.entities.users,
-    followees: state.entities.followees,
+    followees: state.entities.users[state.session.id].followees,
     currentUser: state.session.id,
   };
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function timeAgo(createdAt) {
   let hoursAgo = Math.floor((new Date() - new Date(createdAt)) / 1000 / 60/ 60);
@@ -15,10 +16,16 @@ export default function photographerDetails ({createdAt, photographer}) {
   }
   return (
   <div className="photographer-detail">
-    <img className='followee-avatar' src={window.userIcon} alt="default user icon"/>
-    <div className='text-detail'>
-      <p>{photographer.username}</p>
-      <p>{timeAgo(createdAt)}</p>
-    </div>
+    <Link to={`/users/${photographer.id}`} className='author-link'>
+      <img
+        className='followee-avatar clickable'
+        src={window.userIcon}
+        alt="default user icon"
+      />
+      <div className='text-detail clickable'>
+        <p>{photographer.username}</p>
+        <p>{timeAgo(createdAt)}</p>
+      </div>
+    </Link>
   </div>
 );}
