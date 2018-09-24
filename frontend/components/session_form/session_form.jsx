@@ -75,7 +75,7 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
-          {this.props.exortation} Half A Thousand Tiny Boxes
+          {this.props.exortation} Half A Thousand Little Boxes
           <div className="error-info">{this.renderErrors()}</div>
           <div className="login-form">
             <br/>
