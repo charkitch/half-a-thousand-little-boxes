@@ -28,7 +28,8 @@ class UserAcknowledgement extends React.Component {
         <div className="left-side-nav">
           <div className="home-link" onClick={this.handleRootClick}>
             <div className='big-logo-start'>HAT</div>
-            <div className='small-logo-end'>LB</div>
+            <div className='small-logo-middle'>l</div>
+            <div className='smallest-log-end'>b</div>
           </div>
         </div>
         <div className="logged-out-nav">

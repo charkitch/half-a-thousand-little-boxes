@@ -24,7 +24,9 @@ class UploadForm extends React.Component {
     formData.append('frame[caption]', this.state.caption);
     formData.append('frame[picture]', this.props.currentFile);
     formData.append('frame[photographer_id]', this.props.currentUser.id);
-    this.props.createFrame(formData).then( () => this.props.history.push(`/users/${this.props.currentUser.id}`));
+    this.props.createFrame(formData)
+      .then( () => this.props.history
+        .push(`/users/${this.props.currentUser.id}`));
     this.props.closeModal();
   }
 
