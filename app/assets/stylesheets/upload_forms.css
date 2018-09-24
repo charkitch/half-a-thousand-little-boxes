@@ -9,7 +9,7 @@
 .upload-button {
   background-color: #34bf49;
   color: white;
-  height: 50px;
+  height: 100%;
   width: 110px;
   display: flex;
   justify-content: space-around;

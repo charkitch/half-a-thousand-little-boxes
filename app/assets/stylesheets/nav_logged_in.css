@@ -22,12 +22,14 @@
 
 .drop-down-logged-in {
   width: 145px;
-  height: 30px;
-  /* height: 300px; */
+  height: 300px;
   position: absolute;
   top: 60px;
   right: 100px;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .nav-user-icon {
@@ -35,7 +37,7 @@
   height: 25px;
 }
 
-.dropdown-button {
+.drop-down-button {
   display: block;
   height: 26px;
   line-height: 26px;
@@ -46,6 +48,6 @@
   text-align: left;
 }
 
-.dropdown-button:hover {
+.drop-down-button:hover {
   color: blue;
 }
