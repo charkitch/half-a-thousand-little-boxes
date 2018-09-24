@@ -24,8 +24,8 @@
   width: 145px;
   height: 300px;
   position: absolute;
-  top: 60px;
-  right: 100px;
+  top: 49px;
+  right: 131px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -37,11 +37,12 @@
   height: 25px;
 }
 
+.drop-down-assemblage {
+  border-bottom: 1px solid #eeeff2;
+}
+
 .drop-down-button {
-  display: block;
   height: 26px;
-  line-height: 26px;
-  font-size: 14px;
   color: #525558;
   padding: 0 20px;
   background-color: #fff;

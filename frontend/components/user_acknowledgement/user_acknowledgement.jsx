@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import uploader from './uploader';
 import { UPLOAD_FILE_SELECT } from '../../actions/modal_actions';
-import { withRouter } from 'react-router'
+import { withRouter } from 'react-router';
 
 class UserAcknowledgement extends React.Component {
   constructor(props) {
@@ -20,10 +19,17 @@ class UserAcknowledgement extends React.Component {
   }
 
   accessLinks()  {
+    let navClass = "fixed-nav";
+    if (this.props.match.path === "/") {
+      navClass = "fixed-nav nav-splash";
+    }
     return (
-      <nav className="fixed-nav">
+      <nav className={navClass}>
         <div className="left-side-nav">
-          <div className="home-link" onClick={this.handleRootClick}>HATLB</div>
+          <div className="home-link" onClick={this.handleRootClick}>
+            <div className='big-logo-start'>HAT</div>
+            <div className='small-logo-end'>LB</div>
+          </div>
         </div>
         <div className="logged-out-nav">
           <Link className="access-login" to="/login">Login</Link>
@@ -61,14 +67,22 @@ class UserAcknowledgement extends React.Component {
     return (
       <nav className="sticky-nav">
         <div className="left-side-nav">
-          <div className="home-link" onClick={this.handleHomeClick}>HATLB</div>
+          <div className="home-link" onClick={this.handleRootClick}>
+            <div className='big-logo-start'>HAT</div>
+            <div className='small-logo-middle'>l</div>
+            <div className='smallest-log-end'>b</div>
+          </div>
         </div>
         <div className='logged-in-nav' >
           <div onMouseEnter={this.handleEnterHover}>
             <img className='nav-user-icon' src={window.userIcon} alt="default user icon"/>
             <div onMouseLeave={this.handleExitHover} className={this.state.dropDown} >
+                <div className="drop-down-assemblage">
                   <button className="drop-down-button" onClick={this.handleVanity}>My profile </button>
+                </div>
+                <div className="drop-down-assemblage">
                   <button className="drop-down-button" onClick={this.logoutAndDeHover}>Log out</button>
+                </div>
             </div>
           </div>
           <button type="submit" className="upload-button" onClick={this.handleUploadClick}>

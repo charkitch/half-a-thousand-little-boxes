@@ -16,12 +16,6 @@
   padding-left: 10px;
 }
 
-.photo-title {
-}
-
-.photo-caption {
-
-}
 
 .followee-avatar {
   width: 60px;
@@ -51,4 +45,13 @@
   /* left: 461px; */
   padding-top: 10px;
   padding-left: 10px;
+}
+
+.following-feed-appeal {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 130px;
+  align-items: center;
 }

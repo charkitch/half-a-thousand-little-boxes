@@ -8,7 +8,6 @@ nav {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #eeeff2;
-
 }
 
 .left-side-nav {
@@ -21,9 +20,22 @@ nav {
 
 .home-link {
   cursor: pointer;
-  font-size: 20px;
-  font-family: 'Righteous';
   color: #34bf49;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Audiowide', cursive;
+}
+
+.big-logo-start {
+  font-size: 18px;
+}
+
+.small-logo-middle {
+  font-size: 13px;
+}
+
+.smallest-log-end {
+  font-size: 11px
 }
 
 .sticky-nav {
@@ -32,6 +44,10 @@ nav {
 
 .fixed-nav {
   position: fixed;
+}
+
+.nav-splash {
+  border-bottom: none;
 }
 
 button {

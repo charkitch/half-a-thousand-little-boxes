@@ -76,6 +76,7 @@ class User < ApplicationRecord
 
   def stripped_email
     at_sym_locale = self.email.index('@')
+    return nil unless at_sym_locale
     self.email[0...at_sym_locale]
   end
 
