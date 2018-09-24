@@ -10,10 +10,11 @@
   background-color: #34bf49;
   color: white;
   height: 100%;
-  width: 110px;
+  width: 112px;
   display: flex;
   justify-content: space-around;
   align-content: center;
+  padding-bottom: 1px;
 }
 
 .upload-mask {
