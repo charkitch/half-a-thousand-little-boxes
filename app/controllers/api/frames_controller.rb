@@ -4,7 +4,8 @@ class Api::FramesController < ApplicationController
     @frame = Frame.new(frame_params)
     @frame.image.attach(io: params[:frame][:picture], filename: params[:frame][:title] + '.jpg')
     if @frame.save
-      render :index
+      debugger
+      render :show
     else
       render json: @frame.errors.full_messages, status: 422
     end
