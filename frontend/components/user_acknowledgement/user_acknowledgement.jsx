@@ -76,17 +76,32 @@ class UserAcknowledgement extends React.Component {
         </div>
         <div className='logged-in-nav' >
           <div onMouseEnter={this.handleEnterHover}>
-            <img className='nav-user-icon' src={window.userIcon} alt="default user icon"/>
-            <div onMouseLeave={this.handleExitHover} className={this.state.dropDown} >
+            <img className='nav-user-icon'
+              src={window.userIcon} 
+              alt="default user icon"/>
+            <div
+              onMouseLeave={this.handleExitHover}
+              className={this.state.dropDown} >
                 <div className="drop-down-assemblage">
-                  <button className="drop-down-button" onClick={this.handleVanity}>My profile </button>
+                  <button
+                    className="drop-down-button"
+                    onClick={this.handleVanity}>
+                    My profile
+                  </button>
                 </div>
                 <div className="drop-down-assemblage">
-                  <button className="drop-down-button" onClick={this.logoutAndDeHover}>Log out</button>
+                  <button
+                    className="drop-down-button"
+                    onClick={this.logoutAndDeHover}>
+                    Log out
+                  </button>
                 </div>
             </div>
           </div>
-          <button type="submit" className="upload-button" onClick={this.handleUploadClick}>
+          <button
+            type="submit"
+            className="upload-button"
+            onClick={this.handleUploadClick}>
             <img className='nav-upload-symbol' src={window.uploadIcon}/>
             <span className="upload-Button-text">Upload</span>
           </button>

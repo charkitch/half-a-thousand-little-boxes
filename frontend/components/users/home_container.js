@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { openModal } from '../../actions/modal_actions';
-import Home from './home'
+import Home from './home';
 
 const mapDispatchToProps = dispatch => {
   return {

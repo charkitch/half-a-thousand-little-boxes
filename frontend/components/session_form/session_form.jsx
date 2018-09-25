@@ -39,7 +39,10 @@ class SessionForm extends React.Component {
 
 
   submitDemo(e) {
-    const demoUser = { email: 'futureboss@yourcompany.com', password: 'hire_me!' };
+    const demoUser = {
+      email: 'futureboss@yourcompany.com',
+      password: 'hire_me!'
+    };
     e.preventDefault();
     this.setState(demoUser);
     this.props.processForm(demoUser);
@@ -66,7 +69,11 @@ class SessionForm extends React.Component {
      let usernameEntry = '';
      if (this.props.formType === 'Sign up') {
        usernameEntry = (<label className='access-label'>Username(optional)
-       <input type='text' value={this.state.username} onChange={this.update('username')} />
+       <input
+         type='text'
+         value={this.state.username}
+         onChange={this.update('username')}
+        />
       </label>); }
 
 
@@ -80,7 +87,8 @@ class SessionForm extends React.Component {
           <div className="login-form">
             <br/>
             <label className='access-label'>{this.props.identifierText}</label>
-            <input type={this.props.inputType}
+            <input
+              type={this.props.inputType}
               value={this.state.email}
               onChange={this.update('email')}
               className="login-input"
@@ -89,12 +97,17 @@ class SessionForm extends React.Component {
             {usernameEntry}
             <br/>
             <label className='access-label'>Password</label>
-            <input type="password"
+            <input
+              type="password"
               value={this.state.password}
               onChange={this.update('password')}
               className="login-input"              />
             <br/>
-            <input className="session-submit form-submit" type="submit" value={this.props.formType} />
+            <input
+              className="session-submit form-submit"
+              type="submit"
+              value={this.props.formType}
+            />
           </div>
           {this.demoButton()}
           <div className='redirect-message'>

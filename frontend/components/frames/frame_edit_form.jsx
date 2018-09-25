@@ -17,7 +17,8 @@ class FrameEditForm extends React.Component {
     const formData = new FormData();
     formData.append('frame[title]', this.state.title);
     formData.append('frame[caption]', this.state.caption);
-    this.props.editFrame(formData).then( () => this.props.history.push('/manage/public'));
+    this.props.editFrame(formData)
+      .then( () => this.props.history.push('/manage/public'));
   }
 
   update(field) {
@@ -38,13 +39,23 @@ class FrameEditForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>Title
-          <input type="text" value={title} onChange={this.update('title')}></input>
+          <input
+            type="text"
+            value={title}
+            onChange={this.update('title')}></input>
         </label>
 
         <label className="upload-box label-caption">Caption
-          <input type="textarea" value={caption} onChange={this.update('caption')}/>
+          <input
+            type="textarea"
+            value={caption}
+            onChange={this.update('caption')}
+          />
         </label>
-        <input className="upload-submit form-submit" type="submit" value="Submit" />
+        <input
+          className="upload-submit form-submit"
+          type="submit"
+          value="Submit" />
       </form>
     );
   }

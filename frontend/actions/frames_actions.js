@@ -53,8 +53,8 @@ const receiveOneFrame = frame => {
   return {
     type: RECEIVE_ONE_FRAME,
     frame
-  }
-}
+  };
+};
 
 export const receiveErrors = errors => {
   return {

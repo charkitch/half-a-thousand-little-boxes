@@ -14,7 +14,11 @@ class FramesIndex extends React.Component {
     return (
       <div className="photo-storage-box">
         <ul className="frames-user-ii-holder">
-          {Object.values(this.props.frames).map( frame => <FramesIndexItem frame={frame} key={`frame-${frame.id}`}/>)}
+          {Object.values(this.props.frames).map(
+            frame => <FramesIndexItem
+            frame={frame}
+            key={`frame-${frame.id}`}
+            />)}
         </ul>
       </div>
     );
