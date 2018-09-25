@@ -1,3 +1,3 @@
 
 
-Half-A-Thousand-Little-Boxes, a demonstrastional clone of 500px.
+Half-A-Thousand-Little-Boxes, a demonstrational clone of 500px.
