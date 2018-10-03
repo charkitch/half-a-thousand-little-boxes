@@ -9,12 +9,12 @@ const usersReducer = (state = {}, action) => {
   let user;
   switch (action.type) {
     case RECEIVE_ONE_FRAME:
-    debugger;
+    user = action.payload.user;
+    return Object.assign({}, state, { [user.id]: user });
     case RECEIVE_ONE_USER:
     case RECEIVE_CURRENT_USER:
       user = action.user;
       return Object.assign({}, state, { [user.id]: user });
-
     default:
       return state;
   }

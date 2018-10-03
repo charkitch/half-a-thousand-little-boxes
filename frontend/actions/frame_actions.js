@@ -24,8 +24,8 @@ export const createFrame = (frame) => {
 
 export const requestOneFrame = (id) => {
   return (dispatch) => {
-    return FRAME_API_UTIL.requestOneFrame(id).then( frame => {
-      return dispatch(receiveOneFrame(frame));
+    return FRAME_API_UTIL.requestOneFrame(id).then( payload => {
+      return dispatch(receiveOneFrame(payload));
     }, err => {
     dispatch(receiveErrors(err.responseJSON));
     });
@@ -49,10 +49,10 @@ const receiveUserFrames = userFrames => {
   };
 };
 
-const receiveOneFrame = frame => {
+const receiveOneFrame = payload => {
   return {
     type: RECEIVE_ONE_FRAME,
-    frame
+    payload,
   };
 };
 
