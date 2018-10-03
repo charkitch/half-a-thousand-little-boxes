@@ -66,5 +66,3 @@ class UserShow extends React.Component {
 }
 
 export default withRouter(UserShow);
-
-// requestOneUser(this.props.match.params.id)
