@@ -12,7 +12,8 @@ class Api::FramesController < ApplicationController
   end
 
   def show
-    @frame = Frame.find(params[:id])
+    @frame = Frame.includes(:photographer).find(params[:id])
+    @user = @frame.photographer
     render :show
   end
 

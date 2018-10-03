@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { UPLOAD_FORM } from '../../actions/modal_actions';
 import { openModal } from '../../actions/modal_actions';
-import { receiveCurrentFile } from '../../actions/frames_actions';
+import { receiveCurrentFile } from '../../actions/frame_actions';
 
 class UploadSelect extends React.Component {
   constructor(props) {

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import FollowFeed from './follow_feed';
-import { requestUserFrames } from '../../actions/frames_actions';
+import { requestUserFrames } from '../../actions/frame_actions';
 import { requestOneUser } from '../../actions/user_actions';
 
 const mapDispatchToProps = dispatch => {

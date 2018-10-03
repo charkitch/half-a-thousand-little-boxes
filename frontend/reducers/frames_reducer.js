@@ -1,6 +1,6 @@
 import {
   RECEIVE_ONE_FRAME, RECEIVE_USER_FRAMES
-  } from '../actions/frames_actions.js';
+  } from '../actions/frame_actions.js';
 
 
 const framesReducer = (state = {}, action) => {

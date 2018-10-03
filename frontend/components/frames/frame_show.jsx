@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+// import UserInfoBox from './frame_show_user_info';
 
 class FrameShow extends React.Component {
   constructor(props) {
@@ -25,8 +26,9 @@ class FrameShow extends React.Component {
               <div className="image-container">
                 <img className="image-show" src={currentFrame.awsLocale}/>
               </div>
-              <div className="user-info-box">
-              </div>
+              < FrameShowUserInfo
+                photographer={this.props.users[this.frameId.photographer_id]
+              }/>
             </div>
         );
       }
@@ -34,8 +36,3 @@ class FrameShow extends React.Component {
   }
 
 export default withRouter(FrameShow);
-
-
-//eventually dispatch a follow action
-//toggle follow status
-//that's why it's a component but wont be neede for a bit

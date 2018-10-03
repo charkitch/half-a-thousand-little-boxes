@@ -7,9 +7,20 @@
 
 .frame-show-container {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .image-show {
   width: auto;
   height: 100%;
+}
+
+.user-info-box {
+  width: 20%;
+  border-left: 1px solid lightgrey;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }

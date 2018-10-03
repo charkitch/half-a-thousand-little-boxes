@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import { requestUserFrames } from '../../actions/frames_actions';
+import { requestUserFrames } from '../../actions/frame_actions';
 import { openModal } from '../../actions/modal_actions';
 import { withRouter } from 'react-router';
 import  UserShow  from './user_show';
