@@ -14,6 +14,7 @@ const framesReducer = (state = {}, action) => {
       );
       return framesPlusOne;
     case RECEIVE_USER_FRAMES:
+    debugger
       return Object.assign({}, state, action.userFrames);
     default:
       return state;
@@ -21,3 +22,21 @@ const framesReducer = (state = {}, action) => {
 };
 
 export default framesReducer;
+
+
+
+export const getFrames = (state, filter) => {
+  switch (filter) {
+    case 'All':
+      return state;
+    case 'id':
+      return state.filter( frame => frame.id === filter);
+    default:
+  }
+};
+
+export const getFramesByPhotographerId = (state, id) => {
+  debugger
+  let selected = Object.values(state).filter( frame => frame.photographer_id === id);
+  return selected;
+};

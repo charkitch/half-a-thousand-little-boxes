@@ -57,8 +57,7 @@ class UserShow extends React.Component {
             buttonClass={this.buttonClass()}
             shownUser={this.props.users[this.shownUser]}
           />
-
-          <FramesIndex frames={this.props.frames}/>
+        <FramesIndex frames={this.props.frames} shownUser={this.shownUser}/>
         </div>
       );
     }

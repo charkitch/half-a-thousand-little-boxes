@@ -27,7 +27,6 @@ class FollowButton extends React.Component {
 
 
   buttonClass() {
-    debugger
     if (this.props.shownUser === this.props.currentUser) {
       return "hidden";
     } else if (this.followStatus) {

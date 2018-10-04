@@ -14,8 +14,8 @@ export const receiveCurrentFile = (currentFile) => {
 
 export const createFrame = (frame) => {
   return (dispatch) => {
-    return FRAME_API_UTIL.createFrame(frame).then( (userFrames) => {
-      return dispatch(receiveUserFrames(userFrames));
+    return FRAME_API_UTIL.createFrame(frame).then( (payload) => {
+      return dispatch(receiveOneFrame(payload));
     },  err => {
     dispatch(receiveErrors(err.responseJSON));
   });

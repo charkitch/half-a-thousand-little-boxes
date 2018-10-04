@@ -4,8 +4,8 @@ import { requestUserFrames } from '../../actions/frame_actions';
 import { openModal } from '../../actions/modal_actions';
 import { withRouter } from 'react-router';
 import  UserShow  from './user_show';
-import { requestOneUser } from "../../actions/user_actions";
-import { createFollow, deleteFollow } from "../../actions/following_actions";
+import { requestOneUser } from '../../actions/user_actions';
+import { createFollow, deleteFollow } from '../../actions/following_actions';
 
 
 const mapDispatchToProps = dispatch => {
@@ -20,7 +20,6 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = (state) => {
   return {
-    frames: state.entities.frames,
     users: state.entities.users,
     followees: state.entities.users[state.session.id].followees,
     currentUser: state.session.id,

@@ -22,10 +22,3 @@ const usersReducer = (state = {}, action) => {
 
 
 export default usersReducer;
-
-
-
-// case RECEIVE_CURRENT_USER:
-// newState = Object.assign({}, state);
-// newState[action.currentUser.id] = action.currentUser;
-// return newState;

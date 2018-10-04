@@ -3,6 +3,7 @@ class Api::FramesController < ApplicationController
   def create
     @frame = Frame.new(frame_params)
     @frame.image.attach(io: params[:frame][:picture], filename: params[:frame][:title] + '.jpg')
+    @user = current_user
     if @frame.save
       render :show
     else

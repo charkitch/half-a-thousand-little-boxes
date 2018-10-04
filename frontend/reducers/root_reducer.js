@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import entitiesReducer from './entities_reducer';
+import entitiesReducer, * as fromEntities from './entities_reducer';
 import sessionReducer from './session_reducer';
 import errorsReducer from './errors_reducer';
 import uiReducer from './ui_reducer';
+
 
 export default combineReducers({
   entities: entitiesReducer,
@@ -10,3 +11,7 @@ export default combineReducers({
   errors: errorsReducer,
   ui: uiReducer,
 });
+
+
+export const getFramesByPhotographerId = (state, id) => 
+  fromEntities.getFramesByPhotographerId(state.entities, id);
