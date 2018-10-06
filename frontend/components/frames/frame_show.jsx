@@ -5,33 +5,31 @@ import FrameShowUserInfo from './frame_show_user_info';
 class FrameShow extends React.Component {
   constructor(props) {
     super(props);
-    this.frameId = parseInt(props.match.params.id);
   }
 
 
   componentDidMount() {
-    if (!this.props.frames[this.frameId]) {
-      this.props.requestOneFrame(this.frameId);
+    if (!this.props.shownFrame) {
+      this.props.requestOneFrame(this.props.shownId);
     }
-
   }
 
   render() {
-    let currentFrame = this.props.frames[this.frameId];
-    if (!currentFrame) {
+    if (!this.props.shownFrame) {
       return null;
     } else {
-      let photographer = this.props.users[this.props.frames[this.frameId].photographer_id];
         return (
             <div className="frame-show-container">
               <div className="image-container">
-                <img className="image-show" src={currentFrame.awsLocale}/>
+                <img className="image-show" src={this.props.shownFrame.awsLocale}/>
               </div>
-              <FrameShowUserInfo photographer={photographer}/>
+              <div className="frame-show-side-box">
+              </div>
+              <FrameShowUserInfo photographerId={this.props.shownFrame.photographer_id}/>
             </div>
         );
       }
     }
   }
 
-export default withRouter(FrameShow);
+export default FrameShow;

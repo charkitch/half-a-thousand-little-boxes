@@ -10,7 +10,7 @@ import Home from './users/home_container.js';
 import Modal from './modal/modal';
 import FramesIndex from './frames/frames_index_container';
 import UserShow from './users/user_show_container';
-import FrameShow from './frames/frame_show_container';
+import FrameShowContainer from './frames/frame_show_container';
 
 const App = () => {
   return (
@@ -23,7 +23,7 @@ const App = () => {
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <ProtectedRoute exact path="/home" component={(Home)} />
         <ProtectedRoute exact path="/users/:id" component={(UserShow)} />
-        <ProtectedRoute exact path="/frames/:id" component={(FrameShow)} />
+        <ProtectedRoute exact path="/frames/:id" component={(FrameShowContainer)} />
       </Switch>
     </div>
   );

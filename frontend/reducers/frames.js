@@ -39,3 +39,9 @@ export const getFramesByPhotographerId = (state, id) => {
     .filter( frame => frame.photographer_id === id);
   return selected;
 };
+
+export const getOneFrameById = (state, id) => {
+  let frame = Object.values(state)
+    .find( f => f.id === id );
+  return frame;
+};

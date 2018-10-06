@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
+import { withRouter } from 'react-router';
+
+import FramesIndex from './frames_index';
 import { createFrame } from '../../actions/frame_actions';
 import { openModal } from '../../actions/modal_actions';
-import { withRouter } from 'react-router';
 import {
   getFrames, getFramesByPhotographerId
 } from '../../reducers/root_reducer';
-import FramesIndex from './frames_index';
 
 
 const mapDispatchToProps = dispatch => {
@@ -16,7 +17,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return {
     frames: getFramesByPhotographerId(state, ownProps.shownUser),
   };

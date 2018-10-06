@@ -46,7 +46,7 @@ class FollowButton extends React.Component {
         <div>
           <div
             onClick={this.onSelection}
-            className={`follow-button-container clickable ${this.buttonClass()}`}
+            className={`${this.props.className} clickable ${this.buttonClass()}`}
             >{this.buttonText()}</div>
         </div>
       );
