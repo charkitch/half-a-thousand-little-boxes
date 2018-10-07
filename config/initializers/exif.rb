@@ -30,13 +30,10 @@ module ActiveStorage
             altitude:  gps.fields[:gps_altitude].to_f
           }
         end
-      #   debugger
         top_targets = [ :make, :model, :date_time]
         top_targets.each do |top_key|
-      #     debugger
           extra_data[top_key] = exif.fields[top_key]
         end
-      #   debugger
         extra_data[:exif] = exif.fields[:exif]
         return extra_data
       end
