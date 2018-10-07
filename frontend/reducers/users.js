@@ -24,8 +24,7 @@ const usersReducer = (state = {}, action) => {
 export default usersReducer;
 
 export const getUserById = (state, id) => {
-  debugger
-  return state[id]
+  return state[id];
 };
 
 export const getPhotographerByFrameId = (state, id) => {

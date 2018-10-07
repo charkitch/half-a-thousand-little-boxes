@@ -6,7 +6,6 @@ import { getUserById } from '../../reducers/root_reducer';
 
 
 function frameShowUserInfo(props) {
-  debugger
     return (
 
       <div className="user-info-box">
@@ -28,7 +27,6 @@ function frameShowUserInfo(props) {
 
 const mapStateToProps = (state, ownProps) => {
   let photographerId = ownProps.photographerId;
-  debugger
   return {
     photographer: getUserById(state, photographerId),
   };

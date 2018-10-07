@@ -21,11 +21,16 @@ class FrameShow extends React.Component {
         return (
             <div className="frame-show-container">
               <div className="image-container">
-                <img className="image-show" src={this.props.shownFrame.awsLocale}/>
+                <img
+                  className="image-show"
+                  src={this.props.shownFrame.awsLocale}
+                />
               </div>
               <div className="frame-show-side-box">
               </div>
-              <FrameShowUserInfo photographerId={this.props.shownFrame.photographer_id}/>
+              <FrameShowUserInfo
+                photographerId={this.props.shownFrame.photographer_id}
+              />
             </div>
         );
       }

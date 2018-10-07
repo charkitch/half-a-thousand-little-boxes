@@ -22,10 +22,10 @@ export const getOneFrameById = (state, id) => {
 };
 
 
-export const getPhotographerByFrameId = (state, id) =>
-  fromEntities.getPhotographerByFrameId(state.entities, id);
+export const getPhotographerByFrameId = (state, id) => {
+  return fromEntities.getPhotographerByFrameId(state.entities, id);
+};
 
 export const getUserById = (state, id) => {
-  debugger
   return fromEntities.getUserById(state.entities, id);
 };

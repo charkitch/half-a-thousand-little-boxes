@@ -13,8 +13,10 @@ export default combineReducers({
   currentFile: currentFileReducer,
 });
 
-export const getFrames = (state, filter) =>
- fromFrames.getFrames(state.frames, filter);
+export const getFrames = (state, filter) => {
+  return fromFrames.getFrames(state.frames, filter);
+};
+
 
 export const getFramesByPhotographerId = (state, id) => {
   return fromFrames.getFramesByPhotographerId(state.frames, id);
@@ -30,6 +32,5 @@ export const getPhotographerByFrameId = (state, id) => {
 };
 
 export const getUserById = (state, id) => {
-  debugger
   return fromUsers.getUserById(state.users, id);
 };
