@@ -21,6 +21,9 @@ export const getOneFrameById = (state, id) => {
   return blern;
 };
 
+export const getUsers = (state, filter) => {
+  return fromEntities.getUsersByFilter(state.entities, filter);
+};
 
 export const getPhotographerByFrameId = (state, id) => {
   return fromEntities.getPhotographerByFrameId(state.entities, id);

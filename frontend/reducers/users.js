@@ -23,6 +23,14 @@ const usersReducer = (state = {}, action) => {
 
 export default usersReducer;
 
+export const getUsersByFilter = (state, filter='All') => {
+  switch (filter) {
+    case 'All':
+      return state;
+    default:
+  }
+};
+
 export const getUserById = (state, id) => {
   return state[id];
 };

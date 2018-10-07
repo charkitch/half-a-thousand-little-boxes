@@ -17,6 +17,9 @@ export const getFrames = (state, filter) => {
   return fromFrames.getFrames(state.frames, filter);
 };
 
+export const getUsers = (state, filter) => {
+  return fromUsers.getUsersByFilter(state.users, filter);
+};
 
 export const getFramesByPhotographerId = (state, id) => {
   return fromFrames.getFramesByPhotographerId(state.frames, id);

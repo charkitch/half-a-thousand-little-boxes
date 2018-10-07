@@ -6,6 +6,7 @@ import { withRouter } from 'react-router';
 import  UserShow  from './user_show';
 import { requestOneUser } from '../../actions/user_actions';
 import { createFollow, deleteFollow } from '../../actions/following_actions';
+import { getUserById } from '../../reducers/root_reducer';
 
 
 const mapDispatchToProps = dispatch => {
@@ -18,14 +19,16 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+  let userId = parseInt(ownProps.match.params.id);
+  let shownUser = getUserById(state, userId);
   return {
     users: state.entities.users,
-    followees: state.entities.users[state.session.id].followees,
-    currentUser: state.session.id,
+    shownUser: shownUser,
+    currentUser: getUserById(state, state.session.id),
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
-  mapDispatchToProps)(UserShow);
+  mapDispatchToProps)(UserShow));
