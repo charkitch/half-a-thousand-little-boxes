@@ -12,10 +12,12 @@ class FramesIndexItem extends React.Component {
   }
 
   render() {
+    debugger
     return (
         <div className="frames-user-index-item">
           <img className="index-image"
-               src={this.props.frame.awsLocale}>
+               src={this.props.frame.awsLocale}
+          >
           </img>
         </div>
     );
