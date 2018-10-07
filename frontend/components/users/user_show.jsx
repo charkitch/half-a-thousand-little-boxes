@@ -7,8 +7,6 @@ import UserNav from './user_nav';
 class UserShow extends React.Component {
   constructor(props) {
     super(props);
-    this.shownUser = parseInt(this.props.match.params.id);
-    this.onSelection = this.onSelection.bind(this);
   }
 
 
@@ -40,12 +38,12 @@ class UserShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestOneUser(this.shownUser)
-    .then(this.props.requestUserFrames(this.shownUser));
+    this.props.requestOneUser(this.props.shownUserId)
+    .then(this.props.requestUserFrames(this.props.shownUserId));
   }
 
   render() {
-    if (!this.props.users[this.shownUser]) {
+    if (!this.props.shownUser) {
       return null;
     }
     else {
@@ -55,9 +53,11 @@ class UserShow extends React.Component {
             onSelection={this.onSelection}
             buttonText={this.buttonText()}
             buttonClass={this.buttonClass()}
-            shownUser={this.props.users[this.shownUser]}
+            shownUser={this.props.shownUser}
           />
-        <FramesIndex frames={this.props.frames} shownUser={this.shownUser}/>
+        <FramesIndex
+          shownUser={this.props.shownUser}
+        />
         </div>
       );
     }

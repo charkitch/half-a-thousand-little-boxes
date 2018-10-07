@@ -7,7 +7,12 @@ class FramesIndex extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    
+  }
+
   render() {
+    debugger
     if (this.props.frames.length === 0) {
         return null;
     }

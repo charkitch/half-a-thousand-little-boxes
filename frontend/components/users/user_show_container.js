@@ -23,6 +23,7 @@ const mapStateToProps = (state, ownProps) => {
   let userId = parseInt(ownProps.match.params.id);
   let shownUser = getUserById(state, userId);
   return {
+    shownUserId: userId,
     users: state.entities.users,
     shownUser: shownUser,
     currentUser: getUserById(state, state.session.id),
