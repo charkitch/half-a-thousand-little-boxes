@@ -12,7 +12,6 @@ class FramesIndexItem extends React.Component {
   }
 
   render() {
-    debugger
     return (
         <div className="frames-user-index-item">
           <img className="index-image"

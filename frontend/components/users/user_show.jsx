@@ -28,7 +28,7 @@ class UserShow extends React.Component {
 
 
   buttonClass() {
-    if (this.shownUser === this.props.currentUser) {
+    if (this.props.shownUser === this.props.currentUser) {
       return "hidden";
     } else if (this.props.shownUser.followees.includes(this.shownUser)) {
       return "unfollow-button";
