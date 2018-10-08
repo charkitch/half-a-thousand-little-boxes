@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import FrameShowUserInfo from './frame_show_user_info';
+import FrameShowDetails
+ from './frame_show_details';
 
 class FrameShow extends React.Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class FrameShow extends React.Component {
   }
 
   render() {
+    debugger
     if (!this.props.shownFrame) {
       return null;
     } else {
@@ -28,7 +30,8 @@ class FrameShow extends React.Component {
               </div>
               <div className="frame-show-side-box">
               </div>
-              <FrameShowUserInfo
+              <FrameShowDetails
+                shownFrame={this.props.shownFrame}
                 photographerId={this.props.shownFrame.photographer_id}
               />
             </div>

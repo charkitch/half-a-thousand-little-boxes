@@ -5,9 +5,9 @@ import FollowButton from '../users/follow_button_container';
 import { getUserById } from '../../reducers/root_reducer';
 
 
-function frameShowUserInfo(props) {
+function FrameShowDetails(props) {
+  debugger;
     return (
-
       <div className="user-info-box">
         <div>
           <img className="user-avatar-frame-show"
@@ -20,6 +20,13 @@ function frameShowUserInfo(props) {
             className="follow-button-frame-show"
             shownUser={props.photographer.id}
           />
+        <div className="metadata-display">
+          <div>{props.shownFrame.make}</div>
+          <div>{props.shownFrame.model}</div>
+          <div>{props.shownFrame.exif.focal_length_in_35mm_film}</div>
+          <div></div>
+          <div>{props.shownFrame.exif.iso_speed_ratings}</div>
+        </div>
         </div>
       </div>
     );
@@ -32,4 +39,4 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps)(frameShowUserInfo);
+export default connect(mapStateToProps)(FrameShowDetails);
