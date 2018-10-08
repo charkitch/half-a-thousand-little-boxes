@@ -12,7 +12,8 @@
 class Following < ApplicationRecord
 
   validates :follower_id, uniqueness: { scope: :followee_id }
-  
+  validate :cannot_follow_self
+
   belongs_to :follower,
   foreign_key: :follower_id,
   class_name: :User
@@ -21,5 +22,10 @@ class Following < ApplicationRecord
   foreign_key: :followee_id,
   class_name: :User
 
+  def cannot_follow_self
+    if follower_id == followee_id
+      errors.add(:followee_id, 'cannot refer to follower. You cannot follow yourself.')
+    end
+  end
 
 end
