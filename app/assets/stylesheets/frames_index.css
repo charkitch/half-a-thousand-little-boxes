@@ -25,6 +25,6 @@ i {
   flex-wrap: wrap;
 }
 
-/* .photo-store-box: nth-last-child(1) {
+.photo-store-box :nth-last-child(1) {
   flex-grow: 0
-} */
+}
