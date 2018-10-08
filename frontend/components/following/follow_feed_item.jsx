@@ -1,5 +1,5 @@
-import React from 'react';
 import { Link, withRouter } from 'react-router';
+import React from 'react';
 
 import PhotographerDetails from './photographer_details';
 import PictureDetails from './picture_details';
@@ -15,6 +15,7 @@ class FollowFeedItem extends React.Component {
   }
 
   render() {
+    debugger
     return (
       <div className="follow-feed-item">
         <PhotographerDetails

@@ -1,4 +1,5 @@
 import { union } from 'lodash';
+
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import {
   RECEIVE_NEW_FOLLOWEE,

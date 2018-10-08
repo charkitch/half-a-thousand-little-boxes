@@ -1,6 +1,7 @@
 import React from 'react';
-import FramesIndexItem from './frames_index_item';
 import withRouter from 'react-router';
+
+import FramesIndexItem from './frames_index_item';
 
 class FramesIndex extends React.Component {
   constructor(props) {

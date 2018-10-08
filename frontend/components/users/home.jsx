@@ -1,6 +1,7 @@
 import React from 'react';
-import { UPLOAD_FILE_SELECT } from '../../actions/modal_actions';
+
 import FollowFeed from '../following/follow_feed_container';
+import { UPLOAD_FILE_SELECT } from '../../actions/modal_actions';
 
 class Home extends React.Component {
   constructor(props) {

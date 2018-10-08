@@ -1,4 +1,5 @@
 import * as FOLLOWING_API_UTIL from "./../util/following_api_util";
+
 export const RECEIVE_NEW_FOLLOWEE = "RECEIVE_NEW_FOLLOWEE";
 export const RECEIVE_UNFOLLOW = "RECEIVE_UNFOLLOW";
 export const RECEIVE_FOLLOW_ERRORS = "RECEIVE_FOLLOW_ERRORS";

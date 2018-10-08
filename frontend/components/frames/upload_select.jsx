@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
+
 import { UPLOAD_FORM } from '../../actions/modal_actions';
 import { openModal } from '../../actions/modal_actions';
 import { receiveCurrentFile } from '../../actions/frame_actions';

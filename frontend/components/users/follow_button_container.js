@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+
 import { createFollow, deleteFollow } from "../../actions/following_actions";
 import FollowButton from './follow_button';
 

@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+
 import FollowFeed from './follow_feed';
 import { requestUserFrames } from '../../actions/frame_actions';
 import { requestOneUser } from '../../actions/user_actions';
@@ -12,6 +13,7 @@ const mapDispatchToProps = dispatch => {
 
 
 const mapStateToProps = (state) => {
+  debugger
   return {
     followees: state.entities.users[state.session.id].followees,
     frames: state.entities.frames,

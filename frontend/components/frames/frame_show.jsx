@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+
 import FrameShowDetails
  from './frame_show_details_container';
 

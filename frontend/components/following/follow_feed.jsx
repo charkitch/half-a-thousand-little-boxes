@@ -1,4 +1,5 @@
 import React from 'react';
+
 import FollowFeedItem from './follow_feed_item';
 
 class FollowFeed extends React.Component {
@@ -14,6 +15,7 @@ class FollowFeed extends React.Component {
   }
 
   render() {
+    debugger
     return (
       <div className="feed-storage-box">
         <ul className="feed-storage-list">
