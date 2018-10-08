@@ -12,8 +12,6 @@
   width: 60px;
 }
 
-
-
 .follow-button-container {
   width: 100px;
   height: 30px;
@@ -47,6 +45,11 @@
 .picture-container {
   width: 100%;
 }
+
+.picture-container > img {
+  width: 100%;
+}
+
 .photo-info {
   padding-left: 10px;
 }
