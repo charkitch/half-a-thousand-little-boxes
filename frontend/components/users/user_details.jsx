@@ -10,12 +10,12 @@ const UserDetails = ({
 }) => {
   return (
     <div className="profile-info-box">
-      <div>
+      <div className="user-container">
         <img className="user-avatar"
           src={window.userIcon}
           atl="default user icon"/>
+        <div className="shown-user-name">{shownUser.username}</div>
       </div>
-      <div className="shown-user-name">{shownUser.username}</div>
       <FollowButtonContainer
         className="follow-button-container"
         followStatus={followStatus}

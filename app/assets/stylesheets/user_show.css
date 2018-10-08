@@ -9,6 +9,14 @@
   justify-content: space-between;
 }
 
+.user-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-between;
+  height: 100%;
+}
+
 .user-avatar  {
   margin: 0 auto;
   width: 104px;
