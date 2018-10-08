@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
 class FramesIndexItem extends React.Component {
   constructor(props) {
@@ -17,6 +17,7 @@ class FramesIndexItem extends React.Component {
     return (
         <div className="frames-user-index-item"
             style={{width: w*200/h +'px', flexGrow: w*200/h}}
+            onClick={this.handleClick}
           >
           <i style={{paddingBottom: h/w * 100 + `%`}}></i>
           <img className="index-image"

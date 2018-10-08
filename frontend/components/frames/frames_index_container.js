@@ -19,7 +19,7 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = (state, ownProps) => {
   let frames = getFramesByPhotographerId(state, ownProps.shownUser.id);
   return {
-    frames: frames
+    frames: getFramesByPhotographerId(state, ownProps.shownUser.id)
   };
 };
 
