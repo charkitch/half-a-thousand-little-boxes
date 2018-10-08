@@ -3,10 +3,6 @@
   top: 0;
   width: 100%;
   vertical-align: bottom;
-  /* height: 200px;
-  max-width: 500px;
-  flex-grow: 1;
-  object-fit: cover; */
 }
 
 i {
@@ -17,10 +13,6 @@ i {
   margin: 2px;
   position: relative;
   overflow: hidden;
-  /* flex-grow: 1; */
-  /* padding: 4px; */
-  /* display: flex;
-  flex-wrap: wrap; */
 }
 
 .photo-storage-box::after {
@@ -36,30 +28,3 @@ i {
 .photo-store-box: nth-last-child(1) {
   flex-grow: 0
 }
-
-
-
-/* .frames-user-index-item {
-  margin: 5px */
-  /* width: 146px;
-  height: 110px; */
-/* } */
-
-/* .photo-storage-box {
-  background-color: #f7f8fa;
-  height: 100vh;
-  padding: 20px 40px;
-}
-
-.frames-user-ii-holder {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.frames-user-index-item {
-  margin: 5px;
-  width: 146px;
-  height: 110px;
-} */
