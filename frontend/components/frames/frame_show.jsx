@@ -16,7 +16,6 @@ class FrameShow extends React.Component {
   }
 
   render() {
-    debugger
     if (!this.props.shownFrame) {
       return null;
     } else {
@@ -27,8 +26,6 @@ class FrameShow extends React.Component {
                   className="image-show"
                   src={this.props.shownFrame.awsLocale}
                 />
-              </div>
-              <div className="frame-show-side-box">
               </div>
               <FrameShowDetails
                 shownFrame={this.props.shownFrame}

@@ -5,6 +5,11 @@
   height: 90vh;
 }
 
+.metadata-display {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .frame-show-container {
   width: 100%;
   display: flex;
@@ -23,18 +28,17 @@
 }
 
 .frame-show-side-box {
+  font-size: 12px;
   width: 20%;
   border-left: 1px solid lightgrey;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center
-}
-
-.user-info-box {
+  align-items: center;
   display: flex;
   justify-content: center;
 }
+
 
 .follow-button-frame-show {
   height: 20px;
@@ -44,4 +48,5 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
