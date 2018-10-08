@@ -1,29 +1,18 @@
+.author-link {
+  display: flex
+}
+
 .feed-storage-box {
   height: 100vh;
   width: 700px;
   overflow: scroll;
 }
 
-.photographer-detail {
-  height: 61px;
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 20px;
-}
-
-.photo-info {
-  padding-left: 10px;
-}
-
-
 .followee-avatar {
   width: 60px;
 }
 
-.author-link {
-  display: flex
-}
+
 
 .follow-button-container {
   width: 100px;
@@ -38,8 +27,28 @@
   padding-top: 10px;
 }
 
-.unfollow-button {
-  background-color: #ff6666;
+.following-feed-appeal {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 130px;
+  align-items: center;
+}
+
+.photographer-detail {
+  height: 61px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+.picture-container {
+  width: 100%;
+}
+.photo-info {
+  padding-left: 10px;
 }
 
 .text-detail {
@@ -50,11 +59,8 @@
   padding-left: 10px;
 }
 
-.following-feed-appeal {
-  color: white;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 130px;
-  align-items: center;
+
+
+.unfollow-button {
+  background-color: #ff6666;
 }
