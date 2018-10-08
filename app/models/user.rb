@@ -70,7 +70,7 @@ class User < ApplicationRecord
 
   def ensure_username
     if self.username == ''
-      self.username = self.stripped_email
+      self.username = self.stripped_email.capitalize
     end
   end
 
