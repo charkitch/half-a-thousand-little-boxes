@@ -52,9 +52,6 @@ class UserShow extends React.Component {
       return (
         <div>
           <UserDetails
-            onSelection={this.onSelection}
-            buttonText={this.buttonText()}
-            buttonClass={this.buttonClass()}
             shownUser={this.props.shownUser}
             followStatus={this.props.followStatus}
           />
@@ -68,3 +65,9 @@ class UserShow extends React.Component {
 }
 
 export default withRouter(UserShow);
+
+
+
+// onSelection={this.onSelection}
+// buttonText={this.buttonText()}
+// buttonClass={this.buttonClass()}

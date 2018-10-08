@@ -4,13 +4,11 @@ import { withRouter } from 'react-router';
 class FollowButton extends React.Component {
   constructor(props) {
     super(props);
-    this.followStatus = props.users[props.currentUser]
-      .followees.includes(props.shownUser);
     this.onSelection = this.onSelection.bind(this);
   }
 
   onSelection() {
-    if (this.followStatus) {
+    if (this.props.followStatus) {
       (this.props.deleteFollow(this.props.shownUser.id));
     } else {
       this.props.createFollow(this.props.shownUser.id);
@@ -18,7 +16,7 @@ class FollowButton extends React.Component {
   }
 
   buttonText() {
-    if (this.followStatus) {
+    if (this.props.followStatus) {
       return "Unfollow";
     } else {
       return "Follow";
@@ -27,9 +25,9 @@ class FollowButton extends React.Component {
 
 
   buttonClass() {
-    if (this.props.shownUser === this.props.currentUser) {
+    if (this.props.shownUser.id === this.props.currentUserId) {
       return "hidden";
-    } else if (this.followStatus) {
+    } else if (this.props.followStatus) {
       return "unfollow-button";
     } else {
       return "follow-button";

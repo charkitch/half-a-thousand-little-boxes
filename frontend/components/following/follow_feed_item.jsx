@@ -15,7 +15,6 @@ class FollowFeedItem extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <div className="follow-feed-item">
         <PhotographerDetails

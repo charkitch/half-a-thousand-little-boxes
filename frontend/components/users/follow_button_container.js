@@ -13,9 +13,9 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    users: state.entities.users,
-    currentUser: state.session.id,
-    shownUser: ownProps.shownUser
+    currentUserId: state.session.id,
+    shownUser: ownProps.shownUser,
+    followStatus: ownProps.followStatus,
   };
 };
 

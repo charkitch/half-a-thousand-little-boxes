@@ -1,13 +1,12 @@
 class Api::FollowingsController < ApplicationController
 
   def create
-    debugger
     new_follow = Following.new
     new_follow.followee_id = params[:user_id]
     new_follow.follower_id = current_user.id
     if new_follow.save
       @current_user = current_user
-      render json: @current_user, status: 200
+      render 'api/users/show'
     else
       render json: new_follow.errors.full_messages, status: 422
     end

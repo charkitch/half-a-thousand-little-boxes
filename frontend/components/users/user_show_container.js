@@ -25,7 +25,6 @@ const mapStateToProps = (state, ownProps) => {
   let shownUser = getUserById(state, userId);
   return {
     shownUserId: userId,
-    users: state.entities.users,
     followStatus: getFollowStatus(state, userId),
     shownUser: shownUser,
     currentUser: getUserById(state, state.session.id),

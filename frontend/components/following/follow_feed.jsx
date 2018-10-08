@@ -15,7 +15,6 @@ class FollowFeed extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <div className="feed-storage-box">
         <ul className="feed-storage-list">
