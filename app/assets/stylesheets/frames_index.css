@@ -1,13 +1,24 @@
 .index-image {
-  height: 200px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  vertical-align: bottom;
+  /* height: 200px;
   max-width: 500px;
   flex-grow: 1;
-  object-fit: cover;
+  object-fit: cover; */
+}
+
+i {
+  display: block;
 }
 
 .frames-user-index-item {
-  flex-grow: 1;
-  padding: 4px;
+  margin: 2px;
+  position: relative;
+  overflow: hidden;
+  /* flex-grow: 1; */
+  /* padding: 4px; */
   /* display: flex;
   flex-wrap: wrap; */
 }
@@ -25,6 +36,8 @@
 .photo-store-box: nth-last-child(1) {
   flex-grow: 0
 }
+
+
 
 /* .frames-user-index-item {
   margin: 5px */
