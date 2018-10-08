@@ -1,10 +1,15 @@
 import React from 'react';
 import FollowButtonContainer from './follow_button_container';
 
-const UserDetails = ({shownUser, onSelection, buttonClass, buttonText, followStatus}) => {
+const UserDetails = ({
+  shownUser,
+  onSelection,
+  buttonClass,
+  buttonText,
+  followStatus
+}) => {
   return (
     <div className="profile-info-box">
-      <FollowButtonContainer followStatus={followStatus} shownUser={shownUser}/>
       <div>
         <img className="user-avatar"
           src={window.userIcon}

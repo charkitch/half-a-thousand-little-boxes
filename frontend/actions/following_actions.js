@@ -5,6 +5,7 @@ export const RECEIVE_UNFOLLOW = "RECEIVE_UNFOLLOW";
 export const RECEIVE_FOLLOW_ERRORS = "RECEIVE_FOLLOW_ERRORS";
 
 export const createFollow = (id) => {
+  debugger
   return (dispatch) => {
     return FOLLOWING_API_UTIL.createFollow(id).then( (followees) => {
       return dispatch(receiveNewFollowee(followees));

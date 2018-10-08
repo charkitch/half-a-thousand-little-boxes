@@ -11,9 +11,9 @@ class FollowButton extends React.Component {
 
   onSelection() {
     if (this.followStatus) {
-      (this.props.deleteFollow(this.props.shownUser));
+      (this.props.deleteFollow(this.props.shownUser.id));
     } else {
-      this.props.createFollow(this.props.shownUser);
+      this.props.createFollow(this.props.shownUser.id);
     }
   }
 
