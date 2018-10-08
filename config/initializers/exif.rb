@@ -34,7 +34,7 @@ module ActiveStorage
         top_targets.each do |top_key|
           extra_data[top_key] = exif.fields[top_key]
         end
-        extra_data[:exif] = exif.fields[:exif]
+        extra_data[:exif] = exif.fields[:exif] if exif.fields[:exif]
         return extra_data
       end
     rescue EXIFR::MalformedImage, EXIFR::MalformedJPEG

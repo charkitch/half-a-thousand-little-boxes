@@ -33,3 +33,13 @@ export const getPhotographerByFrameId = (state, id) => {
 export const getUserById = (state, id) => {
   return fromEntities.getUserById(state.entities, id);
 };
+
+
+export const getCurrentUser = (state) => {
+  return getUserById(state, state.session.id);
+};
+
+export const getFollowStatus = (state, id) => {
+  let currentUser = getCurrentUser(state);
+  return currentUser.followees.includes(id);
+};

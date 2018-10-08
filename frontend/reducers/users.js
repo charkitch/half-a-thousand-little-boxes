@@ -1,6 +1,7 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { RECEIVE_ONE_USER } from '../actions/user_actions';
 import { RECEIVE_ONE_FRAME } from '../actions/frame_actions';
+import { getCurrentUser } from './root_reducer';
 
 
 const usersReducer = (state = {}, action) => {
@@ -34,6 +35,8 @@ export const getUsersByFilter = (state, filter='All') => {
 export const getUserById = (state, id) => {
   return state[id];
 };
+
+
 
 export const getPhotographerByFrameId = (state, id) => {
   let photographer = Object.values(state)

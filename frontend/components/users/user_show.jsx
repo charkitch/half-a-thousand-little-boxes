@@ -8,11 +8,12 @@ import UserNav from './user_nav';
 class UserShow extends React.Component {
   constructor(props) {
     super(props);
+    this.onSelection = this.onSelection.bind(this);
   }
 
 
   onSelection() {
-    if (this.props.followees.includes(this.shownUser)) { // user not following
+    if (this.props.followStatus) {
       (this.props.deleteFollow(this.shownUser));
     } else {
       this.props.createFollow(this.shownUser);
@@ -20,7 +21,7 @@ class UserShow extends React.Component {
   }
 
   buttonText() {
-    if (this.props.shownUser.followees.includes(this.shownUser)) {
+    if (this.props.followStatus) {
       return "Unfollow";
     } else {
       return "Follow";
@@ -31,7 +32,7 @@ class UserShow extends React.Component {
   buttonClass() {
     if (this.props.shownUser === this.props.currentUser) {
       return "hidden";
-    } else if (this.props.shownUser.followees.includes(this.shownUser)) {
+    } else if (this.props.followStatus) {
       return "unfollow-button";
     } else {
       return "follow-button";
@@ -55,6 +56,7 @@ class UserShow extends React.Component {
             buttonText={this.buttonText()}
             buttonClass={this.buttonClass()}
             shownUser={this.props.shownUser}
+            followStatus={this.props.followStatus}
           />
         <FramesIndex
           shownUser={this.props.shownUser}

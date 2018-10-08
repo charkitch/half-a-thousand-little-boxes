@@ -11,10 +11,11 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
     users: state.entities.users,
     currentUser: state.session.id,
+    shownUser: ownProps.shownUser
   };
 };
 

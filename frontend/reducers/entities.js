@@ -9,7 +9,7 @@ import usersReducer, * as fromUsers from './users';
 export default combineReducers({
   users: usersReducer,
   frames: framesReducer,
-  followees: followeesReducer,
+  // followees: followeesReducer, //should be dead.
   currentFile: currentFileReducer,
 });
 

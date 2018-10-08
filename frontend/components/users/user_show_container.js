@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
 import { createFollow, deleteFollow } from '../../actions/following_actions';
-import { getUserById } from '../../reducers/root_reducer';
+import { getUserById, getFollowStatus } from '../../reducers/root_reducer';
 import { logout } from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
 import { requestOneUser } from '../../actions/user_actions';
@@ -26,6 +26,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     shownUserId: userId,
     users: state.entities.users,
+    followStatus: getFollowStatus(state, userId),
     shownUser: shownUser,
     currentUser: getUserById(state, state.session.id),
   };
