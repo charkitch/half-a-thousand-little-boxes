@@ -1,6 +1,7 @@
 import React from 'react';
 
 import FollowButton from '../../users/follow_button_container';
+import MetadataBox from './metadata';
 
 
 class FrameShowDetails extends React.Component {
@@ -13,36 +14,7 @@ class FrameShowDetails extends React.Component {
   }
 
   render() {
-    let make;
-    let model;
-    let focalLength;
-    let exposureTime;
-    let iso;
 
-    if (this.props.shownFrame.make) {
-      make = this.props.shownFrame.make;
-    }
-    if (this.props.shownFrame.model) {
-      model = this.props.shownFrame.model;
-    }
-
-    if (this.props.shownFrame.exif) {
-      if (this.props.shownFrame.exif.focal_length_in_35mm_film) {
-        focalLength = this.props.shownFrame.exif.focal_length_in_35mm_film;
-      }
-      if (this.props.shownFrame.exif.exposure_time) {
-        exposureTime = this.props.shownFrame.exif.exposure_time;
-      }
-      if (this.props.shownFrame.exif.iso_speed_ratings) {
-        iso = this.props.shownFrame.exif.iso_speed_ratings;
-      }
-    }
-
-    make = make || '';
-    model = model || '';
-    focalLength = focalLength || '';
-    exposureTime = exposureTime || '';
-    iso = iso || '';
 
 
     return (
@@ -83,12 +55,7 @@ class FrameShowDetails extends React.Component {
             <div>
 
             </div>
-            <div className="metadata-display">
-              <div>{make} {model}</div>
-              <div>{`Focal length: ${focalLength}`}</div>
-              <div>{`Exposure: ${exposureTime}`}</div>
-              <div>{`ISO: ${iso}`}</div>
-            </div>
+            <MetadataBox shownFrame={this.props.shownFrame} />
           </div>
         </div>
       </div>
