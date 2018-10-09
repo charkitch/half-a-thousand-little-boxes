@@ -1,13 +1,12 @@
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
 import { withRouter } from 'react-router';
 
 import FramesIndex from './frames_index';
-import { createFrame } from '../../actions/frame_actions';
-import { openModal } from '../../actions/modal_actions';
+import { createFrame } from '../../../actions/frame_actions';
 import {
   getFrames, getFramesByPhotographerId
-} from '../../reducers/root_reducer';
+} from '../../../reducers/root_reducer';
+import { openModal } from '../../../actions/modal_actions';
 
 
 const mapDispatchToProps = dispatch => {

@@ -1,0 +1,12 @@
+.image-container {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 90vh;
+}
+
+
+.image-show {
+  width: auto;
+  height: 100%;
+}

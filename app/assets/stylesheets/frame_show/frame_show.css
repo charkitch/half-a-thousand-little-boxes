@@ -1,0 +1,25 @@
+.info-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  border-top: 1px black;
+  width: 100%;
+  height: 78%;
+}
+
+.frame-show-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.frame-show-side-box {
+  font-size: 12px;
+  width: 20%;
+  border-left: 1px solid lightgrey;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+}

@@ -26,15 +26,18 @@ nav {
 }
 
 .big-logo-start {
-  font-size: 18px;
+  font-size: 22px;
+  letter-spacing: 3px;
+  margin-left: 40px;
 }
 
 .small-logo-middle {
-  font-size: 13px;
+  font-size: 15px;
+  letter-spacing: 2px;
 }
 
 .smallest-log-end {
-  font-size: 11px
+  font-size: 12px
 }
 
 .sticky-nav {

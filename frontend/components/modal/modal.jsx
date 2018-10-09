@@ -2,8 +2,8 @@ import React from "react";
 import { connect } from 'react-redux';
 
 import { closeModal } from "../../actions/modal_actions";
-import UploadSelectContainer from '../frames/upload_select';
-import UploadForm from '../frames/upload_form';
+import UploadSelectContainer from '../frames/upload/upload_select';
+import UploadForm from '../frames/upload/upload_form';
 import { UPLOAD_FORM, UPLOAD_FILE_SELECT } from '../../actions/modal_actions';
 
 

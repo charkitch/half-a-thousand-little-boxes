@@ -1,0 +1,29 @@
+.user-text-frame-show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 43px;
+}
+
+.user-avatar-frame-show {
+  height: 50px;
+  width: 50px;
+}
+
+.username {
+  font-weight: normal;
+  color: #525558;
+  font-size: 14px;
+}
+
+.follow-button-frame-show {
+  height: 20px;
+}
+
+.frame-user-details-box {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-left: 35px;
+  margin-top: 20px;
+}

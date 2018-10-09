@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 
-import FramesIndex from '../frames/frames_index_container';
+import FramesIndex from '../frames/index/frames_index_container';
 import UserDetails from './user_details';
 import UserNav from './user_nav';
 
