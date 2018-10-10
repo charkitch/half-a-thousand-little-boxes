@@ -35,7 +35,7 @@ export const updateOneFrame = (frame) => {
 export const deleteOneFrame = (frame) => {
   return $.ajax({
     method: 'DELETE',
-    url: `/api/frames${frame.id}`,
+    url: `/api/frames/${frame.id}`,
     data: { frame },
   });
 };

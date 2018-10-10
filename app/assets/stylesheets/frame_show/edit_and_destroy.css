@@ -68,3 +68,41 @@
   width: 80%;
   border: solid lightgrey 1px;
 }
+
+#update-submit {
+    color: white;
+    background-color: #34bf49;
+    align-self: center;
+    margin-top: 4px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100px;
+    height: 40px;
+}
+
+.delete-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100px;
+  align-content: space-evenly;
+}
+
+.delete-box >strong {
+  width: 80%;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 200;
+  text-align: center;
+}
+
+.delete-box >p {
+  width: 50%;
+  font-size: 15px;
+  background-color: #ff6666;
+  text-align: center;
+  color: white;
+}

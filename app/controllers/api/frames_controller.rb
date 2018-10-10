@@ -33,8 +33,7 @@ class Api::FramesController < ApplicationController
 
   def destroy
     @frame = Frame.find(params[:id])
-    if @frame.photographer_id == current_user
-
+    if @frame.photographer_id == current_user.id
       if @frame.destroy
         render :show
       else
