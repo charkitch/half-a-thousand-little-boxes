@@ -15,8 +15,6 @@
 }
 
 .frame-user-details-box {
-  display: flex;
-  flex-direction: row;
   width: 100%;
   padding-left: 20px;
   padding-top: 36px;
