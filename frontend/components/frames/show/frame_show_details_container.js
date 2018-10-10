@@ -15,7 +15,9 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = (state, ownProps) => {
   let photographerId = ownProps.photographerId;
   return {
+    shownFrame: ownProps.shownFrame,
     photographer: getUserById(state, photographerId),
+    owned: ownProps.shownFrame.photographer_id === state.session.id
   };
 };
 

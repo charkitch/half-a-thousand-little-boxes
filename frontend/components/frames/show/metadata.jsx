@@ -1,12 +1,15 @@
 import React from 'react';
 
 function MetadataBox({ shownFrame }) {
+  if (!shownFrame.exif) {
+    return null;
+  }
   let make;
   let model;
   let focalLength;
   let exposureTime;
   let iso;
-  let takenTime;
+  let takenTime = "Unavailable";
   let fNumberFrac;
   let arr;
   let fNumber;

@@ -12,11 +12,8 @@ class FramesIndexItem extends React.Component {
   }
 
   render() {
-    let w = this.props.frame.width
-    // || 300;
-    let h = this.props.frame.height
-    // || 200;
-    debugger;
+    let w = this.props.frame.width || 300;
+    let h = this.props.frame.height || 200;
     return (
         <div className="frames-user-index-item"
             style={{width: w*200/h +'px', flexGrow: w*200/h}}
