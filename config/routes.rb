@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       resources :frames, only: [:index]
     end
     resource :session, only: [:create, :destroy]
-    resources :frames, only: [:create, :show]
+    resources :frames, only: [:create, :show, :destroy, :update]
   end
 
   root "static_pages#root"

@@ -22,17 +22,28 @@ class Api::FramesController < ApplicationController
     render :index
   end
 
-  def edit
+  def update
     @frame = Frame.find(params[:id])
-    if @frame
-      render :edit
+    if @frame.update(frame_params)
+      render :show
     else
       render json: ["invalid edit attempt"], status: 404
     end
   end
 
   def destroy
+    @frame = Frame.find(params[:id])
+    if @frame.photographer_id == current_user
 
+      if @frame.destroy
+        render :show
+      else
+        render json: @frame.errors.full_messages, status: 422
+      end
+
+    else
+      render json: ["unauthorizied delete request"], status: 404
+    end
   end
 
   private

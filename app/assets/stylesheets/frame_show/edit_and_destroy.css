@@ -1,0 +1,31 @@
+.ownership-box {
+  width: 100%;
+  padding-top: 36px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.ownership-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 4px;
+  width: 100px;
+  height: 40px;
+  background-color: rgba(0,153,229,0.1)
+}
+
+.ownership-button-delete {
+  color: white;
+  background-color: #ff6666;
+}
+
+.ownership-button-edit {
+  color: #0099e5;
+  border: 1px solid #0099e5;
+  background-color: rgba(0,153,229,0.1)
+}

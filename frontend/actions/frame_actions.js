@@ -4,6 +4,7 @@ export const RECEIVE_USER_FRAMES = 'RECEIVE_USERS_FRAMES';
 export const RECEIVE_CURRENT_FILE = "RECEIVE_CURRENT_FILE";
 export const RECEIVE_FRAME_ERRORS = "RECEIVE_FRAME_ERRORS";
 export const RECEIVE_ONE_FRAME = "RECEIVE_ONE_FRAME";
+export const REMOVE_ONE_FRAME = "REMOVE_ONE_FRAME";
 
 export const receiveCurrentFile = (currentFile) => {
   return {
@@ -32,6 +33,26 @@ export const requestOneFrame = (id) => {
   };
 };
 
+export const updateOneFrame = (frameToUpdate) => {
+  return (dispatch) => {
+    return FRAME_API_UTIL.updateOneFrame(frameToUpdate).then( frameUpdated => {
+      return dispatch(receiveOneFrame(frameUpdated));
+    }, err => {
+    dispatch(receiveErrors(err.responseJSON));
+    });
+  };
+};
+
+export const deleteOneFrame = (frameToDelete) => {
+  return (dispatch) => {
+    return FRAME_API_UTIL.deleteOneFrame(frameToDelete).then( frameDeleted => {
+      return dispatch(removeOneFrame(frameDeleted));
+    }, err => {
+    dispatch(receiveErrors(err.responseJSON));
+    });
+  };
+};
+
 export const requestUserFrames = (userId) => {
   return (dispatch) => {
     return FRAME_API_UTIL.requestUserFrames(userId).then( (userFrames) => {
@@ -42,12 +63,20 @@ export const requestUserFrames = (userId) => {
   };
 };
 
+const removeOneFrame = deletedFrame => {
+  return {
+    type: REMOVE_ONE_FRAME,
+    deletedFrame,
+  };
+};
+
 const receiveUserFrames = userFrames => {
   return {
     type: RECEIVE_USER_FRAMES,
     userFrames,
   };
 };
+
 
 const receiveOneFrame = payload => {
   return {

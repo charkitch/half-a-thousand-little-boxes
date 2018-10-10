@@ -24,11 +24,19 @@ export const requestOneFrame = (id) => {
   });
 };
 
-export const editFrame = (frame) => {
+export const updateOneFrame = (frame) => {
   return $.ajax({
     method: 'PATCH',
     url: `/api/frames/${frame.id}`,
     data: { frame }
+  });
+};
+
+export const deleteOneFrame = (frame) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/frames${frame.id}`,
+    data: { frame },
   });
 };
 
