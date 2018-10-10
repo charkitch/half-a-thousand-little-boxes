@@ -37,4 +37,5 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default withRouter(connect(null, mapDispatchToProps)(DeleteConfirmation));
+export default withRouter(
+  connect(null, mapDispatchToProps)(DeleteConfirmation));
