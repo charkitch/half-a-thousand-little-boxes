@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import FollowButton from '../../users/follow_button_container';
 import MetadataBox from './metadata';
 
@@ -14,9 +14,6 @@ class FrameShowDetails extends React.Component {
   }
 
   render() {
-
-
-
     return (
       <div className="frame-show-side-box">
         <div className='fake-ad'>
@@ -34,6 +31,9 @@ class FrameShowDetails extends React.Component {
         </div>
         <div className='info-body'>
           <div className="frame-user-details-box">
+            <Link to={`/users/${this.props.shownFrame.photographer_id}`}
+                  className='author-link'
+            >
               <div>
                 <img className="user-avatar-frame-show"
                   src={window.userIcon}
@@ -45,7 +45,8 @@ class FrameShowDetails extends React.Component {
                   className="follow-button-frame-show"
                   shownUser={this.props.photographer.id}
                 />
-            </div>
+              </div>
+            </Link>
           </div>
           <div className="photo-details">
             <div className="photo-text-boxes">
