@@ -3,13 +3,17 @@
 }
 
 .feed-storage-box {
-  height: 100vh;
   width: 700px;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .followee-avatar {
   width: 60px;
+}
+
+.following-feed-item {
+  background-color: white;
+  margin-bottom: 20px;
 }
 
 .following-feed-appeal {

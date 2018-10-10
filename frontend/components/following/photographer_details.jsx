@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function timeAgo(createdAt) {
   let hoursAgo = Math.floor((new Date() - new Date(createdAt)) / 1000 / 60/ 60);
   if (hoursAgo < 24) {
-    return "about " + String(hoursAgo) + " hours ago";
+    return String(hoursAgo) + " hours ago";
   } else {
     return String(Math.floor(hoursAgo/24)) + " days ago";
   }

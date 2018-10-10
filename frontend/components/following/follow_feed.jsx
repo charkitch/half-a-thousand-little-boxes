@@ -17,14 +17,14 @@ class FollowFeed extends React.Component {
   render() {
     return (
       <div className="feed-storage-box">
-        <ul className="feed-storage-list">
+        <div className="feed-storage-list">
           {Object.values(this.props.frames).map( frame =>
             <FollowFeedItem
               key={frame.id}
               frame={frame}
               photographer={this.props.users[frame.photographer_id]}/>
           )}
-        </ul>
+        </div>
       </div>
     );
   }
