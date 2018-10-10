@@ -6,6 +6,9 @@ json.frame do
     json.extract! metadata, :make if metadata[:make]
     json.extract! metadata, :model if metadata[:model]
     json.extract! metadata, :exif if metadata[:exif]
+    json.extract! metadata, :altitude if metadata[:altitude]
+    json.extract! metadata, :longitude if metadata[:longitude]
+    json.extract! metadata, :latitude if metadata[:latitude]
   end
 end
 json.user do

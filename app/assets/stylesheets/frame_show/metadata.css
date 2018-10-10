@@ -1,5 +1,48 @@
+.metadata {
+  background-color: #f7f8fa;
+  border-bottom: solid 1px lightgrey;
+  color: #525558;
+  height: 322px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
 .metadata-camera-display {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-direction: column;
+  min-height: 74px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.make-model {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.metadata-camera-general {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.row-wrap {
+  padding: 5px 18px 0px 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.camera-specifics {
+  padding-top: 20px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.delimiter-if-you-will {
+  font-weight: 100;
+  padding: 0 5px 0 5px;
 }

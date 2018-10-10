@@ -5,6 +5,7 @@
   margin-left: 1px;
   margin-top: 1px;
   border-bottom: solid 1px lightgray;
+  flex-shrink: 5;
 }
 
 .fake-ad-sub-text {
@@ -34,7 +35,6 @@
   text-decoration: none;
   font-size: 13px;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  line-height: 1.5;
   margin-right: 17px;
   margin-left: 7px;
   margin-top: 4px;
