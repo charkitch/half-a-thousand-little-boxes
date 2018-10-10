@@ -11,8 +11,9 @@ class DeleteConfirmation extends React.Component {
   }
 
   render() {
+    debugger
     return (
-      <div className="delete-box">
+      <div className="delete-box interaction-box">
         <strong>
           Are you sure you wish to delete this photo? This is an irrevocable action.
         </strong>
@@ -21,3 +22,6 @@ class DeleteConfirmation extends React.Component {
     );
   }
 }
+
+
+export default DeleteConfirmation;

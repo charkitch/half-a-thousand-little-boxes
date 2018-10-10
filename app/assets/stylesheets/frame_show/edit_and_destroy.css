@@ -29,3 +29,42 @@
   border: 1px solid #0099e5;
   background-color: rgba(0,153,229,0.1)
 }
+
+.interaction-box {
+  width: 100%;
+  padding-top: 36px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.update-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.update-form >label {
+  display: inline-block;
+  color: #0099e5;
+  font-weight: normal;
+  margin-bottom: 10px;
+  cursor: default;
+  padding-top: 3px;
+}
+
+#update-input {
+  width: 80%;
+  text-align: center;
+  height: 30px;
+}
+
+.info-collector {
+  align-self: center;
+  width: 80%;
+  align-self: center;
+  width: 80%;
+  border: solid lightgrey 1px;
+}

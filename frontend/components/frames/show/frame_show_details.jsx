@@ -2,15 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import DeleteConfirmation from './delete_confirmation';
-import EditForm from './update_box';
+import UpdateBox from './update_box';
 import FakeAd from './fake_ad';
 import FollowButton from '../../users/follow_button_container';
 import MetadataBox from './metadata';
 
 
+
 class FrameShowDetails extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { editing: false, deleting: false};
+    this.confirmingDelete = false;
+    this.handleDeleteClick = this.handleDeleteClick.bind(this);
+    this.handleEditClick = this.handleEditClick.bind(this);
   }
 
   componentDidMount() {
@@ -19,28 +24,36 @@ class FrameShowDetails extends React.Component {
 
   ownershipBox() {
     return (
-      <div className="ownership-box">
-        <div onClick={this.handleEditClick}
-          className="ownership-button ownership-button-delete">Delete
-        </div>
+      <div className="ownership-box interaction-box">
         <div onClick={this.handleDeleteClick}
-          className="ownership-button ownership-button-edit">Edit
+          className="ownership-button ownership-button-delete clickable">Delete
+        </div>
+        <div onClick={this.handleEditClick}
+          className="ownership-button ownership-button-edit clickable">Edit
         </div>
       </div>
     );
   }
 
   handleDeleteClick() {
-
+    this.setState(state => ({
+      deleting: true
+    }));
   }
 
-  handleEditClick() {
-
+  handleEditClick(e) {
+    this.setState( state => ({
+      editing: true
+    }));
   }
 
   render() {
     let userBox;
-    if (this.props.owned) {
+    if (this.state.editing) {
+      userBox = <UpdateBox frameToUpdate={this.props.shownFrame} />;
+    } else if (this.state.deleting) {
+      userBox = <DeleteConfirmation frameToDelete={this.props.shownFrame} />;
+    } else if (this.props.owned) {
       userBox = this.ownershipBox();
     } else {
       userBox = (<div className="frame-user-details-box">
@@ -62,7 +75,6 @@ class FrameShowDetails extends React.Component {
         </Link>
       </div>);
     }
-
     return (
       <div className="frame-show-side-box">
         <div className='fake-ad'>
