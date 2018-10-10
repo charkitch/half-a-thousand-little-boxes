@@ -13,6 +13,7 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
+    passedClassName: ownProps.className,
     currentUserId: state.session.id,
     shownUser: ownProps.shownUser,
     followStatus: ownProps.followStatus,

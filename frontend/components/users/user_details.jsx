@@ -17,8 +17,8 @@ const UserDetails = ({
         <div className="shown-user-name">{shownUser.username}</div>
       </div>
       <FollowButtonContainer
-        className="follow-button-container"
         followStatus={followStatus}
+        className="follow-button-user-show"
         shownUser={shownUser}/>
     </div>
   );

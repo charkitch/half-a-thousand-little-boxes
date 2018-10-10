@@ -37,7 +37,7 @@ class FrameShowDetails extends React.Component {
               <div>
                 <img className="user-avatar-frame-show"
                   src={window.userIcon}
-                  atl="default user icon"/>
+                  alt="default user icon"/>
               </div>
               <div className="user-text-frame-show">
                 <div className="username">{this.props.photographer.username}</div>

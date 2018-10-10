@@ -6,6 +6,9 @@ function MetadataBox({ shownFrame }) {
   let focalLength;
   let exposureTime;
   let iso;
+  let takenTime;
+  let uploadTime = new Date(shownFrame.createdAt).toDateString();
+
 
   if (shownFrame.make) {
     make = shownFrame.make;
@@ -24,6 +27,10 @@ function MetadataBox({ shownFrame }) {
     if (shownFrame.exif.iso_speed_ratings) {
       iso = shownFrame.exif.iso_speed_ratings;
     }
+    if (shownFrame.exif.date_time_original) {
+      takenTime = new Date(shownFrame.exif.date_time_original).toDateString();
+    }
+
   }
 
   make = make || '';
@@ -32,11 +39,35 @@ function MetadataBox({ shownFrame }) {
   exposureTime = exposureTime || '';
   iso = iso || '';
   return (
-    <div className="metadata-display">
-      <div>{make} {model}</div>
-      <div>{`Focal length: ${focalLength}`}</div>
-      <div>{`Exposure: ${exposureTime}`}</div>
-      <div>{`ISO: ${iso}`}</div>
+    <div>
+      <div className="metadata-camera-display">
+        <div>{make} {model}</div>
+        <div>{`Focal length: ${focalLength}`}</div>
+        <div>{`Exposure: ${exposureTime}`}</div>
+        <div>{`ISO: ${iso}`}</div>
+      </div>
+      <div className="metadata-camera-general">
+        <td>
+          <tr>Uploaded</tr>
+          <tr>{uploadTime}</tr>
+        </td>
+        <td>
+          <tr>Taken</tr>
+          <tr>{takenTime}</tr>
+        </td>
+        <td>
+          <tr>Latitude</tr>
+          <tr>{uploadTime}</tr>
+        </td>
+        <td>
+          <tr>Longitude</tr>
+          <tr>{uploadTime}</tr>
+        </td>
+        <td>
+          <tr>Altitude</tr>
+          <tr>{uploadTime}</tr>
+        </td>
+      </div>
     </div>
   );
 }

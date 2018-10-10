@@ -12,19 +12,6 @@
   width: 60px;
 }
 
-.follow-button-container {
-  width: 100px;
-  height: 30px;
-  border-radius: 3px;
-  background-color: #0099e5;
-  color: white;
-  position: absolute;
-  right: 53px;
-  top: 160px;
-  text-align: center;
-  padding-top: 10px;
-}
-
 .following-feed-appeal {
   color: white;
   display: flex;
@@ -59,10 +46,4 @@
   flex-direction: column;
   padding-top: 10px;
   padding-left: 10px;
-}
-
-
-
-.unfollow-button {
-  background-color: #ff6666;
 }
