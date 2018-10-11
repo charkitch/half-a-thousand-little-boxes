@@ -23,8 +23,8 @@ export default function photographerDetails ({createdAt, photographer}) {
         alt="default user icon"
       />
       <div className='text-detail clickable'>
-        <p>{photographer.username}</p>
-        <p>{timeAgo(createdAt)}</p>
+        <p className='follow-feed-detail-username'>{photographer.username}</p>
+        <p className='time-stamp'>{timeAgo(createdAt)}</p>
       </div>
     </Link>
   </div>

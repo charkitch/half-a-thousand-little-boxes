@@ -12,10 +12,20 @@ class UploadForm extends React.Component {
     this.state = {
       imageURL: '',
       caption: 'Tell us more about your beautiful photo',
-      title: this.props.currentFile.name
+      title: this.stripper(this.props.currentFile.name)
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
+  stripper(string) {
+    let returnedString = string;
+    let endings = ['.JPG', '.PNG', '.TIFF', '.jpg'];
+    endings.forEach( extension => {
+      if (string.includes(extension)) {
+        returnedString = string.split(extension)[0];
+      }
+    });
+    return returnedString;
   }
 
   handleSubmit(e) {

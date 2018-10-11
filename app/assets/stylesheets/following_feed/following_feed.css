@@ -8,12 +8,15 @@
 }
 
 .followee-avatar {
-  width: 60px;
+  width: 50px;
+  height: 50px;
 }
 
-.following-feed-item {
+.follow-feed-item {
   background-color: white;
   margin-bottom: 20px;
+  border-radius: 3px;
+  border: 1px solid #eeeff2;
 }
 
 .following-feed-appeal {
@@ -30,7 +33,7 @@
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  margin-top: 20px;
+  padding: 20px 0px 3px 30px
 }
 
 .picture-container {
@@ -50,4 +53,29 @@
   flex-direction: column;
   padding-top: 10px;
   padding-left: 10px;
+}
+
+.follow-feed-detail-username {
+  font-size: 14px;
+  font-weight: bold;
+  color: #525558;
+}
+
+.follow-feed-detail-userame:hover {
+  opacity: .7
+}
+
+.time-stamp {
+  font-size: 12px;
+  color: #b9c1c7;
+}
+
+.photo-title {
+  font-size: 18px;
+  color: #525558;
+}
+
+.photo-caption {
+  font-size: 14px;
+  color: #525558;
 }
