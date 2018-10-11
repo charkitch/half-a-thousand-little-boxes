@@ -18,7 +18,7 @@ const framesReducer = (state = {}, action) => {
       return Object.assign({}, state, action.userFrames);
     case REMOVE_ONE_FRAME:
       newState = Object.assign({}, state);
-      delete newState[action.frame.id];
+      delete newState[action.deletedFrame.frame.id];
       return newState;
     default:
       return state;

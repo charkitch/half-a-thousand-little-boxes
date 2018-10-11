@@ -35,6 +35,7 @@ class Api::FramesController < ApplicationController
     @frame = Frame.find(params[:id])
     if @frame.photographer_id == current_user.id
       if @frame.destroy
+        @user = current_user
         render :show
       else
         render json: @frame.errors.full_messages, status: 422
