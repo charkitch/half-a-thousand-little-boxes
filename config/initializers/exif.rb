@@ -5,11 +5,17 @@ module ActiveStorage
 
     def metadata
       read_image do |image|
+        debugger
         if rotated_image?(image)
-          { width: image.height, height: image.width }
+          camera_orientation = { width: image.height, height: image.width }
         else
-          { width: image.width, height: image.height }
-        end.merge(data_from_exif(image) || {})
+          camera_orientation = { width: image.width, height: image.height }
+        end
+        debugger
+        data = data_from_exif(image)
+        blergon = camera_orientation.merge(data || {})
+        debugger
+        return blergon
       end
 
     rescue LoadError
@@ -23,6 +29,8 @@ module ActiveStorage
       return unless image.type == 'JPEG'
 
       if exif = EXIFR::JPEG.new(image.path).exif
+        exif.fields[:exif].to_hash.select {|k, v| k != :user_comment }
+        debugger
         if gps = exif.fields[:gps]
           extra_data = {
             latitude:  gps.fields[:gps_latitude].to_f,
@@ -34,7 +42,8 @@ module ActiveStorage
         top_targets.each do |top_key|
           extra_data[top_key] = exif.fields[top_key]
         end
-        extra_data[:exif] = exif.fields[:exif] if exif.fields[:exif]
+        extra_data[:exif] = exif.fields[:exif].to_hash.select {|k, v| k != :user_comment }
+        # extra_data[:exif] = exif.fields[:exif] if exif.fields[:exif]
         return extra_data
       end
     rescue EXIFR::MalformedImage, EXIFR::MalformedJPEG
