@@ -5,16 +5,13 @@ module ActiveStorage
 
     def metadata
       read_image do |image|
-        debugger
         if rotated_image?(image)
           camera_orientation = { width: image.height, height: image.width }
         else
           camera_orientation = { width: image.width, height: image.height }
         end
-        debugger
         data = data_from_exif(image)
         blergon = camera_orientation.merge(data || {})
-        debugger
         return blergon
       end
 
@@ -30,7 +27,6 @@ module ActiveStorage
 
       if exif = EXIFR::JPEG.new(image.path).exif
         exif.fields[:exif].to_hash.select {|k, v| k != :user_comment }
-        debugger
         if gps = exif.fields[:gps]
           extra_data = {
             latitude:  gps.fields[:gps_latitude].to_f,
