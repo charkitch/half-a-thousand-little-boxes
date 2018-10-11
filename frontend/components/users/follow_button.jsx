@@ -3,11 +3,13 @@ import { withRouter } from 'react-router';
 
 class FollowButton extends React.Component {
   constructor(props) {
+    debugger
     super(props);
     this.onSelection = this.onSelection.bind(this);
   }
 
   onSelection() {
+    debugger
     if (this.props.followStatus) {
       (this.props.deleteFollow(this.props.shownUser.id));
     } else {
@@ -36,6 +38,7 @@ class FollowButton extends React.Component {
 
 
   render() {
+    debugger
     if (!this.props.shownUser) {
       return null;
     }

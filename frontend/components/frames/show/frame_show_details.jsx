@@ -69,7 +69,8 @@ class FrameShowDetails extends React.Component {
             <div className="username">{this.props.photographer.username}</div>
             <FollowButton
               className="follow-button-frame-show"
-              shownUser={this.props.photographer.id}
+              shownUser={this.props.photographer}
+              followStatus={this.props.followStatus}
             />
           </div>
         </Link>
