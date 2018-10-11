@@ -74,13 +74,12 @@ class UserAcknowledgement extends React.Component {
             <div className='smallest-log-end'>b</div>
           </div>
         </div>
-        <div className='logged-in-nav' >
+        <div className='logged-in-nav' onMouseLeave={this.handleExitHover}>
           <div onMouseEnter={this.handleEnterHover}>
             <img className='nav-user-icon'
-              src={window.userIcon} 
+              src={window.userIcon}
               alt="default user icon"/>
             <div
-              onMouseLeave={this.handleExitHover}
               className={this.state.dropDown} >
                 <div className="drop-down-assemblage">
                   <button

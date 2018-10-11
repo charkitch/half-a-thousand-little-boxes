@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import FollowFeed from './follow_feed';
 import { requestUserFrames } from '../../actions/frame_actions';
 import { requestOneUser } from '../../actions/user_actions';
+import { getCurrentUser } from '../../reducers/root_reducer';
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -14,7 +15,7 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = (state) => {
   return {
-    followees: state.entities.users[state.session.id].followees,
+    currentUser: getCurrentUser(state),
     frames: state.entities.frames,
     users: state.entities.users,
   };

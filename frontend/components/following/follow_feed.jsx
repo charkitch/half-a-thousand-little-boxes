@@ -8,9 +8,9 @@ class FollowFeed extends React.Component {
   }
 
   componentDidMount() {
-    for (var i = 0; i < this.props.followees.length; i++) {
-      this.props.requestUserFrames(this.props.followees[i]);
-      this.props.requestOneUser(this.props.followees[i]);
+    for (var i = 0; i < this.props.currentUser.followees.length; i++) {
+      this.props.requestUserFrames(this.props.currentUser.followees[i]);
+      this.props.requestOneUser(this.props.currentUser.followees[i]);
     }
   }
 
