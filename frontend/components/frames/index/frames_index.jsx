@@ -8,10 +8,6 @@ class FramesIndex extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-
-  }
-
   render() {
     if (this.props.frames.length === 0) {
         return null;
