@@ -18,9 +18,10 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :password_digest, presence: true
   validates :email, presence: true, uniqueness: true
+  validates :username, uniqueness: true
 
-  after_initialize :ensure_session_token
-  validate :ensure_username
+  after_initialize :ensure_session_token#, :ensure_username
+  before_create :ensure_username
 
   has_many :frames,
   foreign_key: :photographer_id
@@ -43,7 +44,6 @@ class User < ApplicationRecord
   through: :follows,
   source: :followee
 
-
   attr_reader :password
 
   def password=(password)
@@ -57,10 +57,7 @@ class User < ApplicationRecord
     return nil
   end
 
-  def valid_password?(password)
-    unsaltedHash = BCrypt::Password.new(self.password_digest)
-    unsaltedHash.is_password?(password)
-  end
+
 
   def reset_session_token
     self.session_token = User.generate_session_token
@@ -69,7 +66,7 @@ class User < ApplicationRecord
   end
 
   def ensure_username
-    if self.username == ''
+    if self.username == '' || self.username == nil
       self.username = self.stripped_email.capitalize
     end
   end
@@ -81,6 +78,14 @@ class User < ApplicationRecord
   end
 
   private
+
+  def valid_password?(password)
+    unsaltedHash = BCrypt::Password.new(self.password_digest)
+    unsaltedHash.is_password?(password)
+  end
+
+
+
 
   def ensure_session_token
     self.session_token ||= User.generate_session_token

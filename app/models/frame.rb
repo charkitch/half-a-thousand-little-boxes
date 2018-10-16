@@ -12,7 +12,6 @@
 
 class Frame < ApplicationRecord
   validates :photographer_id, presence: true
-  # validate :not_empty
 
   belongs_to :photographer,
   foreign_key: :photographer_id,
