@@ -16,14 +16,18 @@ RSpec.describe Frame, type: :model do
 
   describe 'image' do
     it 'has one attached through active storage' do
-      jasps = User.create(email: 'jasper@torrino', password: 'janejane')
+      jasps = User.create(email: 'jelk@jelk', password: 'jelkjelk')
       testing_frame = Frame.create!(photographer_id: jasps.id)
       testing_frame.image.attach(io: File.open(Rails.root + 'app/assets/images/user.svg'), filename: 'user.svg', content_type: 'image/svg')
       expect(testing_frame.image).to be_attached
     end
   end
 
-  it { should validate_uniquiness_of }
+
   it { should belong_to(:photographer) }
+
+  it { should have_db_index(:photographer_id)}
+  it { should have_db_index(:title)}
+  it { should have_db_index(:caption)}
 
 end

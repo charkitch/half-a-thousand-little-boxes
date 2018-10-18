@@ -21,8 +21,8 @@ RSpec.describe User, type: :model do #as of rspec 3 describe can be limited glob
   describe 'password encryption' do
 
     it 'does not save passwords to the database' do #it creates an example inside the scope of the example group
-      User.create!(email: 'Jasper@torrino', password: 'janejane')
-      user = User.find_by_email('Jasper@torrino')
+      User.create!(email: 'Jasperon@torrino', password: 'janejane')
+      user = User.find_by_email('Jasperon@torrino')
       expect(user.password).not_to be('janejane')
     end
 
@@ -58,15 +58,25 @@ RSpec.describe User, type: :model do #as of rspec 3 describe can be limited glob
 
   it { should validate_presence_of(:email) }
   it { should validate_presence_of(:password_digest) }
+
   it { should validate_length_of(:password).is_at_least(6) }
-  it { should validate_uniqueness_of(:email) }
-  it { should validate_uniqueness_of(:username) }
 
   it { should have_many(:frames) }
   it { should have_many(:followees) }
   it { should have_many(:followers) }
   it { should have_many(:follows) }
   it { should have_many(:followings) }
+
+  it { should have_db_column(:id)}
+  it { should have_db_column(:username)}
+  it { should have_db_column(:email)}
+  it { should have_db_column(:session_token)}
+  it { should have_db_column(:bio)}
+  it { should have_db_column(:created_at)}
+  it { should have_db_column(:updated_at)}
+
+  it { should have_db_index(:session_token) }
+  it { should have_db_index(:username) }
 
 
 end

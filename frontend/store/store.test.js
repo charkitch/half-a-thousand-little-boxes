@@ -3,8 +3,8 @@ import RootReducer from '../reducers/root_reducer';
 
 const mockedUser = {
   id: 1,
-  email: 'jasper@torrino',
-  username: 'Jasper',
+  email: 'jasperone@torrino',
+  username: 'Jasperone',
   created_at: '2018-05-17T09:04:03.204Z',
   updated_at: '2018-05-17T09:04:03.204Z',
 };

@@ -3,9 +3,10 @@
   "private": true,
   "dependencies": {
     "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.2",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.0.0-beta.6",
     "lodash": "^4.17.10",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
@@ -25,6 +26,9 @@
     "lib": "lib",
     "test": "test"
   },
+  "resolutions": {
+    "babel-core": "7.0.0-bridge.0"
+  },
   "scripts": {
     "test": "jest",
     "postinstall": "webpack"
@@ -37,16 +41,18 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/preset-env": "^7.1.0",
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^23.4.0",
+    "jest": "^23.4.1",
+    "enzyme": "^2.7.1",
     "eslint": "^5.5.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
-    "jest": "^23.6.0",
     "react-addons-test-utils": "^15.4.2",
     "react-test-renderer": "^15.6.1",
     "redux-mock-store": "^1.2.2"
-  }
-  "jest": {
   }
 }
