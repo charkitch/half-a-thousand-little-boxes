@@ -18,6 +18,15 @@ nav {
   font: 60px;
 }
 
+.splash-home-link {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Audiowide', cursive;
+}
+
+
+
 .home-link {
   color: #34bf49;
   display: flex;

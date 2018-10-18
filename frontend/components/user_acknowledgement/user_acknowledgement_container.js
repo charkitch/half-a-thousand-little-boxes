@@ -1,8 +1,10 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
+import { withRouter } from 'react-router';
+
 import { createFrame } from '../../actions/frame_actions';
-import UserAcknowledgement from './user_acknowledgement';
 import { openModal } from '../../actions/modal_actions';
+import UserAcknowledgement from './user_acknowledgement';
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -13,12 +15,13 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-   currentUser: state.entities.users[state.session.id],
+    whereWeAt: ownProps.location.pathname,
+    currentUser: state.entities.users[state.session.id],
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
-  mapDispatchToProps)(UserAcknowledgement);
+  mapDispatchToProps)(UserAcknowledgement));

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { UPLOAD_FILE_SELECT } from '../../actions/modal_actions';
-import { withRouter } from 'react-router';
 
 class UserAcknowledgement extends React.Component {
   constructor(props) {
@@ -20,13 +19,17 @@ class UserAcknowledgement extends React.Component {
 
   accessLinks()  {
     let navClass = "fixed-nav";
-    if (this.props.match.path === "/") {
+    let logoClass = "home-link";
+    if (this.props.whereWeAt === "/") {
       navClass = "fixed-nav nav-splash";
+      logoClass = "splash-home-link";
     }
     return (
       <nav className={navClass}>
         <div className="left-side-nav">
-          <div className="home-link clickable" onClick={this.handleRootClick}>
+          <div className={`${logoClass} + clickable`}
+            onClick={this.handleRootClick}
+          >
             <div className='big-logo-start'>HAT</div>
             <div className='small-logo-middle'>l</div>
             <div className='smallest-log-end'>b</div>
@@ -123,4 +126,4 @@ class UserAcknowledgement extends React.Component {
     }
 }
 
-export default withRouter(UserAcknowledgement);
+export default UserAcknowledgement;
