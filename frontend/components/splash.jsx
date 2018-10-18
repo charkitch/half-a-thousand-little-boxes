@@ -1,13 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SplashImage from './splash_image';
 
 const splash = () => (
   <div className="splash-container">
-    <img
-      src={window.splash}
-      className="splash-image appeal-image"
-      alt='A bear walking into a chasm along a shore in Alaska.'
-    />
+    <SplashImage />
     <div className='appeal'>
       <h1 className="appeal-center-headline">
         Get inspired and share your best photos
