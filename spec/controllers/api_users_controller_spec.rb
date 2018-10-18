@@ -5,18 +5,6 @@ RSpec.describe Api::UsersController, type: :controller do
   describe 'Post #create' do
     context 'with invalid params' do
 
-      it 'filters params' do
-        x = post :create, params: {
-          user: {
-            email: 'jasper@torrino',
-            password: ''
-          }
-        }
-        # should permit_params(:email, :user)
-        should permit(:user).for(:create)
-        should respond_with(422)
-      end
-
       it 'validates the presence of the user email and password' do
         x = post :create, params: {
           user: {
@@ -39,6 +27,19 @@ RSpec.describe Api::UsersController, type: :controller do
     end
 
     context 'with valid params' do
+
+      it 'filters params' do
+        params = {
+          params: {
+            user: {
+              email: 'jasper@torrino',
+              password: ''
+            }
+          }
+        }
+        should permit(:email, :password).for(:create, params: params).on(:user)
+      end
+
       it 'returns the user' do
         newby = post :create, format: :json, params: {
           user: {

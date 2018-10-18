@@ -77,15 +77,13 @@ class User < ApplicationRecord
     self.email[0...at_sym_locale]
   end
 
-  private
 
   def valid_password?(password)
     unsaltedHash = BCrypt::Password.new(self.password_digest)
     unsaltedHash.is_password?(password)
   end
 
-
-
+  private
 
   def ensure_session_token
     self.session_token ||= User.generate_session_token
