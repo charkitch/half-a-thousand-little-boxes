@@ -2,7 +2,8 @@ class Api::FramesController < ApplicationController
 
   def create
     @frame = Frame.new(frame_params)
-    @frame.image.attach(io: params[:frame][:picture], filename: params[:frame][:title] + '.jpg')
+    # @frame.image.attach(io: params[:frame][:picture], filename: params[:frame][:title] + '.jpg')
+    @frame.image.attach(params[:frame][:picture])
     @user = current_user
     if @frame.save
       render :show
@@ -18,7 +19,7 @@ class Api::FramesController < ApplicationController
   end
 
   def index
-    @frames = Frame.where(photographer_id: params[:user_id]).with_attached_image
+    @frames = Frame.with_attached_image.where(photographer_id: params[:user_id])
     render :index
   end
 
