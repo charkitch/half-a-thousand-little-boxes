@@ -9,17 +9,28 @@ class FrameShowImage extends React.Component {
     this.state = {
       imageStatus: "loading",
       imageSrc: props.shownFrame.awsLocaleLight,
-      waitingSrc: props.shownFrame.awsLocale
+      waitingSrc: props.shownFrame.awsLocale,
+      waitingFullSrc: props.shownFrame.awsLocaleFull,
+      changeCount: 0,
      };
      this.handleImageLoaded = this.handleImageLoaded.bind(this);
      this.handledImageErrored = this.handleImageErrored.bind(this);
   }
 
   handleImageLoaded() {
-    this.setState({
-      imageStatus: "loaded",
-      imageSrc: this.state.waitingSrc
-    });
+    if (this.state.changeCount < 1) {
+      this.setState({
+        imageStatus: "loaded",
+        imageSrc: this.state.waitingSrc,
+        changeCount: 1,
+      });
+    } else {
+      this.setState({
+        imageStatus: "loaded",
+        imageSrc: this.state.waitingFullSrc,
+        changeCount: 1,
+      });
+    }
   }
 
   handleImageErrored() {

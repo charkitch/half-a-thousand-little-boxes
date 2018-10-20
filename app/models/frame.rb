@@ -19,12 +19,23 @@ class Frame < ApplicationRecord
   class_name: :User
 
   has_one_attached :image
+  after_create :create_thumbnail, :create_fairly_large
 
-  after_create :create_variant
+  def create_thumbnail
+    # debugger
+    self.image.variant(resize: '100 X 100')#.processed.service_url
+  end
 
-  def create_variant
-    debugger
-    self.image.variant(resize: '100 X 100').processed.service_url
+  def create_fairly_large
+    self.image.variant(resize: '500 X 500')
+  end
+
+  def create_large
+    self.image.variant(resize: '2000 X 2000')
+  end
+
+  def thumbnail
+    return self.image.variant(resize: '100 X 100')
   end
 
   # def not_empty
