@@ -11,8 +11,8 @@ module ActiveStorage
           camera_orientation = { width: image.width, height: image.height }
         end
         data = data_from_exif(image)
-        blergon = camera_orientation.merge(data || {})
-        return blergon
+        regularPlusMeta = camera_orientation.merge(data || {})
+        return regularPlusMeta
       end
 
     rescue LoadError

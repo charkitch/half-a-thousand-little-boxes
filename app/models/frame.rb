@@ -20,6 +20,13 @@ class Frame < ApplicationRecord
 
   has_one_attached :image
 
+  after_create :create_variant
+
+  def create_variant
+    debugger
+    self.image.variant(resize: '100 X 100').processed.service_url
+  end
+
   # def not_empty
   #   errors[:image] << 'must be uploaded. This is a photo site!' unless self.image.attached?
   # end

@@ -2,14 +2,14 @@ import React from 'react';
 
 
 
-class SplashImage extends React.Component {
+class FrameShowImage extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       imageStatus: "loading",
-      imageSrc: window.splashLoader,
-      waitingSrc: window.splash
+      imageSrc: props.shownFrame.awsLocaleLight,
+      waitingSrc: props.shownFrame.awsLocale
      };
      this.handleImageLoaded = this.handleImageLoaded.bind(this);
      this.handledImageErrored = this.handleImageErrored.bind(this);
@@ -18,7 +18,7 @@ class SplashImage extends React.Component {
   handleImageLoaded() {
     this.setState({
       imageStatus: "loaded",
-      imageSrc: window.splash
+      imageSrc: this.state.waitingSrc
     });
   }
 
@@ -29,14 +29,14 @@ class SplashImage extends React.Component {
 
   render() {
     return (
-        <img
-          src={this.state.imageSrc}
-          onLoad={this.handleImageLoaded}
-          onError={this.handleImageErrored}
-          className="splash-image appeal-image"
-          alt='A bear walking into a chasm along a shore in Alaska.'
-        />
+      <img
+        className="image-show"
+        src={this.state.imageSrc}
+        onLoad={this.handleImageLoaded}
+        onError={this.handleImageErrored}
+        alt={`User uploaded photo. {${this.props.shownFrame.title}`}
+      />
     );
   }
 }
-export default SplashImage;
+export default FrameShowImage;
