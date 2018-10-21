@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+
+import { requestOneFrame } from '../../../actions/frame_actions';
+
 
 
 class FrameShowImage extends React.Component {
@@ -9,7 +13,7 @@ class FrameShowImage extends React.Component {
     this.state = {
       imageStatus: "loading",
       imageSrc: props.shownFrame.awsLocaleLight,
-      waitingSrc: props.shownFrame.awsLocale,
+      waitingSrc: props.shownFrame.awsLocaleMedium,
       waitingFullSrc: props.shownFrame.awsLocaleFull,
       changeCount: 0,
      };
@@ -24,11 +28,11 @@ class FrameShowImage extends React.Component {
         imageSrc: this.state.waitingSrc,
         changeCount: 1,
       });
-    } else {
+    } else if (this.state.waitingFullSrc) {
       this.setState({
         imageStatus: "loaded",
         imageSrc: this.state.waitingFullSrc,
-        changeCount: 1,
+        changeCount: 2,
       });
     }
   }
@@ -37,6 +41,13 @@ class FrameShowImage extends React.Component {
     this.setState({ imageStatus: "failed to load" });
   }
 
+  componentDidMount() {
+    // if (!this.props.shownFrame.awsLocaleFull) {
+       // return this.props.requestOneFrame(this.props.shownFrame.id).then( () => {
+        // return this.setState({ imageSrc: this.state.waitingFullSrc});
+      // });
+    // }
+  }
 
   render() {
     return (
@@ -50,4 +61,20 @@ class FrameShowImage extends React.Component {
     );
   }
 }
-export default FrameShowImage;
+
+const mapStateToProps = (state, ownProps) => {
+  let awsFull = ownProps.shownFrame.awsLocaleFull;
+  return {
+    awsFull: awsFull
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    requestOneFrame: (id) => dispatch(requestOneFrame(id))
+  };
+};
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(FrameShowImage);

@@ -22,7 +22,6 @@ class Frame < ApplicationRecord
   after_create :create_thumbnail, :create_fairly_large
 
   def create_thumbnail
-    # debugger
     self.image.variant(resize: '100 X 100')#.processed.service_url
   end
 

@@ -11,7 +11,7 @@
       this.state = {
         imageStatus: "loading",
         imageSrc: props.shownFrame.awsLocaleLight,
-        waitingSrc: props.shownFrame.awsLocale
+        waitingSrc: props.shownFrame.awsLocaleMedium
        };
        this.handleImageLoaded = this.handleImageLoaded.bind(this);
        this.handledImageErrored = this.handleImageErrored.bind(this);

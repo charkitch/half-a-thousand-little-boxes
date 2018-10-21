@@ -67,14 +67,12 @@ class SessionForm extends React.Component {
    }
 
    compontWillReceiveProps(nextProps) {
-     debugger
      if (nextProps.location !== this.props.location) {
        this.props.clearErrors();
      }
    }
 
    componentWillUnmount() {
-     debugger
      this.props.clearErrors();
    }
 
