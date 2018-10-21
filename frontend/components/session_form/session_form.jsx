@@ -1,9 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
+
+
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
+    this.pathStatus = this.props.pathStatus;
+    this.path = this.props.path;
     this.state = {
       username: '',
       password: '',
@@ -62,8 +66,15 @@ class SessionForm extends React.Component {
      return demoForm;
    }
 
+   compontWillReceiveProps(nextProps) {
+     if (nextProps.location !== this.props.location) {
+       this.props.clearErrors();
+     }
+   }
 
-
+   componentWillUnmount() {
+     this.props.clearErrors();
+   }
 
    render() {
      let usernameEntry = '';
@@ -128,4 +139,4 @@ class SessionForm extends React.Component {
 
 
 
-export default withRouter(SessionForm);
+export default SessionForm;

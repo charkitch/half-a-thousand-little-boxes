@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import FrameIndexItemImage from './frame_index_item_image';
 
 class FramesIndexItem extends React.Component {
   constructor(props) {
@@ -20,10 +21,7 @@ class FramesIndexItem extends React.Component {
             onClick={this.handleClick}
           >
           <i style={{paddingBottom: h/w * 100 + `%`}}></i>
-          <img className="index-image"
-               src={this.props.frame.awsLocale}
-          >
-          </img>
+          <FrameIndexItemImage shownFrame={this.props.frame}/>
         </div>
     );
   }

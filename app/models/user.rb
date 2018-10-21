@@ -20,7 +20,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   after_initialize :ensure_session_token
-  validate :ensure_username
+  before_create :ensure_username
 
   has_many :frames,
   foreign_key: :photographer_id

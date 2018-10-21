@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 
 
@@ -31,8 +31,8 @@ class SplashImage extends React.Component {
     return (
         <img
           src={this.state.imageSrc}
-          onLoad={this.handleImageLoaded.bind(this)}
-          onError={this.handleImageErrored.bind(this)}
+          onLoad={this.handleImageLoaded}
+          onError={this.handleImageErrored}
           className="splash-image appeal-image"
           alt='A bear walking into a chasm along a shore in Alaska.'
         />

@@ -1,6 +1,8 @@
-import { Link, withRouter } from 'react-router';
 import React from 'react';
 
+import { Link, withRouter } from 'react-router';
+
+import FollowFeedItemImage from './follow_feed_item_image';
 import PhotographerDetails from './photographer_details';
 import PictureDetails from './picture_details';
 
@@ -22,7 +24,7 @@ class FollowFeedItem extends React.Component {
           createdAt={this.props.frame.created_at}
         />
         <div className="picture-container" onClick={this.handleFrameClick}>
-            <img src={this.props.frame.awsLocale}></img>
+            <FollowFeedItemImage shownFrame={this.props.frame} />
         </div>
         <PictureDetails
           title={this.props.frame.title}
