@@ -19,7 +19,7 @@ class Frame < ApplicationRecord
   class_name: :User
 
   has_one_attached :image
-  after_create :create_thumbnail, :create_fairly_large
+  after_create_commit :create_thumbnail, :create_fairly_large
 
   def create_thumbnail
     self.image.variant(resize: '100 X 100')#.processed.service_url
