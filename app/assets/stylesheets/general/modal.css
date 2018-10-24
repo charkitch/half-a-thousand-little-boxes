@@ -12,6 +12,7 @@
 }
 
 .modal-child {
+  overflow: hidden;
   background-color: #f7f8fa;
   position: relative;
   top: 50px;

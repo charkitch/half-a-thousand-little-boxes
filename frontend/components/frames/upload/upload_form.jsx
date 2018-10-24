@@ -60,7 +60,6 @@ class UploadForm extends React.Component {
   }
 
   imageBox() {
-    debugger
     if (!this.state.imageURL) {
       return null;
     }
@@ -74,7 +73,6 @@ class UploadForm extends React.Component {
   }
 
   render() {
-    debugger
     const { caption, title } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
