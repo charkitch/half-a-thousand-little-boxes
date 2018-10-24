@@ -59,15 +59,26 @@ class UploadForm extends React.Component {
     }
   }
 
+  imageBox() {
+    debugger
+    if (!this.state.imageURL) {
+      return null;
+    }
+    return (
+      <img
+        src={this.state.imageURL}
+        className="preview-image"
+        alt={this.props.currentFile.name}
+      />
+    );
+  }
+
   render() {
+    debugger
     const { caption, title } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
-        <img
-          src={this.state.imageURL}
-          className="preview-image"
-          alt={this.props.currentFile.name}
-        />
+        {this.imageBox()}
         <label>Title
           <input
             type="text"
