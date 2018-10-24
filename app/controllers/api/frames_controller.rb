@@ -1,7 +1,6 @@
 class Api::FramesController < ApplicationController
 
   def create
-    debugger
     @frame = Frame.new(frame_params)
     # @frame.image.attach(io: params[:frame][:picture], filename: params[:frame][:title] + '.jpg')
     @frame.image.attach(params[:frame][:picture])
