@@ -10,6 +10,7 @@ json.frame do
     json.extract! metadata, :longitude if metadata[:longitude]
     json.extract! metadata, :latitude if metadata[:latitude]
   end
+  json.awsLocaleFull url_for @frame.image
 end
 json.user do
   json.extract! @user, :id, :username, :email, :followees, :followers

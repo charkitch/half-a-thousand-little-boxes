@@ -72,6 +72,18 @@ class UploadForm extends React.Component {
     );
   }
 
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={'err-${i}'}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
     const { caption, title } = this.state;
     return (
