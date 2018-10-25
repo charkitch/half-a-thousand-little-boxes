@@ -34,7 +34,7 @@ module ActiveStorage
             altitude:  gps.fields[:gps_altitude].to_f
           }
         end
-        top_targets = [ :make, :model, :date_time]
+        top_targets = [ :make, :model, :date_time, :orientation]
         top_targets.each do |top_key|
           extra_data[top_key] = exif.fields[top_key]
         end
