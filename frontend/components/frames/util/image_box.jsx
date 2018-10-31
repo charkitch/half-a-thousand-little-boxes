@@ -39,7 +39,6 @@ class AbstractImageBox extends React.Component {
 
 
   render() {
-    debugger
     return (
       <img
         className={this.props.className}
