@@ -19,27 +19,36 @@ class Frame < ApplicationRecord
   class_name: :User
 
   has_one_attached :image
-  after_create_commit :create_thumbnail, :create_fairly_large
-
-  def create_thumbnail
-    self.image.variant(resize: '100 X 100')#.processed.service_url
-  end
-
-  def create_fairly_large
-    self.image.variant(resize: '500 X 500')
-  end
-
-  def create_large
-    self.image.variant(resize: '2000 X 2000')
-  end
+  after_create :create_thumbnail, :create_fairly_large_image
 
   def thumbnail
-    return self.image.variant(resize: '100 X 100')
+    self.image.variant(resize: '100 X 100', auto_orient: true)
   end
 
-  # def not_empty
-  #   errors[:image] << 'must be uploaded. This is a photo site!' unless self.image.attached?
-  # end
+  def fairly_large_image
+    self.image.variant(resize: '500 X 500', auto_orient: true)
+  end
 
+  def true_image
+    if self.image.metadata && self.image.metadata[:orientation] != 1
+      self.image.variant(auto_orient: true)
+    else
+      self.image
+    end
+  end
+
+  def create_thumbnail
+    thumbnail.processed
+    @thumb_made = true
+  end
+
+  def create_fairly_large_image
+    fairly_large_image.processed
+    @middling_made = true
+  end
+
+  def create_true_image
+    true_image.processed
+  end
 
 end

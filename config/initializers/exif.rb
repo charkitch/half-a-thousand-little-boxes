@@ -6,10 +6,11 @@ module ActiveStorage
     def metadata
       read_image do |image|
         if rotated_image?(image)
-          camera_orientation = { width: image.height, height: image.width }
+          camera_orientation = { width: image.height, height: image.width, orientation: image.exif["Orientation"].to_i  }
         else
-          camera_orientation = { width: image.width, height: image.height }
+          camera_orientation = { width: image.width, height: image.height, orientation: image.exif["Orientation"].to_i }
         end
+
         data = data_from_exif(image)
         regularPlusMeta = camera_orientation.merge(data || {})
         return regularPlusMeta

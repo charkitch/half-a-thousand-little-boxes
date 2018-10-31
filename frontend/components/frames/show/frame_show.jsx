@@ -1,9 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 
+import AbstractImageBox from '../util/image_box';
 import FrameShowImage from './frame_show_image';
 import FrameShowDetails
  from './frame_show_details_container';
+
+
 
 class FrameShow extends React.Component {
   constructor(props) {
@@ -24,7 +27,10 @@ class FrameShow extends React.Component {
         return (
             <div className="frame-show-container">
               <div className="image-container">
-                <FrameShowImage shownFrame={this.props.shownFrame} />
+                <AbstractImageBox
+                  shownFrame={this.props.shownFrame}
+                  className="image-show"
+                  />
               </div>
               <FrameShowDetails
                 shownFrame={this.props.shownFrame}
@@ -35,5 +41,6 @@ class FrameShow extends React.Component {
       }
     }
   }
+  // <FrameShowImage shownFrame={this.props.shownFrame} />
 
 export default FrameShow;
