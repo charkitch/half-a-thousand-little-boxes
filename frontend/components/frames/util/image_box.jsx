@@ -1,11 +1,10 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
 
-
-class FrameShowImage extends React.Component {
+class AbstractImageBox extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       imageStatus: "loading",
       imageSrc: props.shownFrame.awsLocaleLight,
@@ -38,15 +37,29 @@ class FrameShowImage extends React.Component {
   }
 
 
+
   render() {
+    debugger
     return (
-      <img className="index-image"
-           src={this.state.imageSrc}
-           onLoad={this.handleImageLoaded}
-           onError={this.handleImageErrored}
-           alt={`User uploaded photo. {${this.props.shownFrame.title}`}
+      <img
+        className={this.props.className}
+        src={this.state.imageSrc}
+        onLoad={this.handleImageLoaded}
+        onError={this.handleImageErrored}
+        alt={`User uploaded photo. {${this.props.shownFrame.title}`}
       />
     );
   }
 }
-export default FrameShowImage;
+
+const mapStateToProps = (state, ownProps) => {
+  let awsFull = ownProps.shownFrame.awsLocaleFull;
+  return {
+    awsFull: awsFull
+  };
+};
+
+
+
+
+export default connect(mapStateToProps, null)(AbstractImageBox);
