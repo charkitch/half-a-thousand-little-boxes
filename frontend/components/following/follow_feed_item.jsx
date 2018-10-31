@@ -2,9 +2,9 @@ import React from 'react';
 
 import { Link, withRouter } from 'react-router';
 
-import FollowFeedItemImage from './follow_feed_item_image';
 import PhotographerDetails from './photographer_details';
 import PictureDetails from './picture_details';
+import AbstractImageBox from '../frames/util/image_box';
 
 class FollowFeedItem extends React.Component {
   constructor(props) {
@@ -24,7 +24,9 @@ class FollowFeedItem extends React.Component {
           createdAt={this.props.frame.created_at}
         />
         <div className="picture-container" onClick={this.handleFrameClick}>
-            <FollowFeedItemImage shownFrame={this.props.frame} />
+            <AbstractImageBox
+              shownFrame={this.props.frame}
+            />
         </div>
         <PictureDetails
           title={this.props.frame.title}

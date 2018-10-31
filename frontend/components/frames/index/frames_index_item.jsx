@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-import FrameIndexItemImage from './frame_index_item_image';
 import AbstractImageBox from '../util/image_box';
 
 class FramesIndexItem extends React.Component {
@@ -22,7 +21,10 @@ class FramesIndexItem extends React.Component {
             onClick={this.handleClick}
           >
           <i style={{paddingBottom: h/w * 100 + `%`}}></i>
-          <AbstractImageBox shownFrame={this.props.frame} className={"index-image"} />
+          <AbstractImageBox
+            shownFrame={this.props.frame}
+            className={"index-image"}
+          />
         </div>
     );
   }
