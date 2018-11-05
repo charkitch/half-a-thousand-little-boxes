@@ -25,7 +25,7 @@ class User < ApplicationRecord
   has_many :frames,
   foreign_key: :photographer_id
 
-  has_one_attached :user_avatar
+  has_one_attached :avatar
 
   has_many :followings,
   foreign_key: :followee_id,
