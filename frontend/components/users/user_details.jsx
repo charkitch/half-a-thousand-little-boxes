@@ -1,5 +1,6 @@
 import React from 'react';
 import FollowButtonContainer from './follow_button_container';
+import UserAvatarDisplay from './user_avatar_display';
 
 const UserDetails = ({
   shownUser,
