@@ -1,6 +1,6 @@
 import React from 'react';
 import FollowButtonContainer from './follow_button_container';
-import UserAvatarDisplay from './user_avatar_display';
+import AvatarDisplay from './avatar_display';
 
 const UserDetails = ({
   shownUser,
@@ -12,9 +12,7 @@ const UserDetails = ({
   return (
     <div className="profile-info-box">
       <div className="user-container">
-        <img className="user-avatar"
-          src={window.userIcon}
-          atl="default user icon"/>
+        <AvatarDisplay shownUser={shownUser} />
         <div className="shown-user-name">{shownUser.username}</div>
       </div>
       <FollowButtonContainer

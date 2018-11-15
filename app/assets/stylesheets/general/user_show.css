@@ -18,12 +18,26 @@
 }
 
 .user-avatar  {
+  background-image: url()
   margin: 0 auto;
   width: 104px;
   height: 104px;
   top: 52px;
 }
 
+
+.avatar-upload-ready {
+  filter: brightness(1.5);
+  opacity: .7;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
 .shown-user-name {
   font-size: 30px;
+}
+
+.profile-upload {
+  display: none;
 }
