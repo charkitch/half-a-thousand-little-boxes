@@ -21,7 +21,7 @@ class AvatarDisplay extends React.Component {
     this.deHover = this.deHover.bind(this);
     this.enHover = this.enHover.bind(this);
     this.handleProfileSelect = this.handleProfileSelect.bind(this);
-    this.handleUplpad = this.handleUpload.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
   }
 
   deHover(e) {
@@ -40,12 +40,6 @@ class AvatarDisplay extends React.Component {
     }
   }
 
-  handleProfileSelect(e) {
-    let x = document.getElementById('avat-upload')
-    this.setState({hoverStatus: false});
-    x.click();
-  }
-
   vanillaProfilePic() {
     return (
       <div>
@@ -57,6 +51,16 @@ class AvatarDisplay extends React.Component {
         />
       </div>
       );
+  }
+
+
+  handleProfileSelect(e) {
+    e.preventDefault()
+    debugger
+    let hiddenFileInput = document.getElementById('avat-upload')
+    debugger
+    this.setState({hoverStatus: false});
+    hiddenFileInput.click();
   }
 
   handleUpload(e) {
@@ -77,8 +81,8 @@ class AvatarDisplay extends React.Component {
             style={style}
             onClick={this.handleProfileSelect}
           >
-          <input id="avat-upload" className="profile-upload" type="file" onChange={this.handleUpload}/>
         </div>
+        <input id="avat-upload" className="profile-upload" type="file" onChange={this.handleUpload}/>
       </div>
       );
   }
