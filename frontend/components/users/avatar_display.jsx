@@ -14,14 +14,16 @@ import {
 class AvatarDisplay extends React.Component {
   constructor(props) {
     super(props);
+    this.profilePicture = props.shownUser.avatarLocale ? props.shownUser.avatarLocale : window.userIcon
     this.state = {
       hoverStatus: false,
       className: "user-avatar",
     };
+    this.fileRef = React.createRef();
     this.deHover = this.deHover.bind(this);
     this.enHover = this.enHover.bind(this);
-    this.handleProfileSelect = this.handleProfileSelect.bind(this);
-    this.handleUpload = this.handleUpload.bind(this);
+    // this.handleProfileSelect = this.handleProfileSelect.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
   deHover(e) {
@@ -40,52 +42,54 @@ class AvatarDisplay extends React.Component {
     }
   }
 
+
+                // onMouseLeave={this.deHover}
+
+
+  handleFile(e) {
+    console.log('handle file')
+    const formData = new FormData();
+    formData.append('avatar[shown_user_id]', this.props.shownUser.id)
+    formData.append('avatar[picture]', e.currentTarget.files[0]);
+    this.props.createAvatar(formData)
+      .then(this.setState({hoverStatus: false}));
+  }
+
   vanillaProfilePic() {
+    console.log('van van vanilla')
     return (
       <div>
         <img className={this.state.className}
               onMouseEnter={this.enHover}
-              onMouseLeave={this.deHover}
-              src={window.userIcon}
+              src={this.profilePicture}
               alt="default user icon"
         />
       </div>
       );
   }
 
-
-  handleProfileSelect(e) {
-    e.preventDefault()
-    debugger
-    let hiddenFileInput = document.getElementById('avat-upload')
-    debugger
-    this.setState({hoverStatus: false});
-    hiddenFileInput.click();
-  }
-
-  handleUpload(e) {
-    debugger
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append('avatar[picture]', e.currentTarget.files[0]);
-    this.props.createAvatar(formData);
-  }
-
   uploaderProfilePic() {
-    const style = { backgroundImage: `url(${window.userIcon})`};
+    const style = { backgroundImage: `url(${this.profilePicture})`};
     return (
       <div>
-        <div
+        <label
+            htmlFor="avat-upload"
             className="user-avatar avatar-upload-ready"
-            onMouseLeave={this.deHover}
             style={style}
-            onClick={this.handleProfileSelect}
           >
-        </div>
-        <input id="avat-upload" className="profile-upload" type="file" onChange={this.handleUpload}/>
+        </label>
+        <input 
+          id="avat-upload" 
+          className="profile-upload" 
+          type="file" 
+          ref={this.fileRef}
+          onInput={this.handleFile}
+        />
       </div>
       );
   }
+  // onMouseLeave={this.deHover}
+
 
   render() {
     return (

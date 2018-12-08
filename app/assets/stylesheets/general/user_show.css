@@ -18,7 +18,7 @@
 }
 
 .user-avatar  {
-  background-image: url()
+  border-radius: 50px;
   margin: 0 auto;
   width: 104px;
   height: 104px;
