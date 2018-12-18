@@ -26,6 +26,7 @@ class Api::FramesController < ApplicationController
   def update
     @frame = Frame.find(params[:id])
     if @frame.update(frame_params)
+      @user = current_user
       render :show
     else
       render json: ["invalid edit attempt"], status: 404
