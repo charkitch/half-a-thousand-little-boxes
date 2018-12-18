@@ -40,7 +40,7 @@ class UpdateBox extends React.Component {
       <form onSubmit={this.handleSubmit}
             className="update-form"
       >
-        <label>Title </label>
+        <label>Title: </label>
           <input id="update-input"
             className="info-collector"
             type="text" onChange={this.handleTitleChange}
