@@ -3,12 +3,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import { deleteOneFrame } from '../../../actions/frame_actions';
+import { cancelDeleting, deleteOneFrame } from '../../../actions/frame_actions';
 
 class DeleteConfirmation extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
 
   handleClick(e) {
@@ -17,14 +18,20 @@ class DeleteConfirmation extends React.Component {
       .then(this.props.history.push('/home'));
   }
 
+  handleCancel(e) {
+    e.preventDefault();
+    this.props.cancelDeleting();
+  }
+
   render() {
     return (
       <div className="delete-box interaction-box">
         <strong>
           Are you sure you wish to delete this photo?
-          This is an irrevocable action.
+          This cannot be undone.
         </strong>
-        <p className="clickable" onClick={this.handleClick}>Click to confirm</p>
+        <p className="confirm clickable" onClick={this.handleClick}>Confirm</p>
+        <p className="cancel clickable" onClick={this.handleCancel}>Cancel</p>
       </div>
     );
   }
@@ -33,6 +40,7 @@ class DeleteConfirmation extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
+    cancelDeleting: () => dispatch(cancelDeleting()),
     deleteOneFrame: (frame) => dispatch(deleteOneFrame(frame)),
   };
 };

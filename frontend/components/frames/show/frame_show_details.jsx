@@ -35,23 +35,20 @@ class FrameShowDetails extends React.Component {
     );
   }
 
+
   handleDeleteClick() {
-    this.setState(state => ({
-      deleting: true
-    }));
+    this.props.beginDeleting();
   }
 
   handleEditClick(e) {
-    this.setState( state => ({
-      editing: true
-    }));
+    this.props.beginEditing();
   }
 
   render() {
     let userBox;
-    if (this.state.editing) {
+    if (this.props.editing) {
       userBox = <UpdateBox frameToUpdate={this.props.shownFrame} />;
-    } else if (this.state.deleting) {
+    } else if (this.props.deleting) {
       userBox = <DeleteConfirmation frameToDelete={this.props.shownFrame} />;
     } else if (this.props.owned) {
       userBox = this.ownershipBox();

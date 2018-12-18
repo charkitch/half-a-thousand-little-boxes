@@ -1,10 +1,15 @@
 import * as FRAME_API_UTIL from '../util/frame_api_util';
 
+export const BEGIN_EDITING = "BEGIN_EDITING";
+export const BEGIN_DELETING = "BEGIN_DELETING";
+export const CANCEL_DELETING = "CANCEL_DELETING";
+
 export const RECEIVE_USER_FRAMES = 'RECEIVE_USERS_FRAMES';
 export const RECEIVE_CURRENT_FILE = "RECEIVE_CURRENT_FILE";
 export const RECEIVE_FRAME_ERRORS = "RECEIVE_FRAME_ERRORS";
 export const RECEIVE_ONE_FRAME = "RECEIVE_ONE_FRAME";
 export const REMOVE_ONE_FRAME = "REMOVE_ONE_FRAME";
+
 
 export const receiveCurrentFile = (currentFile) => {
   return {
@@ -42,6 +47,7 @@ export const updateOneFrame = (frameToUpdate) => {
     });
   };
 };
+
 
 export const deleteOneFrame = (frameToDelete) => {
   return (dispatch) => {
@@ -91,3 +97,21 @@ export const receiveErrors = errors => {
     errors
   };
 };
+
+export const beginEditing = () => {
+  return {
+    type: BEGIN_EDITING,
+  };
+};
+
+export const beginDeleting = () => {
+  return {
+    type: BEGIN_DELETING,
+  };
+}
+
+export const cancelDeleting = () => {
+  return {
+    type: CANCEL_DELETING,
+  };
+}
