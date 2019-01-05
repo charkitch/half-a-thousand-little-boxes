@@ -1,6 +1,7 @@
 import React from 'react';
+
+import AvatarDisplay from './avatar/avatar_display';
 import FollowButtonContainer from './follow_button_container';
-import AvatarDisplay from './avatar_display';
 
 const UserDetails = ({
   shownUser,
@@ -22,7 +23,6 @@ const UserDetails = ({
     </div>
   );
 };
-
 
 
 export default UserDetails;

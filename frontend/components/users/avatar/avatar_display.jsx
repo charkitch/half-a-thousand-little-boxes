@@ -2,13 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import { getCurrentUser } from '../../reducers/root_reducer';
-
 import {
   createAvatar,
   updateAvatar,
   deleteAvatar
-} from '../../actions/avatar_actions';
+} from '../../../actions/avatar_actions';
+
+import { EDIT_AVATAR, openModal } from '../../../actions/modal_actions';
+
+import { getCurrentUser } from '../../../reducers/root_reducer';
+
+import { receiveCurrentFile } from '../../../actions/frame_actions';
+
 
 
 class AvatarDisplay extends React.Component {
@@ -43,16 +48,10 @@ class AvatarDisplay extends React.Component {
   }
 
 
-                // onMouseLeave={this.deHover}
-
-
   handleFile(e) {
-    console.log('handle file')
-    const formData = new FormData();
-    formData.append('avatar[shown_user_id]', this.props.shownUser.id)
-    formData.append('avatar[picture]', e.currentTarget.files[0]);
-    this.props.createAvatar(formData)
-      .then(this.setState({hoverStatus: false}));
+    const file = e.currentTarget.files[0];
+    this.props.receiveCurrentFile(file);
+    this.props.openModal(EDIT_AVATAR)
   }
 
   vanillaProfilePic() {
@@ -101,8 +100,10 @@ class AvatarDisplay extends React.Component {
 const mapDispatchToProps = dispatch => {
   return {
     createAvatar: (avatar) => dispatch(createAvatar(avatar)),
+    openModal: (modal) => dispatch(openModal(modal)),
     updateAvatar: (avatar) => dispatch(updateAvatar(avatar)),
     deleteAvatar: () => dispatch(deleteAvatar()),
+    receiveCurrentFile: (file) => dispatch(receiveCurrentFile(file))
   };
 };
 

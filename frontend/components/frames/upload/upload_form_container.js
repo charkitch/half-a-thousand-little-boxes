@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 
 import { createFrame } from '../../actions/frame_actions';
-import { logout } from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
 import UploadForm from './upload_form';
 

@@ -30,10 +30,10 @@ class Frame < ApplicationRecord
   end
 
   def true_image
-    if self.image.metadata && self.image.metadata[:orientation] != 1
-      self.image.variant(auto_orient: true)
+    if self.image.metadata && self.image.metadata['orientation'] != 1
+      self.image.variant(resize: '1200 x 1200', auto_orient: true)
     else
-      self.image
+      self.image.variant(resize: '1200 X 1200')
     end
   end
 
