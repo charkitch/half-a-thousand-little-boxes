@@ -1,25 +1,45 @@
 import React from 'react';
 
-import ImageEditor from '../../util/image_editor';
+
+import AvatarEditor from 'react-avatar-editor';
 
 class EditAvatar extends React.Component {
   constructor(props) {
-    debugger
     super(props);
+    this.currentVersionRef = React.createRef()
     this.state = {
       imageUrl: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSave = this.handleSave.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-     const formData = new FormData();
-    formData.append('avatar[shown_user_id]', this.props.shownUser.id)
-    formData.append('avatar[picture]', e.currentTarget.files[0]);
+  handleSubmit(blob) {
+    debugger
+    const formData = new FormData();
+    formData.append('avatar[shown_user_id]', this.props.currentUserId)
+    formData.append('avatar[picture]', blob);
     this.props.createAvatar(formData)
     .then(this.setState({hoverStatus: false}));
     this.props.closeModal();
+  }
+
+  handleCancel(e) {
+    this.props.closeModal();
+  }
+
+  handleSave(e) {
+    const url = this.currentVersionRef.current.getImage().toDataURL();
+    fetch(url)
+      .then( (result) => { 
+        debugger
+        return result.blob();
+        })
+      .then( (blob) => {
+        debugger
+        this.handleSubmit(blob)
+        })
   }
 
   update(field) {
@@ -32,7 +52,6 @@ class EditAvatar extends React.Component {
     const reader = new FileReader();
     const file = this.props.currentFile;
     reader.onloadend = () => {
-      debugger
       this.setState({imageUrl: reader.result, imageFile: file});
     };
     if (file) {
@@ -66,10 +85,23 @@ class EditAvatar extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <>
-        <ImageEditor imageUrl={`${this.state.imageUrl}`}  />
+        <AvatarEditor
+        ref={this.currentVersionRef}
+        image={`${this.state.imageUrl}`}
+        width={104}
+        height={104}
+        borderRadius={50}
+        border={50}
+        color={[255, 255, 255, 0.6]}
+        scale={2.0}
+        rotate={0}
+        onLoadSuccess={ () => { debugger} }
+        onLoadFailure={ () => { debugger} }
+       />
+        <p onClick={this.handleSave}>Save</p>
+        <p onClick={this.handleCancel}>Cancel</p>
       </>
     );
   }

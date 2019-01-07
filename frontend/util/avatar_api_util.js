@@ -1,4 +1,5 @@
 export const createAvatar = (formData) => {
+  debugger
   return $.ajax({
     url: '/api/users/'+formData.id + '/avatar',
     method: 'POST',

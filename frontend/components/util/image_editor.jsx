@@ -2,18 +2,17 @@ import React from 'react'
 import AvatarEditor from 'react-avatar-editor'
 import { connect } from 'react-redux'
  
-class ImageEditor extends React.Component {
+const ImageEditor = ({imageUrl})
   render() {
-    debugger
     return (
       <AvatarEditor
-        image={`${this.props.imageUrl}`}
+        image={`${imageUrl}`}
         width={104}
         height={104}
         borderRadius={50}
         border={50}
         color={[255, 255, 255, 0.6]}
-        scale={1.2}
+        scale={2.0}
         rotate={0}
         onLoadSuccess={ () => { debugger} }
         onLoadFailure={ () => { debugger} }
