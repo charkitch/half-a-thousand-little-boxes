@@ -32,6 +32,7 @@ class AvatarDisplay extends React.Component {
   }
 
   deHover(e) {
+    debugger
     this.setState({
       hoverStatus: false,
       className: "user-avatar"
@@ -49,6 +50,7 @@ class AvatarDisplay extends React.Component {
 
 
   handleFile(e) {
+    debugger
     const file = e.currentTarget.files[0];
     this.props.receiveCurrentFile(file);
     this.props.openModal(EDIT_AVATAR)
@@ -68,7 +70,10 @@ class AvatarDisplay extends React.Component {
   }
 
   uploaderProfilePic() {
-    const style = { backgroundImage: `url(${this.profilePicture})`};
+    const style = { 
+      backgroundImage: `url(${this.profilePicture})`,
+      backgroundSize: `cover`
+    };
     return (
       <div>
         <label
@@ -87,7 +92,6 @@ class AvatarDisplay extends React.Component {
       </div>
       );
   }
-  // onMouseLeave={this.deHover}
 
 
   render() {

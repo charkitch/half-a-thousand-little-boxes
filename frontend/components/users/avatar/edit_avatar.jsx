@@ -2,6 +2,7 @@ import React from 'react';
 
 
 import AvatarEditor from 'react-avatar-editor';
+import Slider from '../../util/slider';
 
 class EditAvatar extends React.Component {
   constructor(props) {
@@ -9,10 +10,18 @@ class EditAvatar extends React.Component {
     this.currentVersionRef = React.createRef()
     this.state = {
       imageUrl: '',
+      scale: '1.2'
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSave = this.handleSave.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
+    this.handleStep = this.handleStep.bind(this);
+  }
+
+  handleStep(e) {
+    this.setState({
+      scale: e.target.value,
+    })
   }
 
   handleSubmit(blob) {
@@ -26,6 +35,7 @@ class EditAvatar extends React.Component {
   }
 
   handleCancel(e) {
+    e.preventDefault();
     this.props.closeModal();
   }
 
@@ -87,6 +97,7 @@ class EditAvatar extends React.Component {
   render() {
     return (
       <>
+        <div className='image-column'>
         <AvatarEditor
         ref={this.currentVersionRef}
         image={`${this.state.imageUrl}`}
@@ -95,11 +106,29 @@ class EditAvatar extends React.Component {
         borderRadius={50}
         border={50}
         color={[255, 255, 255, 0.6]}
-        scale={2.0}
+        scale={this.state.scale}
         rotate={0}
         onLoadSuccess={ () => { debugger} }
         onLoadFailure={ () => { debugger} }
        />
+       <p className='instructions'>
+        Click and drag on the circle to center the image where you'd like.
+       </p>
+       </div>
+        <div className='adjustables'>
+          <input
+                className='sliders' 
+                type="range"
+                name="avatar"
+                min={1.0}
+                max={2.0}
+                step={.01}
+                value={this.state.scale}
+                onChange={this.handleStep}
+                width="100px"
+          />
+          <label htmlFor="avatar">Zoom</label>
+        </div>
         <p onClick={this.handleSave}>Save</p>
         <p onClick={this.handleCancel}>Cancel</p>
       </>
