@@ -2,7 +2,6 @@ import React from 'react';
 
 
 import AvatarEditor from 'react-avatar-editor';
-import Slider from '../../util/slider';
 
 class EditAvatar extends React.Component {
   constructor(props) {
@@ -17,6 +16,7 @@ class EditAvatar extends React.Component {
     this.handleSave = this.handleSave.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
     this.handleStep = this.handleStep.bind(this);
+    this.handleRotate = this.handleRotate.bind(this);
   }
 
   handleStep(e) {
@@ -26,7 +26,6 @@ class EditAvatar extends React.Component {
   }
 
   handleSubmit(blob) {
-    debugger
     const formData = new FormData();
     formData.append('avatar[shown_user_id]', this.props.currentUserId)
     formData.append('avatar[picture]', blob);
@@ -40,15 +39,45 @@ class EditAvatar extends React.Component {
     this.props.closeModal();
   }
 
+  handleRotate(e) {
+    debugger
+    e.preventDefault;
+    if (e.currentTarget.innerText[7] == 'R') {
+     let nextRot = this.rotateRight()
+     this.setState({
+        rotation: nextRot,
+      });
+    } else {
+      let nextRot = this.rotateLeft()
+      this.setState({
+        rotation: nextRot,
+      });
+    }
+  }
+
+  rotateRight() {
+    let rotation = this.state.rotation
+    let total = rotation + 90;
+    return total % 360;
+  }
+
+  rotateLeft() {
+    let rotation = this.state.rotation
+    let total = rotation - 90
+    if (total < 0) {
+      return 360 % total
+    } else {
+      return total
+    }
+  }
+
   handleSave(e) {
     const url = this.currentVersionRef.current.getImage().toDataURL();
     fetch(url)
       .then( (result) => { 
-        debugger
         return result.blob();
         })
       .then( (blob) => {
-        debugger
         this.handleSubmit(blob)
         })
   }
@@ -96,6 +125,7 @@ class EditAvatar extends React.Component {
   }
 
   render() {
+    debugger
     return (
       <div className='avatar editor'>
         <div className='changables'>
@@ -109,7 +139,7 @@ class EditAvatar extends React.Component {
             border={50}
             color={[255, 255, 255, 0.6]}
             scale={this.state.scale}
-            rotate={0}
+            rotate={this.state.rotation}
             onLoadSuccess={ () => { debugger} }
             onLoadFailure={ () => { debugger} }
              />
@@ -128,9 +158,10 @@ class EditAvatar extends React.Component {
                   value={this.state.scale}
                   onChange={this.handleStep}
                   width="100px"
-                  backgroundColor="#232323"
             />
             <label htmlFor="avatar">Zoom</label>
+            <button onClick={this.handleRotate}>Rotate Left</button>
+            <button onClick={this.handleRotate}>Rotate Right</button>
             </div>
           </div>
         <div className='final-options'>        
