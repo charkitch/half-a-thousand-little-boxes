@@ -13,5 +13,5 @@ json.frame do
   json.awsLocaleFull url_for @frame.true_image
 end
 json.user do
-  json.extract! @user, :id, :username, :email, :followees, :followers
+  json.partial! "api/users/user", user: @user
 end

@@ -18,6 +18,7 @@ import { receiveCurrentFile } from '../../../actions/frame_actions';
 
 class AvatarDisplay extends React.Component {
   constructor(props) {
+    debugger
     super(props);
     this.profilePicture = props.shownUser.avatarLocale ? props.shownUser.avatarLocale : window.userIcon
     this.state = {
@@ -50,13 +51,13 @@ class AvatarDisplay extends React.Component {
 
 
   handleFile(e) {
-    debugger
     const file = e.currentTarget.files[0];
     this.props.receiveCurrentFile(file);
     this.props.openModal(EDIT_AVATAR)
   }
 
   vanillaProfilePic() {
+    debugger
     console.log('van van vanilla')
     return (
       <div>
@@ -70,6 +71,7 @@ class AvatarDisplay extends React.Component {
   }
 
   uploaderProfilePic() {
+    debugger
     const style = { 
       backgroundImage: `url(${this.profilePicture})`,
       backgroundSize: `cover`

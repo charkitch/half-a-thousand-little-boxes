@@ -48,6 +48,7 @@ class FrameShowDetails extends React.Component {
   }
 
   render() {
+    debugger
     let userBox;
     if (this.state.editing) {
       userBox = <UpdateBox frameToUpdate={this.props.shownFrame} />;

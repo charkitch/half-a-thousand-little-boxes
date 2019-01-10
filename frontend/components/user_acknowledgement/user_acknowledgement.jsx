@@ -68,6 +68,12 @@ class UserAcknowledgement extends React.Component {
   }
 
   personalGreeting() {
+    let avatImage;
+    if (this.props.currentUser.avatarLocale) {
+      avatImage = this.props.currentUser.avatarLocale
+    } else {
+      avatImage = window.userIcon
+    }
     return (
       <nav className="sticky-nav">
         <div className="left-side-nav">

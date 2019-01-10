@@ -10,7 +10,8 @@ class EditAvatar extends React.Component {
     this.currentVersionRef = React.createRef()
     this.state = {
       imageUrl: '',
-      scale: '1.2'
+      scale: '1.2',
+      rotation: 0
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSave = this.handleSave.bind(this);
@@ -96,42 +97,47 @@ class EditAvatar extends React.Component {
 
   render() {
     return (
-      <>
-        <div className='image-column'>
-        <AvatarEditor
-        ref={this.currentVersionRef}
-        image={`${this.state.imageUrl}`}
-        width={104}
-        height={104}
-        borderRadius={50}
-        border={50}
-        color={[255, 255, 255, 0.6]}
-        scale={this.state.scale}
-        rotate={0}
-        onLoadSuccess={ () => { debugger} }
-        onLoadFailure={ () => { debugger} }
-       />
-       <p className='instructions'>
-        Click and drag on the circle to center the image where you'd like.
-       </p>
-       </div>
-        <div className='adjustables'>
-          <input
-                className='sliders' 
-                type="range"
-                name="avatar"
-                min={1.0}
-                max={2.0}
-                step={.01}
-                value={this.state.scale}
-                onChange={this.handleStep}
-                width="100px"
-          />
-          <label htmlFor="avatar">Zoom</label>
+      <div className='avatar editor'>
+        <div className='changables'>
+          <div className='image-column'>
+            <AvatarEditor
+            ref={this.currentVersionRef}
+            image={`${this.state.imageUrl}`}
+            width={204}
+            height={204}
+            borderRadius={150}
+            border={50}
+            color={[255, 255, 255, 0.6]}
+            scale={this.state.scale}
+            rotate={0}
+            onLoadSuccess={ () => { debugger} }
+            onLoadFailure={ () => { debugger} }
+             />
+            <p className='instructions'>
+              Click and drag.
+            </p>
+          </div>
+          <div className='tweakers'>
+            <input
+                  className='sliders' 
+                  type="range"
+                  name="avatar"
+                  min={1.0}
+                  max={2.0}
+                  step={.01}
+                  value={this.state.scale}
+                  onChange={this.handleStep}
+                  width="100px"
+                  backgroundColor="#232323"
+            />
+            <label htmlFor="avatar">Zoom</label>
+            </div>
+          </div>
+        <div className='final-options'>        
+          <p className='upload-submit' onClick={this.handleSave}>Save</p>
+          <p className='ownership-button-delete' onClick={this.handleCancel}>Cancel</p>
         </div>
-        <p onClick={this.handleSave}>Save</p>
-        <p onClick={this.handleCancel}>Cancel</p>
-      </>
+      </div>
     );
   }
 }

@@ -48,5 +48,20 @@
 }
 
 .sliders {
+  height: 10px;
   width: 150px;
 }
+
+.image-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar-editor {
+
+}
+
+.final-options {
+  
+}
+
