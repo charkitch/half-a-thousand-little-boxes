@@ -9,8 +9,8 @@ class EditAvatar extends React.Component {
     this.currentVersionRef = React.createRef()
     this.state = {
       imageUrl: '',
-      scale: '1.2',
-      rotation: 0
+      scale: 1.2,
+      rotate: 0
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSave = this.handleSave.bind(this);
@@ -20,8 +20,9 @@ class EditAvatar extends React.Component {
   }
 
   handleStep(e) {
+
     this.setState({
-      scale: e.target.value,
+      scale: parseFloat(e.target.value),
     })
   }
 
@@ -45,29 +46,29 @@ class EditAvatar extends React.Component {
     if (e.currentTarget.innerText[7] == 'R') {
      let nextRot = this.rotateRight()
      this.setState({
-        rotation: nextRot,
+        rotate: nextRot,
       });
     } else {
       let nextRot = this.rotateLeft()
       this.setState({
-        rotation: nextRot,
+        rotate: nextRot,
       });
     }
   }
 
   rotateRight() {
-    let rotation = this.state.rotation
-    let total = rotation + 90;
+    let rotate = this.state.rotate
+    let total = rotate + 90;
     return total % 360;
   }
 
   rotateLeft() {
-    let rotation = this.state.rotation
-    let total = rotation - 90
+    let rotate = this.state.rotate
+    let total = rotate - 90
     if (total < 0) {
-      return 360 % total
+      return 360 - total;
     } else {
-      return total
+      return total;
     }
   }
 
@@ -127,41 +128,46 @@ class EditAvatar extends React.Component {
   render() {
     debugger
     return (
-      <div className='avatar editor'>
+      <div className='edit-box'>
         <div className='changables'>
           <div className='image-column'>
             <AvatarEditor
-            ref={this.currentVersionRef}
-            image={`${this.state.imageUrl}`}
-            width={204}
-            height={204}
-            borderRadius={150}
-            border={50}
-            color={[255, 255, 255, 0.6]}
-            scale={this.state.scale}
-            rotate={this.state.rotation}
-            onLoadSuccess={ () => { debugger} }
-            onLoadFailure={ () => { debugger} }
+              className="editor"
+              ref={this.currentVersionRef}
+              image={`${this.state.imageUrl}`}
+              width={204}
+              height={204}
+              borderRadius={150}
+              border={50}
+              color={[255, 255, 255, 0.6]}
+              scale={this.state.scale}
+              rotate={this.state.rotate}
+              onLoadSuccess={ () => { debugger} }
+              onLoadFailure={ () => { debugger} }
              />
             <p className='instructions'>
               Click and drag.
             </p>
           </div>
           <div className='tweakers'>
-            <input
-                  className='sliders' 
-                  type="range"
-                  name="avatar"
-                  min={1.0}
-                  max={2.0}
-                  step={.01}
-                  value={this.state.scale}
-                  onChange={this.handleStep}
-                  width="100px"
-            />
-            <label htmlFor="avatar">Zoom</label>
-            <button onClick={this.handleRotate}>Rotate Left</button>
-            <button onClick={this.handleRotate}>Rotate Right</button>
+            <div className='scaler'>
+                <input
+                    className='sliders' 
+                    type="range"
+                    name="avatar"
+                    min={1.0}
+                    max={2.0}
+                    step={.01}
+                    value={this.state.scale}
+                    onChange={this.handleStep}
+                    width="100px"
+                />
+                <label htmlFor="avatar">Zoom</label>
+              </div>
+            <div className='rotators'>
+              <button onClick={this.handleRotate}>{"\u27f2"}</button>
+              <button onClick={this.handleRotate}>{"\u27f3"}</button>
+            </div>
             </div>
           </div>
         <div className='final-options'>        

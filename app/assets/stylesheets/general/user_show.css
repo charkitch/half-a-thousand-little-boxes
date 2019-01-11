@@ -58,11 +58,29 @@
   flex-direction: column;
 }
 
-.avatar-editor {
+.edit-box {
 
+}
+
+.rotators {
+  font-size: 60px;
 }
 
 .final-options {
   
 }
 
+.editor {
+  border: 1px solid red;
+  background-color: '#7d7d7b'
+}
+
+.changables {
+  display: flex;
+}
+
+.tweakers { 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
