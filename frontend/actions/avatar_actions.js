@@ -5,7 +5,6 @@ export const RECEIVE_AVATAR_ERRORS = "REMOVE_AVATAR_ERRORS";
 
 
 export const createAvatar = (avatar) => {
-  debugger
   return (dispatch) => {
     return AVATAR_API_UTIL.createAvatar(avatar).then( user => {
       return dispatch(receiveOneUser(user));

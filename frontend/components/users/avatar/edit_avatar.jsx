@@ -41,7 +41,6 @@ class EditAvatar extends React.Component {
   }
 
   handleRotate(e) {
-    debugger
     e.preventDefault;
     if (e.currentTarget.innerText[7] == 'R') {
      let nextRot = this.rotateRight()
@@ -126,7 +125,6 @@ class EditAvatar extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <div className='edit-box'>
         <div className='changables'>
@@ -143,10 +141,9 @@ class EditAvatar extends React.Component {
               scale={this.state.scale}
               rotate={this.state.rotate}
               onLoadSuccess={ () => { debugger} }
-              onLoadFailure={ () => { debugger} }
              />
             <p className='instructions'>
-              Click and drag.
+              click and drag
             </p>
           </div>
           <div className='tweakers'>

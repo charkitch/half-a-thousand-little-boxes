@@ -14,8 +14,6 @@ const ImageEditor = ({imageUrl})
         color={[255, 255, 255, 0.6]}
         scale={2.0}
         rotate={0}
-        onLoadSuccess={ () => { debugger} }
-        onLoadFailure={ () => { debugger} }
       />
     )
   }
