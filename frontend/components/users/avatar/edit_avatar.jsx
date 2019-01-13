@@ -64,7 +64,7 @@ class EditAvatar extends React.Component {
     let rotate = this.state.rotate
     let total = rotate - 90
     if (total < 0) {
-      return 360 - total;
+      return 360 + total;
     } else {
       return total;
     }
@@ -156,6 +156,7 @@ class EditAvatar extends React.Component {
                     onChange={this.handleStep}
                     width="100px"
                 />
+
                 <label htmlFor="avatar">Zoom</label>
               </div>
             <div className='rotators'>
