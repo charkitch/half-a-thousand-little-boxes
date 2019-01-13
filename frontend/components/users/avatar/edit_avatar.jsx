@@ -20,9 +20,8 @@ class EditAvatar extends React.Component {
   }
 
   handleStep(e) {
-
     this.setState({
-      scale: parseFloat(e.target.value),
+      scale: e.target.value
     })
   }
 
@@ -140,7 +139,6 @@ class EditAvatar extends React.Component {
               color={[255, 255, 255, 0.6]}
               scale={this.state.scale}
               rotate={this.state.rotate}
-              onLoadSuccess={ () => { debugger} }
              />
             <p className='instructions'>
               click and drag
@@ -152,10 +150,9 @@ class EditAvatar extends React.Component {
                     className='sliders' 
                     type="range"
                     name="avatar"
-                    min={1.0}
-                    max={2.0}
-                    step={.01}
-                    value={this.state.scale}
+                    min="1.0"
+                    max="2.0"
+                    step=".01"
                     onChange={this.handleStep}
                     width="100px"
                 />
