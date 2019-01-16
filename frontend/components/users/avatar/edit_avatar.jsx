@@ -10,13 +10,14 @@ class EditAvatar extends React.Component {
     this.state = {
       imageUrl: '',
       scale: 1.2,
-      rotate: 0
+      rotation: 0
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSave = this.handleSave.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
     this.handleStep = this.handleStep.bind(this);
-    this.handleRotate = this.handleRotate.bind(this);
+    this.rotateRight = this.rotateRight.bind(this);
+    this.rotateLeft = this.rotateLeft.bind(this);
   }
 
   handleStep(e) {
@@ -39,34 +40,23 @@ class EditAvatar extends React.Component {
     this.props.closeModal();
   }
 
-  handleRotate(e) {
-    e.preventDefault;
-    if (e.currentTarget.innerText[7] == 'R') {
-     let nextRot = this.rotateRight()
-     this.setState({
-        rotate: nextRot,
-      });
-    } else {
-      let nextRot = this.rotateLeft()
-      this.setState({
-        rotate: nextRot,
-      });
-    }
-  }
-
   rotateRight() {
-    let rotate = this.state.rotate
+    let rotate = this.state.rotation;
     let total = rotate + 90;
-    return total % 360;
+    this.setState({rotation: total % 360});
   }
 
   rotateLeft() {
-    let rotate = this.state.rotate
-    let total = rotate - 90
+    let rotate = this.state.rotation;
+    let total = rotate - 90;
     if (total < 0) {
-      return 360 + total;
+      this.setState({
+        rotation: 360 + total,
+      });
     } else {
-      return total;
+       this.setState({
+         rotation: total,
+       })
     }
   }
 
@@ -138,37 +128,36 @@ class EditAvatar extends React.Component {
               border={50}
               color={[255, 255, 255, 0.6]}
               scale={this.state.scale}
-              rotate={this.state.rotate}
+              rotate={this.state.rotation}
              />
-            <p className='instructions'>
-              click and drag
-            </p>
           </div>
           <div className='tweakers'>
+            <p className='instructions'>
+              Click and drag to center the image. 
+            </p>
             <div className='scaler'>
                 <input
                     className='sliders' 
                     type="range"
                     name="avatar"
                     min="1.0"
-                    max="2.0"
+                    max="2.5"
                     step=".01"
                     onChange={this.handleStep}
                     width="100px"
                 />
-
                 <label htmlFor="avatar">Zoom</label>
               </div>
             <div className='rotators'>
-              <button onClick={this.handleRotate}>{"\u27f2"}</button>
-              <button onClick={this.handleRotate}>{"\u27f3"}</button>
+              <button onClick={this.rotateLeft}>{"\u27f2"}</button>
+              <button onClick={this.rotateRight}>{"\u27f3"}</button>
             </div>
-            </div>
+            <div className='final-options'>        
+              <p className='avatar-save clickable' onClick={this.handleSave}>Save</p>
+             </div>
           </div>
-        <div className='final-options'>        
-          <p className='upload-submit' onClick={this.handleSave}>Save</p>
-          <p className='ownership-button-delete' onClick={this.handleCancel}>Cancel</p>
-        </div>
+          </div>
+      
       </div>
     );
   }

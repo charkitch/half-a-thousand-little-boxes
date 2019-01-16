@@ -92,5 +92,18 @@
   padding: 15px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
+
+.avatar-save {
+  border-radius: 8px;
+  background-color: #34bf49;
+  color: white;
+  width: 200%;
+  display: flex;
   justify-content: space-around;
+  padding-bottom: 1px;
+  align-self: center;
 }

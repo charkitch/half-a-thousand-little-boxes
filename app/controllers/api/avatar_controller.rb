@@ -4,6 +4,8 @@ class Api::AvatarController < ApplicationController
     user_without_face = current_user
     if user_without_face.id == params[:avatar][:shown_user_id].to_i
       user_without_face.avatar.attach(params[:avatar][:picture])
+      @user = current_user
+      render 'api/users/show'
     else
       render json: ['Incorrect Avatar Change Request'], status: 404
     end

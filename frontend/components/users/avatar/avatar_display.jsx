@@ -19,7 +19,7 @@ import { receiveCurrentFile } from '../../../actions/frame_actions';
 class AvatarDisplay extends React.Component {
   constructor(props) {
     super(props);
-    this.profilePicture = props.shownUser.avatarLocale ? props.shownUser.avatarLocale : window.userIcon
+    this.profilePicture = props.avatarLocale ? props.avatarLocale : window.userIcon
     this.state = {
       hoverStatus: false,
       className: "user-avatar",
@@ -67,6 +67,7 @@ class AvatarDisplay extends React.Component {
       );
   }
 
+
   uploaderProfilePic() {
     const style = { 
       backgroundImage: `url(${this.profilePicture})`,
@@ -113,6 +114,7 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = (state, ownProps) => {
   const isItMe = getCurrentUser(state).id === ownProps.shownUser.id;
   return {
+    avatarLocale: ownProps.shownUser.avatarLocale,
     imageOwned: isItMe
   };
 };
