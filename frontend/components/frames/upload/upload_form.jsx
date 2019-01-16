@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
-import { logout } from '../../../actions/session_actions';
 import { createFrame } from '../../../actions/frame_actions';
 import { openModal, closeModal } from '../../../actions/modal_actions';
 

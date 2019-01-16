@@ -13,7 +13,7 @@ export const requestOneUser = (id) => {
   };
 };
 
-const receiveOneUser = (user) => {
+export const receiveOneUser = (user) => {
   return {
     type: RECEIVE_ONE_USER,
     user

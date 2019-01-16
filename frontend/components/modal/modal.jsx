@@ -1,10 +1,14 @@
 import React from "react";
+
 import { connect } from 'react-redux';
 
-import { closeModal } from "../../actions/modal_actions";
+import EditAvatar from '../users/avatar/edit_avatar_container'
 import UploadSelectContainer from '../frames/upload/upload_select';
 import UploadForm from '../frames/upload/upload_form';
-import { UPLOAD_FORM, UPLOAD_FILE_SELECT } from '../../actions/modal_actions';
+
+
+import { closeModal } from "../../actions/modal_actions";
+import { UPLOAD_FORM, UPLOAD_FILE_SELECT, EDIT_AVATAR } from '../../actions/modal_actions';
 
 
 const Modal = ({ modal, closeModal }) => {
@@ -19,6 +23,9 @@ const Modal = ({ modal, closeModal }) => {
     case UPLOAD_FORM:
       component = <UploadForm />;
       break;
+    case EDIT_AVATAR:
+      component = <EditAvatar />;
+      break
     default:
       return null;
   }

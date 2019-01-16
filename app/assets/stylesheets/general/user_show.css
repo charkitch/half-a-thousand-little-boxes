@@ -1,5 +1,3 @@
-
-
 .profile-info-box {
   height: 200px;
   width: 100%;
@@ -18,12 +16,94 @@
 }
 
 .user-avatar  {
+  border-radius: 50px;
   margin: 0 auto;
   width: 104px;
   height: 104px;
   top: 52px;
 }
 
+
+.avatar-upload-ready {
+  filter: brightness(1.5);
+  opacity: .7;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
 .shown-user-name {
   font-size: 30px;
+}
+
+.profile-upload {
+  display: none;
+}
+
+.adjustables {
+  display: flex;
+  flex-direction: column;
+}
+
+.sliders {
+  height: 10px;
+  width: 150px;
+  display: flex;
+  flex-direction: column
+}
+
+.image-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-box {
+  background-color: #dddddddd;
+}
+
+.rotators {
+  font-size: 60px;
+  display: flex; 
+  justify-content: space-around
+}
+
+.final-options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 5px;
+}
+
+.editor {
+  border: 1px solid grey;
+  background-color: darkgrey;
+  border-style: dashed
+}
+
+.image-column {
+  background-color: '#7d7d7b';
+}
+
+.changables {
+  display: flex;
+}
+
+.tweakers { 
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
+
+.avatar-save {
+  border-radius: 8px;
+  background-color: #34bf49;
+  color: white;
+  width: 200%;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 1px;
+  align-self: center;
 }
