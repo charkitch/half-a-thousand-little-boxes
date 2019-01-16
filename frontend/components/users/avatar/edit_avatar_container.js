@@ -15,7 +15,6 @@ const mapDispatchToProps = dispatch => {
 
 
 const mapStateToProps = (state) => {
-  debugger;
   return {
    currentUserId: state.session.id,
    currentFile: state.entities.currentFile,

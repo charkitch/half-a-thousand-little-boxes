@@ -19,7 +19,6 @@ import { receiveCurrentFile } from '../../../actions/frame_actions';
 class AvatarDisplay extends React.Component {
   constructor(props) {
     super(props);
-    this.profilePicture = props.avatarLocale ? props.avatarLocale : window.userIcon
     this.state = {
       hoverStatus: false,
       className: "user-avatar",
@@ -43,7 +42,7 @@ class AvatarDisplay extends React.Component {
       this.setState({
         hoverStatus: true,
         className: "user-avatar avatar-upload-ready"
-        });
+      });
     }
   }
 
@@ -56,12 +55,14 @@ class AvatarDisplay extends React.Component {
 
   vanillaProfilePic() {
     console.log('van van vanilla')
+    let image = this.props.avatarLocale ? this.props.avatarLocale : window.userIcon
     return (
       <div>
-        <img className={this.state.className}
-              onMouseEnter={this.enHover}
-              src={this.profilePicture}
-              alt="default user icon"
+        <img 
+          className={this.state.className}
+          onMouseEnter={this.enHover}
+          src={image}
+          alt="default user icon"
         />
       </div>
       );
@@ -69,16 +70,17 @@ class AvatarDisplay extends React.Component {
 
 
   uploaderProfilePic() {
+    let image = this.props.avatarLocale ? this.props.avatarLocale : window.userIcon
     const style = { 
-      backgroundImage: `url(${this.profilePicture})`,
+      backgroundImage: `url(${image})`,
       backgroundSize: `cover`
     };
     return (
       <div>
         <label
-            htmlFor="avat-upload"
-            className="user-avatar avatar-upload-ready"
-            style={style}
+          htmlFor="avat-upload"
+          className="user-avatar avatar-upload-ready"
+          style={style}
           >
         </label>
         <input 
@@ -92,6 +94,8 @@ class AvatarDisplay extends React.Component {
       );
   }
 
+  componentDidUpdate(oldprops, oldstate) {
+  }
 
   render() {
     return (
@@ -113,8 +117,10 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = (state, ownProps) => {
   const isItMe = getCurrentUser(state).id === ownProps.shownUser.id;
+  let ident = ownProps.location.pathname[ownProps.location.pathname.length-1];
+  let avatarLocale = state.entities.users[ident].avatarLocale;
   return {
-    avatarLocale: ownProps.shownUser.avatarLocale,
+    avatarLocale: avatarLocale,
     imageOwned: isItMe
   };
 };
