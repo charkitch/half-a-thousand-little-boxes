@@ -7,9 +7,10 @@
 
 Users can sign up with a username, an email address and a password. If no username is provided the username is set by default to the local part of the user's required email address.<sup>***</sup> Passwords are not stored in database. In accordance with best practices passwords are not stored but only a salted hash is stored via BCrypt.<sup>****</sup>
   
-<sup>***</sup> *Local part being the official but off-sound term for the pre-@ portion of an email address.
+<sup>***</sup> *Local part being the official but off-sound term for the pre-@ portion of an email address.*
+<br/>
 <sup>****</sup> *This would not be done in production as I don't have a PHD in math. 
 
 Users have many frames. Each frame is linked via active storage through the blob to AWS S3.
 
-On the React front end Redux is used to handle state. 
+On the front end Redux is used to handle state. 
