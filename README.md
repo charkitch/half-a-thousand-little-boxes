@@ -6,6 +6,8 @@
 <sup>**</sup>This was a headache. 
 
 Users can sign up with a username, an email address and a password. If no username is provided the username is set by default to the local part of the user's required email address.<sup>***</sup> Passwords are not stored in database. In accordance with best practices passwords are not stored but only a salted hash is stored via BCrypt.<sup>****</sup>
+
+<br/>
   
 <sup>***</sup> *Local part being the official but off-sound term for the pre-@ portion of an email address.*
 <br/>
